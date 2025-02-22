@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/3o6ZsYm5hHf6hPpNss/giphy.gif" width="800">
+  <img src="https://media.giphy.com/media/XULcTRcSxPje/giphy.gif" width="800">
 </p>
 
 ---
@@ -26,7 +26,7 @@ int main() {
 📌 **Dark mode, terminal life, and power tools all the way.**  
 
 <p align="center">
-  <img src="https://media.giphy.com/media/l3vRn1F2qzY2gQUqQ/giphy.gif" width="500">
+  <img src="https://media.giphy.com/media/l0HlMWkkrmA6jDfoc/giphy.gif" width="500">
 </p>
 
 ---
@@ -36,7 +36,7 @@ int main() {
 |:-:|:-:|
 
 <p align="center">
-  <img src="https://media.giphy.com/media/l3vRn1F2qzY2gQUqQ/giphy.gif" width="600">
+  <img src="https://media.giphy.com/media/5eJ21K5ChQmuQ/giphy.gif" width="600">
 </p>
 
 ---
@@ -58,7 +58,7 @@ int main() {
 🔹 **[💀 Super AI Tool](https://github.com/akella/super-ai-tool)** - A neural network powerhouse.  
 
 <p align="center">
-  <img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" width="700">
+  <img src="https://media.giphy.com/media/hpBNUQAKDIrx6/giphy.gif" width="700">
 </p>
 
 ---
@@ -84,7 +84,7 @@ int main() {
 </p>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="500">
+  <img src="https://media.giphy.com/media/l2Je5a1RDYxMHH46k/giphy.gif" width="500">
 </p>
 
 ---
