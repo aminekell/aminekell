@@ -28,14 +28,14 @@
 
 # 🏆 **42 School Progress**
 <p align="center">
-  <a href="https://github.com/oakoudad/badge42">
-    <img src="https://badge.mediaplus.ma/greenbinary/akella" alt="akella's 42 stats" />
+  <a href="https://profile.intra.42.fr/users/akella">
+    <img src="https://badge.mediaplus.ma/red/akella" alt="akella's 42 stats" />
   </a>
 </p>
 
-<!-- 🏆 PROGRESS GIF -->
+<!-- 🔥 COOL GIF -->
 <p align="center">
-  <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="400">
+  <img src="https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif" width="400">
 </p>
 
 ---
