@@ -1,11 +1,11 @@
-<!-- 🚀 INSANE ANIMATED HEADER -->
+<!-- 🚀 EPIC ANIMATED HEADER -->
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=40&color=FF5733&center=true&vCenter=true&width=1000&height=60&lines=👋+HELLO,+WORLD!;🚀+I+AM+AMINE+KELLA!;🔥+C%2FC%2B%2B+Developer+%7C+AI+Explorer;💻+Passionate+About+Low-Level+Programming;🛠️+Building+Cool+Projects!+Let's+Connect!">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=45&color=FF5733&center=true&vCenter=true&width=1200&height=75&lines=👋+HELLO,+WORLD!;🚀+I+AM+AMINE+KELLA!;🔥+C%2FC%2B%2B+Developer+%7C+AI+Explorer;💻+Passionate+About+Low-Level+Programming;🛠️+Building+Cool+Projects!+Let's+Connect!">
 </p>
 
-<!-- 🎉 CRAZY WELCOME GIF -->
+<!-- 🎉 WELCOME GIF -->
 <p align="center">
-  <img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" width="500">
+  <img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" width="600">
 </p>
 
 ---
@@ -19,6 +19,11 @@
 🔹 **Linux, Bash, and OS Developer ⚡**  
 🔹 **Loves Open-Source & Contributing!**  
 
+<!-- 💡 ABOUT ME GIF -->
+<p align="center">
+  <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="500">
+</p>
+
 ---
 
 # 🏆 **42 School Progress**
@@ -28,17 +33,32 @@
   </a>
 </p>
 
+<!-- 🏆 PROGRESS GIF -->
+<p align="center">
+  <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="400">
+</p>
+
 ---
 
 # 📊 **GitHub Stats**
 | ![Amine's GitHub stats](https://github-readme-stats.vercel.app/api?username=akella&show_icons=true&theme=tokyonight&hide_border=true) | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=akella&layout=compact&theme=tokyonight&hide_border=true)](https://github.com/akella/github-readme-stats) |
 |:-:|:-:|
 
+<!-- 📊 GITHUB STATS GIF -->
+<p align="center">
+  <img src="https://media.giphy.com/media/Jd6XlKj74bWgM/giphy.gif" width="500">
+</p>
+
 ---
 
 # 🏆 **GitHub Trophies**
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=akella&theme=radical&no-frame=true&margin-w=15" />
+</p>
+
+<!-- 🏆 TROPHY GIF -->
+<p align="center">
+  <img src="https://media.giphy.com/media/l2JejQv8lOCjVnMbG/giphy.gif" width="400">
 </p>
 
 ---
@@ -48,11 +68,21 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=akella&theme=highcontrast&hide_border=true" />
 </p>
 
+<!-- 🔥 CODING STREAK GIF -->
+<p align="center">
+  <img src="https://media.giphy.com/media/hqU2KkjW5bE2v2Z7Q2/giphy.gif" width="500">
+</p>
+
 ---
 
 # 🎨 **Tech Stack**
 <p align="center">
   <img src="https://skillicons.dev/icons?i=c,cpp,python,bash,linux,git,vscode,github,html,css,js,react,docker,postgresql,mysql,redis,aws,figma" />
+</p>
+
+<!-- 🎨 TECH STACK GIF -->
+<p align="center">
+  <img src="https://media.giphy.com/media/QTfX9Ejfra3ZmNxh6B/giphy.gif" width="600">
 </p>
 
 ---
@@ -65,42 +95,23 @@
 - 🔹 **[System Monitor Dashboard 💻](https://github.com/akella/sys-monitor)** – Beautiful real-time Linux system monitor  
 - 🔹 **[Data Analysis Engine 📊](https://github.com/akella/data-engine)** – AI-driven data processing & analytics  
 
+<!-- 🚀 PROJECTS GIF -->
+<p align="center">
+  <img src="https://media.giphy.com/media/3ov9k4w2pQO6ZMP2BW/giphy.gif" width="600">
+</p>
+
 ---
 
 # 📚 **Open Source Contributions**
-I actively contribute to Open Source!  
 🌍 Some of my PRs and contributions:
 - ✅ Contributed to [Linux Kernel](https://github.com/torvalds/linux)
 - ✅ Improved security in [OpenSSL](https://github.com/openssl/openssl)
 - ✅ Added new features to [MiniLibX](https://github.com/42Paris/minilibx-linux)
 
----
-
-# 🔥 **Fun Facts About Me**
-- 🔹 **I write C code faster than I type!** 💻  
-- 🔹 **I can debug a program in my sleep.** 💤  
-- 🔹 **I once built an OS from scratch for fun.** ⚡  
-- 🔹 **I spend more time in the terminal than in the real world.** 🖥️  
-
----
-
-# 📺 **Latest YouTube Videos**
-🎥 **Watch me build, break, and hack code!**
+<!-- 📚 OPEN SOURCE GIF -->
 <p align="center">
-  <a href="https://www.youtube.com/c/akella-tech">
-    <img src="https://img.shields.io/badge/Youtube-Subscribe-red?style=for-the-badge&logo=youtube" alt="YouTube" />
-  </a>
+  <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="500">
 </p>
-
----
-
-# 🛠 **Tools & IDEs I Use**
-📌 **Development Setup:**
-- **🔥 OS:** Arch Linux / Ubuntu / macOS
-- **🔥 Editor:** Neovim / VS Code
-- **🔥 Terminal:** Zsh + Oh My Zsh
-- **🔥 Tools:** Docker, Postman, tmux, Makefile
-- **🔥 Favorite Language:** C 💙
 
 ---
 
@@ -116,6 +127,11 @@ I actively contribute to Open Source!
   <a href="mailto:akella@example.com">
     <img src="https://img.shields.io/badge/Email-Contact%20Me-red?style=for-the-badge&logo=gmail" alt="Email" />
   </a>
+</p>
+
+<!-- 📡 CONTACT GIF -->
+<p align="center">
+  <img src="https://media.giphy.com/media/xUPGcMzwkOY01njhYQ/giphy.gif" width="400">
 </p>
 
 ---
