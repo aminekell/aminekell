@@ -118,7 +118,7 @@
 
 <!-- 📡 CONTACT GIF -->
 <p align="center">
-  <img src="[https://media.giphy.com/media/xUPGcMzwkOY01njhYQ/giphy.gif](https://giphy.com/gifs/siteStunt-coding-jan-sitestunt-1SvtUkj2T6122rQ7oX)" width="400">
+  <img src="[[https://media.giphy.com/media/xUPGcMzwkOY01njhYQ/giphy.gif](https://giphy.com/gifs/siteStunt-coding-jan-sitestunt-1SvtUkj2T6122rQ7oX)](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzM0N2VibGxpa3F2MWJpbGJtN3U4Mmk2Zjd2ZnB0dGdoaHBoN3poZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1SvtUkj2T6122rQ7oX/giphy.gif)" width="400">
 </p>
 
 ---
