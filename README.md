@@ -1,16 +1,10 @@
-<h1 align="center">🌟 Hi 👋, I'm Amine Kella 🌟</h1>
-<h3 align="center">🚀 Software Developer | 🖥️ 42 School Student | 🔥 Passionate About Low-Level Programming & AI</h3>
+<!-- Banner -->
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=35&color=FF5733&center=true&vCenter=true&width=900&height=50&lines=👋+Hello,+I+am+Amine+Kella!;🚀+Software+Engineer+%7C+AI+Explorer;🔥+42+School+Student+%7C+C%2FC%2B%2B+Lover;💡+Passionate+about+Problem+Solving!" />
+</p>
 
 <p align="center">
-  <a href="https://github.com/akella">
-    <img src="https://komarev.com/ghpvc/?username=akella&label=Profile%20Views&color=0e75b6&style=flat" alt="akella" />
-  </a>
-  <a href="https://linkedin.com/in/akella">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin" alt="LinkedIn" />
-  </a>
-  <a href="mailto:akella@example.com">
-    <img src="https://img.shields.io/badge/Email-Contact%20Me-blue?style=flat&logo=gmail" alt="Email" />
-  </a>
+  <img src="https://media.giphy.com/media/hqU2KkjW5bE2v2Z7Q2/giphy.gif" width="200">
 </p>
 
 ---
@@ -24,20 +18,42 @@
 
 ---
 
-## 📊 **GitHub Stats**
-| ![Amine's GitHub stats](https://github-readme-stats.vercel.app/api?username=akella&show_icons=true&theme=radical) | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=akella&layout=compact&theme=radical)](https://github.com/akella/github-readme-stats) |
+## 🚀 **GitHub Stats**
+| ![Amine's GitHub stats](https://github-readme-stats.vercel.app/api?username=akella&show_icons=true&theme=tokyonight&hide_border=true) | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=akella&layout=compact&theme=tokyonight&hide_border=true)](https://github.com/akella/github-readme-stats) |
 |:-:|:-:|
 
 ---
 
-## 🚀 **Tech Stack**
+## 🏆 **GitHub Trophies**
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=c,cpp,python,bash,linux,git,vscode,github" />
+  <img src="https://github-profile-trophy.vercel.app/?username=akella&theme=radical&no-frame=true&margin-w=15" />
 </p>
 
 ---
 
-## 🌍 **Connect With Me**
+## 🎯 **Coding Streak**
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=akella&theme=highcontrast&hide_border=true" />
+</p>
+
+---
+
+## 🎨 **Tech Stack**
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=c,cpp,python,bash,linux,git,vscode,github,html,css,js,react" />
+</p>
+
+---
+
+## 📚 **Projects & Contributions**
+### 🚀 **Featured Projects**
+- 🔹 [Project 1 - Super AI Tool](https://github.com/akella/super-ai-tool) 🧠  
+- 🔹 [Project 2 - Epic Fractal Renderer](https://github.com/akella/fractol) 🎨  
+- 🔹 [Project 3 - Cyber Security Toolkit](https://github.com/akella/cyber-sec) 🔐  
+
+---
+
+## 🔗 **Find Me Here**
 <p align="center">
   <a href="https://linkedin.com/in/akella">
     <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn" />
@@ -46,10 +62,13 @@
     <img src="https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github" alt="GitHub" />
   </a>
   <a href="mailto:akella@example.com">
-    <img src="https://img.shields.io/badge/Email-Contact%20Me-blue?style=for-the-badge&logo=gmail" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-Contact%20Me-red?style=for-the-badge&logo=gmail" alt="Email" />
   </a>
 </p>
 
 ---
 
-🔥 **"Coding is like painting, but instead of colors, we use logic!"** 🚀
+## 🔥 **"The only way to do great work is to love what you do" – Steve Jobs** 🚀
+<p align="center">
+  <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="300">
+</p>
