@@ -33,9 +33,9 @@
   </a>
 </p>
 
-<!-- 🔥 COOL GIF -->
+<!-- 🏆 PROGRESS GIF -->
 <p align="center">
-  <img src="https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif" width="400">
+  <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="400">
 </p>
 
 ---
@@ -98,19 +98,6 @@
 <!-- 🚀 PROJECTS GIF -->
 <p align="center">
   <img src="https://media.giphy.com/media/3ov9k4w2pQO6ZMP2BW/giphy.gif" width="600">
-</p>
-
----
-
-# 📚 **Open Source Contributions**
-🌍 Some of my PRs and contributions:
-- ✅ Contributed to [Linux Kernel](https://github.com/torvalds/linux)
-- ✅ Improved security in [OpenSSL](https://github.com/openssl/openssl)
-- ✅ Added new features to [MiniLibX](https://github.com/42Paris/minilibx-linux)
-
-<!-- 📚 OPEN SOURCE GIF -->
-<p align="center">
-  <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="500">
 </p>
 
 ---
