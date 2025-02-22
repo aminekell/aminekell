@@ -1,10 +1,11 @@
-<!-- Banner -->
+<!-- 🚀 INSANE ANIMATED HEADER -->
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=40&color=FF5733&center=true&vCenter=true&width=1000&height=60&lines=👋+HELLO,+WORLD!;🚀+I+AM+AMINE+KELLA!;🔥+C%2FC%2B%2B+Developer+%7C+AI+Explorer;💻+Passionate+About+Low-Level+Programming;🛠️+Building+Cool+Projects!+Let's+Connect!">
 </p>
 
+<!-- 🎉 CRAZY WELCOME GIF -->
 <p align="center">
-  <img src="https://media.giphy.com/media/hqU2KkjW5bE2v2Z7Q2/giphy.gif" width="250">
+  <img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" width="500">
 </p>
 
 ---
@@ -57,7 +58,7 @@
 ---
 
 # 🚀 **Epic Projects**
-📌 **Some of my most badass projects:**
+📌 **Some of my most insane projects:**
 - 🔹 **[Super AI Tool 🤖](https://github.com/akella/super-ai-tool)** – Cutting-edge AI tool for automation  
 - 🔹 **[Fractol 🔥](https://github.com/akella/fractol)** – A mind-blowing fractal renderer written in C  
 - 🔹 **[Cyber Security Toolkit 🔐](https://github.com/akella/cyber-sec)** – Powerful hacking and security tools  
