@@ -58,7 +58,7 @@
 
 <!-- 🏆 TROPHY GIF -->
 <p align="center">
-  <img src="https://media.giphy.com/media/l2JejQv8lOCjVnMbG/giphy.gif" width="400">
+  <img src="[https://media.giphy.com/media/l2JejQv8lOCjVnMbG/giphy.gif](https://giphy.com/gifs/scaler-official-monday-computer-laptop-scZPhLqaVOM1qG4lT9)" width="400">
 </p>
 
 ---
