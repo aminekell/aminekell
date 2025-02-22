@@ -118,7 +118,7 @@
 
 <!-- 📡 CONTACT GIF -->
 <p align="center">
-  <img src="https://media.giphy.com/media/xUPGcMzwkOY01njhYQ/giphy.gif" width="400">
+  <img src="[https://media.giphy.com/media/xUPGcMzwkOY01njhYQ/giphy.gif](https://giphy.com/gifs/siteStunt-coding-jan-sitestunt-1SvtUkj2T6122rQ7oX)" width="400">
 </p>
 
 ---
