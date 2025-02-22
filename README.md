@@ -46,7 +46,7 @@
 
 <!-- 📊 GITHUB STATS GIF -->
 <p align="center">
-  <img src="https://media.giphy.com/media/Jd6XlKj74bWgM/giphy.gif" width="500">
+  <img src="[https://media.giphy.com/media/Jd6XlKj74bWgM/giphy.gif](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExemRna2FiYXJnM3VkMW9vM3NxaW50bGFueTE2anFjMzBod2Rkc2dmMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3NyvreZAtNLrNKTrKa/giphy.gif)" width="500">
 </p>
 
 ---
