@@ -1,85 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>42 School Profile</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<!-- 🎓 42 School Profile with Custom Background -->
+<div align="center">
+  <img src="https://yourimageurl.com/bg.jpg" width="100%" height="200px" style="border-radius: 10px; object-fit: cover;" alt="Background Image">
 
-        body {
-            background: url('https://yourimageurl.com/bg.jpg') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <br>
 
-        .profile-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            width: 350px;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-        }
+  <!-- 42 Badge -->
+  <a href="https://profile.intra.42.fr/users/akella" target="_blank">
+    <img src="https://badge.mediaplus.ma/red/akella" alt="42 Intra Profile: Amine Kella" style="border-radius: 8px; margin-top: -50px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);"/>
+  </a>
 
-        .profile-card:hover {
-            transform: scale(1.05);
-        }
+  <br><br>
 
-        .profile-card img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
+  <!-- Caption -->
+  <p style="color: white; font-size: 18px; font-weight: bold;">
+    📍 Student at <strong>42 School</strong> | Low-Level Programming & Cybersecurity
+  </p>
 
-        .profile-card h2 {
-            color: white;
-            font-size: 22px;
-        }
+  <p style="color: #ddd; font-size: 14px;">
+    <em>Click the badge to view my official 42 intra profile</em>
+  </p>
 
-        .profile-card p {
-            color: #ddd;
-            font-size: 14px;
-            margin-top: 5px;
-        }
+  <br>
 
-        .profile-card a {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            color: white;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            transition: background 0.3s ease-in-out;
-        }
+  <!-- Custom Button -->
+  <a href="https://profile.intra.42.fr/users/akella" target="_blank">
+    <img src="https://img.shields.io/badge/Visit%20My%2042%20Profile-0078D4?style=for-the-badge&logo=42&logoColor=white" alt="42 Profile Badge"/>
+  </a>
 
-        .profile-card a:hover {
-            background: rgba(255, 255, 255, 0.4);
-        }
-    </style>
-</head>
-<body>
-
-    <div class="profile-card">
-        <a href="https://profile.intra.42.fr/users/akella" target="_blank">
-            <img src="https://badge.mediaplus.ma/red/akella" alt="42 Intra Profile: Amine Kella">
-        </a>
-        <h2>📍 Student at 42 School</h2>
-        <p>Low-Level Programming & Cybersecurity</p>
-        <a href="https://profile.intra.42.fr/users/akella" target="_blank">View My 42 Profile</a>
-    </div>
-
-</body>
-</html>
+</div>
