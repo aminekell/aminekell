@@ -1,6 +1,5 @@
 <!-- 🎓 42 School Profile with Custom Background -->
 <div align="center">
-  <img src="https://yourimageurl.com/bg.jpg" width="100%" height="200px" style="border-radius: 10px; object-fit: cover;" alt="Background Image">
 
   <br>
 
