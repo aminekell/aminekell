@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Amine Kella (akella)</h1>
 <div align="center">
   <a href="https://github.com/oakoudad/badge42">
-    <img src="https://badge42.vercel.app/api/v2/cl5y1zqpi003109l5j0q3u3j9/stats?cursusId=21&coalitionId=45" alt="akella's 42 stats" />
+    <img src="[![akella's 42 stats](https://badge.mediaplus.ma/greenbinary/akella)](https://github.com/oakoudad/badge42)" />
   </a>
 </div>
 
