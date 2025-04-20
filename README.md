@@ -1,4 +1,4 @@
-<h1 align="center">  Hi 👋 , I am Mohammed El haia</h1>
+<h1 align="center">  Hi 👋 , I am Amine kella</h1>
 <div align="center">
   <a href="<a href="https://github.com/oakoudad/badge42"><img src="https://badge.mediaplus.ma/greenbinary/akella" alt="akella's 42 stats"  /></a>
   </div>
