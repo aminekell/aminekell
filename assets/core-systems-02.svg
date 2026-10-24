@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+<title id="title">ft_irc and cub3d: realtime messaging and ray casting in 3D</title>
+<desc id="desc">An isometric IRC server relays messages between clients and channels. Next to it, rays pass through walls in a 2D map and form a first-person perspective corridor.</desc>
+<defs>
+  <linearGradient id="bg2" x2="0" y2="1"><stop stop-color="#07111a"/><stop offset="1" stop-color="#03070b"/></linearGradient>
+  <linearGradient id="mint2" x2="1" y2="1"><stop stop-color="#35ffd0"/><stop offset="1" stop-color="#41df8a"/></linearGradient>
+  <linearGradient id="blue2" x2="0" y2="1"><stop stop-color="#1c667c"/><stop offset="1" stop-color="#102733"/></linearGradient>
+  <linearGradient id="violet2" x2="1" y2="0"><stop stop-color="#987cff"/><stop offset="1" stop-color="#515bd6"/></linearGradient>
+  <linearGradient id="tunnel" x2="0" y2="1"><stop stop-color="#10233a"/><stop offset=".52" stop-color="#111722"/><stop offset="1" stop-color="#0b2929"/></linearGradient>
+  <pattern id="grid2" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#71ffc1" stroke-opacity=".05"/></pattern>
+  <pattern id="walls" width="23" height="23" patternUnits="userSpaceOnUse"><rect width="23" height="23" fill="#142a39" stroke="#57e8cf" stroke-opacity=".24"/><path d="M0 0H23V23" fill="none" stroke="#87fff0" stroke-opacity=".13"/></pattern>
+  <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#49ffd0"/></marker>
+</defs>
+<rect width="1200" height="500" rx="24" fill="url(#bg2)"/><rect width="1200" height="500" rx="24" fill="url(#grid2)"/>
+<path d="M28 78H1172M600 92V470" stroke="#37f6c4" stroke-opacity=".17"/>
+<text x="46" y="48" fill="#72ffcf" font-family="monospace" font-size="13" letter-spacing="3">CORE SYSTEMS / 02</text>
+<text x="1154" y="48" text-anchor="end" fill="#7696a5" font-family="monospace" font-size="12" letter-spacing="2">REALTIME &amp; RAY CASTING</text>
+<!-- FT_IRC -->
+<g font-family="monospace">
+<text x="52" y="120" fill="#e8fff7" font-size="24" font-weight="700">FT_IRC</text>
+<text x="52" y="145" fill="#7ba6a7" font-size="12" letter-spacing="1">CLIENT → SERVER → CHANNEL</text>
+<!-- isometric network floor -->
+<path d="M58 356L289 263L554 366L322 458Z" fill="#09212b" stroke="#1c5b66" stroke-opacity=".7"/>
+<path d="M104 356L333 266M153 375L382 286M202 394L430 305M251 413L479 324M107 337L371 440M156 318L420 421M205 299L469 402" stroke="#46eac3" stroke-opacity=".11"/>
+<!-- server cube -->
+<path d="M274 237l62-26 62 26-62 27z" fill="#18505a" stroke="#60ffe0" stroke-width="1.5"/><path d="M274 237v65l62 27v-65z" fill="#0d2b38" stroke="#60ffe0" stroke-width="1.5"/><path d="M336 264v65l62-27v-65z" fill="#164355" stroke="#60ffe0" stroke-width="1.5"/>
+<path d="M293 248l43-18 43 18-43 18z" fill="#4bffd0" fill-opacity=".2" stroke="#75ffdc"/><text x="336" y="293" text-anchor="middle" fill="#eafffb" font-size="12">IRC SERVER</text>
+<circle cx="336" cy="307" r="3" fill="#44ffc8"><animate attributeName="opacity" values=".35;1;.35" dur="1.6s" repeatCount="indefinite"/></circle>
+<!-- client cubes -->
+<path d="M93 237l32-14 32 14-32 14z" fill="#145563" stroke="#55e8f5"/><path d="M93 237v35l32 14v-35z" fill="#0e2c3b" stroke="#55e8f5"/><path d="M125 251v35l32-14v-35z" fill="#126377" stroke="#55e8f5"/><text x="125" y="262" text-anchor="middle" fill="#fff" font-size="9">CLIENT A</text>
+<path d="M451 237l32-14 32 14-32 14z" fill="#27365a" stroke="#a48aff"/><path d="M451 237v35l32 14v-35z" fill="#172640" stroke="#a48aff"/><path d="M483 251v35l32-14v-35z" fill="#394178" stroke="#a48aff"/><text x="483" y="262" text-anchor="middle" fill="#fff" font-size="9">CLIENT B</text>
+<!-- channels on floor -->
+<path d="M123 355l49-20 50 20-49 21z" fill="#10383a" stroke="#41e6bb"/><path d="M123 355v28l50 21v-28z" fill="#0b252d" stroke="#41e6bb"/><path d="M173 376v28l49-21v-28z" fill="#12413d" stroke="#41e6bb"/><text x="173" y="374" text-anchor="middle" fill="#eafff8" font-size="10">#CHANNEL</text>
+<path d="M399 355l49-20 50 20-49 21z" fill="#222b4c" stroke="#9c87ff"/><path d="M399 355v28l50 21v-28z" fill="#161f37" stroke="#9c87ff"/><path d="M449 376v28l49-21v-28z" fill="#2d315e" stroke="#9c87ff"/><text x="449" y="374" text-anchor="middle" fill="#f2edff" font-size="10">DIRECT</text>
+<!-- message routes -->
+<path d="M157 254L274 260M398 260L451 254M312 330L204 355M360 330L430 355" fill="none" stroke="#45ffd0" stroke-width="2" stroke-dasharray="5 7" marker-end="url(#arrow2)"/>
+<circle r="4" fill="#fff" filter="url(#glow2)"><animateMotion dur="3.8s" repeatCount="indefinite" path="M157 254L274 260L336 292L398 260L451 254"/></circle>
+<circle r="3" fill="#b0a0ff"><animateMotion dur="4.2s" repeatCount="indefinite" path="M336 312L312 330L204 355"/></circle>
+<text x="52" y="474" fill="#73959a" font-size="11" letter-spacing="1.3">ONE SERVER, MANY CONVERSATIONS</text>
+</g>
+<!-- CUB3D -->
+<g font-family="monospace">
+<text x="642" y="120" fill="#e8fff7" font-size="24" font-weight="700">CUB3D</text>
+<text x="642" y="145" fill="#7ba6a7" font-size="12" letter-spacing="1">2D MAP → RAYCAST → 3D VIEW</text>
+<!-- 2D map -->
+<rect x="650" y="181" width="184" height="184" rx="5" fill="#07151d" stroke="#3a7a7c"/>
+<rect x="658" y="189" width="23" height="23" fill="url(#walls)"/><rect x="681" y="189" width="23" height="23" fill="url(#walls)"/><rect x="704" y="189" width="23" height="23" fill="url(#walls)"/><rect x="750" y="189" width="23" height="23" fill="url(#walls)"/><rect x="773" y="189" width="23" height="23" fill="url(#walls)"/><rect x="796" y="189" width="23" height="23" fill="url(#walls)"/>
+<rect x="658" y="212" width="23" height="23" fill="url(#walls)"/><rect x="796" y="212" width="23" height="23" fill="url(#walls)"/>
+<rect x="658" y="235" width="23" height="23" fill="url(#walls)"/><rect x="750" y="235" width="23" height="23" fill="url(#walls)"/><rect x="796" y="235" width="23" height="23" fill="url(#walls)"/>
+<rect x="658" y="258" width="23" height="23" fill="url(#walls)"/><rect x="750" y="258" width="23" height="23" fill="url(#walls)"/><rect x="796" y="258" width="23" height="23" fill="url(#walls)"/>
+<rect x="658" y="281" width="23" height="23" fill="url(#walls)"/><rect x="773" y="281" width="23" height="23" fill="url(#walls)"/><rect x="796" y="281" width="23" height="23" fill="url(#walls)"/>
+<rect x="658" y="304" width="23" height="23" fill="url(#walls)"/><rect x="796" y="304" width="23" height="23" fill="url(#walls)"/>
+<rect x="658" y="327" width="23" height="23" fill="url(#walls)"/><rect x="681" y="327" width="23" height="23" fill="url(#walls)"/><rect x="704" y="327" width="23" height="23" fill="url(#walls)"/><rect x="727" y="327" width="23" height="23" fill="url(#walls)"/><rect x="750" y="327" width="23" height="23" fill="url(#walls)"/><rect x="773" y="327" width="23" height="23" fill="url(#walls)"/><rect x="796" y="327" width="23" height="23" fill="url(#walls)"/>
+<!-- camera and map rays -->
+<circle cx="715" cy="292" r="6" fill="#77ffd7" filter="url(#glow2)"/>
+<path d="M715 292L779 244M715 292L790 269M715 292L796 292M715 292L790 315M715 292L779 337" fill="none" stroke="#41ffd0" stroke-opacity=".7" stroke-width="1.4"/>
+<path d="M715 292L796 292" stroke="#fff" stroke-width="2"><animate attributeName="opacity" values=".2;1;.2" dur="2.4s" repeatCount="indefinite"/></path>
+<text x="650" y="390" fill="#79a7a6" font-size="10" letter-spacing="1">WALL MAP + CAMERA RAYS</text>
+<!-- first-person 3D corridor -->
+<rect x="856" y="181" width="300" height="184" rx="5" fill="url(#tunnel)" stroke="#3a7a7c"/>
+<path d="M856 181L994 259L1156 181M856 365L994 277L1156 365" fill="#103438" fill-opacity=".42" stroke="#45dfbb" stroke-opacity=".8" stroke-width="1.3"/>
+<path d="M856 181L994 259V277L856 365ZM1156 181L994 259V277L1156 365Z" fill="#162638" fill-opacity=".9" stroke="#55e7db" stroke-opacity=".6"/>
+<path d="M856 181L1156 181M856 365L1156 365M856 181L856 365M1156 181L1156 365M904 208L994 263M952 235L994 267M904 338L994 275M952 310L994 273M1108 208L994 263M1060 235L994 267M1108 338L994 275M1060 310L994 273" fill="none" stroke="#53edcf" stroke-opacity=".29"/>
+<path d="M856 272H1156M856 281H1156" stroke="#ab84ff" stroke-opacity=".16"/>
+<path d="M868 199L986 263M868 347L986 274" stroke="#69ffe0" stroke-opacity=".48" stroke-width="1.5" filter="url(#glow2)"/>
+<circle cx="994" cy="268" r="3" fill="#d9fff5"><animate attributeName="opacity" values=".45;1;.45" dur="2s" repeatCount="indefinite"/></circle>
+<text x="856" y="390" fill="#79a7a6" font-size="10" letter-spacing="1">PERSPECTIVE WALL SLICES</text>
+<text x="642" y="438" fill="#54efc2" font-size="11" letter-spacing="1.3">FOLLOW A RAY IN THE MAP. SEE A WALL IN 3D.</text>
+</g>
+</svg>
