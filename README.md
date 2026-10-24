@@ -32,7 +32,7 @@ I’m drawn to the hidden mechanics of software: network boundaries, service rel
 A token bucket allows short bursts while limiting the sustained request rate. When the bucket is empty, an API can reject a request with HTTP 429 and refill tokens over time.
 
 <p align="center">
-  <img src="assets/rate-limit-3d.svg" alt="Animated token bucket concept: available tokens admit requests; an empty bucket routes a request to HTTP 429 while tokens refill" width="100%" />
+  <img src="assets/rate-limit-3d.svg" alt="Animated isometric arcade scene: a packet runner crosses a network to a token gate, then requests route to HTTP 200 or 429 while tokens refill" width="100%" />
 </p>
 
 ### 05 / Activity
