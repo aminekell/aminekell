@@ -6,7 +6,7 @@
 
 ### 01 / Perspective
 
-I’m a software engineering learner at **1337 Khouribga (42 Network)** and in **ALX Software Engineering**. I’m drawn to the hidden mechanics of software: network boundaries, service relationships, and the assumptions behind a reliable system.
+I’m drawn to the hidden mechanics of software: network boundaries, service relationships, and the assumptions behind a reliable system.
 
 ### 02 / Toolkit in progress
 
