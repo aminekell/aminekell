@@ -23,6 +23,14 @@
 | [Inception](https://github.com/aminekell/Inception) | A Docker Compose stack with WordPress, MariaDB, NGINX, and bonus services. |
 | [Java_Days](https://github.com/aminekell/Java_Days) | Java exercises and small object-oriented practice projects. |
 
+### Contribution snake
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aminekell/aminekell/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aminekell/aminekell/output/github-contribution-grid-snake.svg" />
+  <img alt="Animated snake moving through my GitHub contribution graph" src="https://raw.githubusercontent.com/aminekell/aminekell/output/github-contribution-grid-snake.svg" width="100%" />
+</picture>
+
 ### Currently curious about
 
 Application security · rate limiting · networking · system design
