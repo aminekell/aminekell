@@ -42,11 +42,12 @@
         <div class="hero-meta"><span><b>01</b> / 1337 &amp; ALX Software Engineering</span><span><b>02</b> / Learning by building</span></div>
       </div>
       <div class="scene-shell">
-        <div class="scene-topline"><span>FIELD VIEW / 01</span><span class="scene-live"><i></i> LIVE RENDER</span></div>
+        <div class="scene-topline"><span>FIELD VIEW / 01</span><span class="scene-live"><i></i> <span id="scene-status-label">LIVE RENDER</span></span></div>
         <canvas id="world" aria-label="Interactive 3D wireframe map of software systems. Drag to rotate the scene." role="img"></canvas>
+        <img id="scene-static-map" src="fallback-map.svg" alt="Isometric project map connecting Inception, minishell, ft_irc, cub3d, NetPractice, and Philosophers." hidden>
         <div class="scene-hint"><span class="mouse-icon" aria-hidden="true"></span> DRAG TO ORBIT <span class="hint-divider">·</span> SELECT A SYSTEM BELOW</div>
         <div class="scene-coordinates" aria-hidden="true"><span>34° 01' N</span><span>STACK / 06 NODES</span></div>
-        <div class="scene-fallback" id="scene-fallback" hidden>WebGL is unavailable here. The project map below still works.</div>
+        <div class="scene-fallback" id="scene-fallback" role="status" aria-live="polite" hidden>INTERACTIVE RENDER UNAVAILABLE · STATIC MAP SHOWN</div>
         <div class="scene-grid" aria-hidden="true"></div>
       </div>
     </section>
