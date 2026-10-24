@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="170" viewBox="0 0 1200 170" role="img" aria-labelledby="title desc">
+<title id="title">Next trace, open invitation</title>
+<desc id="desc">A glowing signal runs toward a small three-dimensional systems node; the profile closes with an invitation to bring an interesting edge case.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="170" gradientUnits="userSpaceOnUse"><stop stop-color="#050907"/><stop offset=".62" stop-color="#0A1312"/><stop offset="1" stop-color="#12101C"/></linearGradient>
+  <linearGradient id="lime" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#D8FF68"/><stop offset="1" stop-color="#48EFC3"/></linearGradient>
+  <linearGradient id="cube" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#D8FF76"/><stop offset=".5" stop-color="#4BE6C2"/><stop offset="1" stop-color="#927EFF"/></linearGradient>
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#88FFD8" stroke-opacity=".05"/></pattern>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect x="1" y="1" width="1198" height="168" rx="22" fill="url(#bg)" stroke="#6CE8C3" stroke-opacity=".42"/>
+<rect x="2" y="2" width="1196" height="166" rx="21" fill="url(#grid)"/>
+<text x="52" y="58" fill="#9BFF70" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2">NEXT TRACE / OPEN</text>
+<text x="52" y="104" fill="#F0F7F3" font-family="Arial,sans-serif" font-size="31" font-weight="800" letter-spacing=".4">Bring an interesting edge case.</text>
+<text x="53" y="131" fill="#92AAA0" font-family="Arial,sans-serif" font-size="13">The best questions begin where a system meets its boundary.</text>
+<path d="M715 105H884M1040 105H1150" stroke="url(#lime)" stroke-opacity=".58" stroke-width="2" stroke-dasharray="4 8"/>
+<circle r="4" fill="#D6FF62" filter="url(#glow)"><animateMotion dur="3.2s" repeatCount="indefinite" path="M715 105H884"/></circle>
+<circle r="3" fill="#55FFE0" filter="url(#glow)"><animateMotion dur="2.6s" begin="-1.2s" repeatCount="indefinite" path="M1040 105H1150"/></circle>
+<ellipse cx="962" cy="107" rx="87" ry="39" transform="rotate(-18 962 107)" fill="none" stroke="#54E8C1" stroke-opacity=".28"/>
+<ellipse cx="962" cy="107" rx="69" ry="48" transform="rotate(27 962 107)" fill="none" stroke="#9B83FF" stroke-opacity=".23"/>
+<path d="M906 89 963 61 1019 89 963 117Z" fill="url(#cube)" stroke="#E6FFC3" stroke-opacity=".78"/>
+<path d="M906 89 963 117V149L906 121Z" fill="#0D604B" stroke="#68F5C4" stroke-opacity=".74"/>
+<path d="M963 117 1019 89V121L963 149Z" fill="#1D4771" stroke="#8BCFFF" stroke-opacity=".65"/>
+<circle cx="963" cy="117" r="5" fill="#F5FFE9" filter="url(#glow)"><animate attributeName="r" values="4;7;4" dur="2.2s" repeatCount="indefinite"/></circle>
+</svg>
