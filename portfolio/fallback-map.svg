@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" role="img" aria-labelledby="title desc">
+  <title id="title">Systems Atlas static map</title>
+  <desc id="desc">Six isometric nodes connected by a glowing route: Inception, minishell, ft_irc, cub3d, NetPractice, and Philosophers.</desc>
+  <defs>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#234c3b"/><stop offset="1" stop-color="#10231f"/></linearGradient>
+    <linearGradient id="left" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#14382c"/><stop offset="1" stop-color="#0a1717"/></linearGradient>
+    <linearGradient id="right" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#152f35"/><stop offset="1" stop-color="#091315"/></linearGradient>
+    <radialGradient id="haze"><stop stop-color="#1b8759" stop-opacity=".22"/><stop offset="1" stop-color="#061011" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <ellipse cx="405" cy="220" rx="360" ry="190" fill="url(#haze)"/>
+  <g fill="none" stroke="#3ca977" stroke-opacity=".16" stroke-width="1">
+    <path d="M70 292 400 125 730 292 400 455Z"/>
+    <path d="M110 313 400 166 690 313M150 333 400 208 650 333M190 353 400 250 610 353M230 373 400 292 570 373M270 393 400 334 530 393"/>
+    <path d="m112 271 288 144M165 245l288 144M220 217l288 144M275 190l288 144M330 163l288 144M385 136l288 144"/>
+  </g>
+  <path d="M101 265 211 217 326 287 441 218 565 282 692 206" fill="none" stroke="#39f3a0" stroke-opacity=".34" stroke-width="2" stroke-dasharray="5 9"/>
+  <path d="M101 265 211 217 326 287 441 218 565 282 692 206" fill="none" stroke="#62eaff" stroke-opacity=".25" stroke-width="1"/>
+  <g stroke-width="1.5">
+    <g transform="translate(101 265)" stroke="#4bff8c">
+      <ellipse cy="38" rx="47" ry="17" fill="#48ff9a" fill-opacity=".06" stroke-opacity=".27"/>
+      <path d="M-28-18 0-32 28-18 0-3Z" fill="url(#top)"/><path d="M-28-18 0-3 0 35-28 20Z" fill="url(#left)"/><path d="M0-3 28-18 28 20 0 35Z" fill="url(#right)"/>
+      <path d="M-28-18 0-32 28-18 0-3ZM0-3V35M-28-18V20L0 35 28 20V-18" fill="none" stroke-opacity=".8"/>
+      <circle cy="-17" r="4" fill="#4bff8c" filter="url(#glow)" stroke="none"/><text x="0" y="59" text-anchor="middle" fill="#a8d9bb" stroke="none" font-family="monospace" font-size="9">INCEPTION</text>
+    </g>
+    <g transform="translate(211 217)" stroke="#63e9ff">
+      <ellipse cy="38" rx="43" ry="15" fill="#63e9ff" fill-opacity=".04" stroke-opacity=".25"/>
+      <path d="M-25-17 0-30 25-17 0-4Z" fill="url(#top)"/><path d="M-25-17 0-4 0 31-25 18Z" fill="url(#left)"/><path d="M0-4 25-17 25 18 0 31Z" fill="url(#right)"/>
+      <path d="M-25-17 0-30 25-17 0-4ZM0-4V31M-25-17V18L0 31 25 18V-17" fill="none" stroke-opacity=".8"/>
+      <circle cy="-17" r="4" fill="#63e9ff" filter="url(#glow)" stroke="none"/><text x="0" y="55" text-anchor="middle" fill="#a7dfe7" stroke="none" font-family="monospace" font-size="9">MINISHELL</text>
+    </g>
+    <g transform="translate(326 287)" stroke="#b388ff">
+      <ellipse cy="38" rx="42" ry="15" fill="#b388ff" fill-opacity=".04" stroke-opacity=".25"/>
+      <path d="M-25-19 0-32 25-19 0-5Z" fill="url(#top)"/><path d="M-25-19 0-5 0 29-25 16Z" fill="url(#left)"/><path d="M0-5 25-19 25 16 0 29Z" fill="url(#right)"/>
+      <path d="M-25-19 0-32 25-19 0-5ZM0-5V29M-25-19V16L0 29 25 16V-19" fill="none" stroke-opacity=".8"/>
+      <circle cy="-18" r="4" fill="#b388ff" filter="url(#glow)" stroke="none"/><text x="0" y="54" text-anchor="middle" fill="#cbb7f4" stroke="none" font-family="monospace" font-size="9">FT_IRC</text>
+    </g>
+    <g transform="translate(441 218)" stroke="#4bff8c">
+      <ellipse cy="38" rx="42" ry="15" fill="#48ff9a" fill-opacity=".04" stroke-opacity=".25"/>
+      <path d="M-25-18 0-31 25-18 0-5Z" fill="url(#top)"/><path d="M-25-18 0-5 0 29-25 16Z" fill="url(#left)"/><path d="M0-5 25-18 25 16 0 29Z" fill="url(#right)"/>
+      <path d="M-25-18 0-31 25-18 0-5ZM0-5V29M-25-18V16L0 29 25 16V-18" fill="none" stroke-opacity=".8"/>
+      <circle cy="-17" r="4" fill="#4bff8c" filter="url(#glow)" stroke="none"/><text x="0" y="54" text-anchor="middle" fill="#a8d9bb" stroke="none" font-family="monospace" font-size="9">CUB3D</text>
+    </g>
+    <g transform="translate(565 282)" stroke="#63e9ff">
+      <ellipse cy="38" rx="43" ry="15" fill="#63e9ff" fill-opacity=".04" stroke-opacity=".25"/>
+      <path d="M-26-18 0-32 26-18 0-4Z" fill="url(#top)"/><path d="M-26-18 0-4 0 31-26 17Z" fill="url(#left)"/><path d="M0-4 26-18 26 17 0 31Z" fill="url(#right)"/>
+      <path d="M-26-18 0-32 26-18 0-4ZM0-4V31M-26-18V17L0 31 26 17V-18" fill="none" stroke-opacity=".8"/>
+      <circle cy="-17" r="4" fill="#63e9ff" filter="url(#glow)" stroke="none"/><text x="0" y="55" text-anchor="middle" fill="#a7dfe7" stroke="none" font-family="monospace" font-size="9">NETPRACTICE</text>
+    </g>
+    <g transform="translate(692 206)" stroke="#b388ff">
+      <ellipse cy="38" rx="42" ry="15" fill="#b388ff" fill-opacity=".04" stroke-opacity=".25"/>
+      <path d="M-25-18 0-31 25-18 0-4Z" fill="url(#top)"/><path d="M-25-18 0-4 0 30-25 16Z" fill="url(#left)"/><path d="M0-4 25-18 25 16 0 30Z" fill="url(#right)"/>
+      <path d="M-25-18 0-31 25-18 0-4ZM0-4V30M-25-18V16L0 30 25 16V-18" fill="none" stroke-opacity=".8"/>
+      <circle cy="-17" r="4" fill="#b388ff" filter="url(#glow)" stroke="none"/><text x="0" y="54" text-anchor="middle" fill="#cbb7f4" stroke="none" font-family="monospace" font-size="9">PHILOSOPHERS</text>
+    </g>
+  </g>
+  <g fill="#b7ffe0" filter="url(#glow)"><circle cx="154" cy="242" r="2.5"/><circle cx="270" cy="253" r="2"/><circle cx="380" cy="247" r="2.5"/><circle cx="501" cy="250" r="2"/><circle cx="630" cy="245" r="2.5"/></g>
+</svg>
