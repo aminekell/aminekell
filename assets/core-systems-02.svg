@@ -59,10 +59,13 @@
 <text x="650" y="390" fill="#79a7a6" font-size="10" letter-spacing="1">WALL MAP + CAMERA RAYS</text>
 <!-- first-person 3D corridor -->
 <rect x="856" y="181" width="300" height="184" rx="5" fill="url(#tunnel)" stroke="#3a7a7c"/>
-<path d="M856 181L994 259L1156 181M856 365L994 277L1156 365" fill="#103438" fill-opacity=".42" stroke="#45dfbb" stroke-opacity=".8" stroke-width="1.3"/>
-<path d="M856 181L994 259V277L856 365ZM1156 181L994 259V277L1156 365Z" fill="#162638" fill-opacity=".9" stroke="#55e7db" stroke-opacity=".6"/>
-<path d="M856 181L1156 181M856 365L1156 365M856 181L856 365M1156 181L1156 365M904 208L994 263M952 235L994 267M904 338L994 275M952 310L994 273M1108 208L994 263M1060 235L994 267M1108 338L994 275M1060 310L994 273" fill="none" stroke="#53edcf" stroke-opacity=".29"/>
-<path d="M856 272H1156M856 281H1156" stroke="#ab84ff" stroke-opacity=".16"/>
+<path d="M856 181L1156 181L1006 259Z" fill="#203951" stroke="#66e8da" stroke-opacity=".58"/>
+<path d="M856 365L1156 365L1006 277Z" fill="#0c3835" stroke="#58e7cb" stroke-opacity=".62"/>
+<path d="M856 181L1006 259V277L856 365Z" fill="#1c3045" stroke="#65dece" stroke-opacity=".76"/>
+<path d="M1156 181L1006 259V277L1156 365Z" fill="#17404a" stroke="#68e5ce" stroke-opacity=".76"/>
+<path d="M1001 259H1011V277H1001Z" fill="#667594" stroke="#d9fff5" stroke-opacity=".55"/>
+<path d="M856 181L1156 181M856 365L1156 365M856 181L856 365M1156 181L1156 365M906 181L1006 259M956 181L1006 259M906 365L1006 277M956 365L1006 277M1106 181L1006 259M1056 181L1006 259M1106 365L1006 277M1056 365L1006 277" fill="none" stroke="#8affdf" stroke-opacity=".37"/>
+<path d="M856 340H1156M856 315H1156M856 294H1156M856 278H1156" stroke="#ab84ff" stroke-opacity=".22"/>
 <path d="M868 199L986 263M868 347L986 274" stroke="#69ffe0" stroke-opacity=".48" stroke-width="1.5" filter="url(#glow2)"/>
 <circle cx="994" cy="268" r="3" fill="#d9fff5"><animate attributeName="opacity" values=".45;1;.45" dur="2s" repeatCount="indefinite"/></circle>
 <text x="856" y="390" fill="#79a7a6" font-size="10" letter-spacing="1">PERSPECTIVE WALL SLICES</text>
