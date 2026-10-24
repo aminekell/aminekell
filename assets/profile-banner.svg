@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Amine Kella — Backend, Systems, Software</title>
+  <desc id="desc">A dark navy banner with cyan and violet accents, a developer terminal card, and the phrase: from APIs to the systems underneath.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111d"/>
+      <stop offset="0.58" stop-color="#0a1526"/>
+      <stop offset="1" stop-color="#101126"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#52f3d1"/>
+      <stop offset="1" stop-color="#9b8cff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#40e6d2" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#40e6d2" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#8aa7c7" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="28" fill="url(#grid)"/>
+  <ellipse cx="815" cy="132" rx="330" ry="250" fill="url(#glow)"/>
+  <path d="M0 302H420L495 230H706" fill="none" stroke="#52f3d1" stroke-opacity=".22" stroke-width="2"/>
+  <path d="M905 0V46L963 104H1200" fill="none" stroke="#9b8cff" stroke-opacity=".25" stroke-width="2"/>
+  <circle cx="495" cy="230" r="4" fill="#52f3d1"/>
+  <circle cx="963" cy="104" r="4" fill="#9b8cff"/>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <rect x="72" y="55" width="294" height="30" rx="15" fill="#112b36" stroke="#52f3d1" stroke-opacity=".4"/>
+    <circle cx="91" cy="70" r="4" fill="#52f3d1"/>
+    <text x="106" y="75" fill="#a9f7e8" font-size="12" font-weight="700" letter-spacing="1.8">BACKEND · SYSTEMS · SOFTWARE</text>
+
+    <text x="70" y="165" fill="#f3f7fb" font-size="59" font-weight="800" letter-spacing="-1.4">AMINE KELLA</text>
+    <rect x="73" y="188" width="104" height="4" rx="2" fill="url(#accent)"/>
+    <text x="72" y="226" fill="#c9d6e4" font-size="22" font-weight="500">From APIs to the systems underneath.</text>
+    <text x="72" y="270" fill="#8fa5bb" font-size="16">Software engineering student · 1337 (42 Network)</text>
+    <text x="72" y="316" fill="#52f3d1" font-size="13" font-weight="700" letter-spacing="1.4">BUILD  /  UNDERSTAND  /  IMPROVE</text>
+
+    <g transform="translate(755 82)">
+      <rect width="370" height="196" rx="18" fill="#08111d" fill-opacity=".9" stroke="#a7c3dc" stroke-opacity=".24"/>
+      <path d="M0 48H370" stroke="#a7c3dc" stroke-opacity=".18"/>
+      <circle cx="24" cy="24" r="5" fill="#ff6b7a"/>
+      <circle cx="43" cy="24" r="5" fill="#ffd166"/>
+      <circle cx="62" cy="24" r="5" fill="#52f3d1"/>
+      <text x="25" y="82" fill="#9b8cff" font-size="14" font-family="monospace">$ amine --focus</text>
+      <text x="25" y="113" fill="#d9e6f2" font-size="16" font-family="monospace">backend APIs</text>
+      <text x="25" y="141" fill="#d9e6f2" font-size="16" font-family="monospace">networks + systems</text>
+      <text x="25" y="169" fill="#52f3d1" font-size="14" font-family="monospace">status: always learning_</text>
+    </g>
+  </g>
+</svg>
