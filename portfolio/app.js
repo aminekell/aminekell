@@ -10,7 +10,9 @@
   };
   const canvas = document.getElementById("world");
   const fallback = document.getElementById("scene-fallback");
-  const buttons = Array.from(document.querySelectorAll(".system-card"));
+
+
+  const staticMap = document.getElementById("scene-static-map"); const sceneShell = document.querySelector(".scene-shell"); const buttons = Array.from(document.querySelectorAll(".system-card"));
   let currentProject = "inception";
   let gl = null;
   let program = null;
@@ -153,8 +155,8 @@
       animationFrame=window.requestAnimationFrame(render);
       if(reducedMotion){ window.cancelAnimationFrame(animationFrame); render(0); }
     } catch (error) {
-      fallback.hidden=false;
-      canvas.hidden=true;
+      console.warn("Interactive scene unavailable; showing the static map.", error); fallback.hidden=false; staticMap.hidden=false; canvas.hidden=true; document.querySelector(".scene-hint").hidden=true; document.getElementById("scene-status-label").textContent="STATIC MAP"; sceneShell.classList.add("is-static");
+
     }
   }
   function selectProject(id, focusButton) {
