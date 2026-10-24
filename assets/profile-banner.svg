@@ -1,29 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
-<title id="title">Amine Kella — Backend and Systems Developer</title>
-<desc id="desc">An animated neon isometric cube with orbiting data nodes, representing backend systems, APIs, and software engineering.</desc>
+<title id="title">Amine Kella — systems, backend, security</title><desc id="desc">A cinematic neon profile banner with a 3D API systems cube, orbital light trails, and an animated title sweep.</desc>
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050b16"/><stop offset=".55" stop-color="#0a1426"/><stop offset="1" stop-color="#17112d"/></linearGradient>
-<linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9bffe6"/><stop offset="1" stop-color="#27c7b8"/></linearGradient>
-<linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1689b8"/><stop offset="1" stop-color="#10446e"/></linearGradient>
-<linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9b7cff"/><stop offset="1" stop-color="#49319e"/></linearGradient>
-<linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#52f3d1"/><stop offset=".5" stop-color="#70a5ff"/><stop offset="1" stop-color="#c98cff"/></linearGradient>
-<radialGradient id="aura"><stop offset="0" stop-color="#42e8ce" stop-opacity=".23"/><stop offset="1" stop-color="#42e8ce" stop-opacity="0"/></radialGradient>
-<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#94acd1" stroke-opacity=".07" stroke-width="1"/></pattern>
-<filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="bg" x1="0" y1="0" x2="1200" y2="420" gradientUnits="userSpaceOnUse"><stop stop-color="#050907"/><stop offset=".52" stop-color="#071316"/><stop offset="1" stop-color="#100D1A"/></linearGradient>
+<linearGradient id="lime" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#D3FF5C"/><stop offset="1" stop-color="#42F5B5"/></linearGradient>
+<linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#B9FF55" stop-opacity="0"/><stop offset=".45" stop-color="#E9FFC4" stop-opacity=".9"/><stop offset="1" stop-color="#4BFFE0" stop-opacity="0"/></linearGradient>
+<linearGradient id="top" x1="757" y1="111" x2="1020" y2="225" gradientUnits="userSpaceOnUse"><stop stop-color="#D8FF70"/><stop offset="1" stop-color="#41FFD0"/></linearGradient>
+<linearGradient id="left" x1="757" y1="193" x2="890" y2="355" gradientUnits="userSpaceOnUse"><stop stop-color="#0E9B70"/><stop offset="1" stop-color="#073D35"/></linearGradient>
+<linearGradient id="right" x1="890" y1="193" x2="1020" y2="355" gradientUnits="userSpaceOnUse"><stop stop-color="#148DB2"/><stop offset="1" stop-color="#472C80"/></linearGradient>
+<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#88FFD8" stroke-opacity=".075"/></pattern>
+<pattern id="scan" width="1" height="6" patternUnits="userSpaceOnUse"><path d="M0 0H1" stroke="#DFFFEA" stroke-opacity=".045"/></pattern>
+<filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<clipPath id="titleMask"><text x="62" y="199" font-family="Arial,sans-serif" font-size="62" font-weight="800" letter-spacing="1.5">AMINE KELLA</text></clipPath>
 </defs>
-<rect width="1200" height="420" rx="28" fill="url(#bg)"/><rect width="1200" height="420" rx="28" fill="url(#grid)"/><ellipse cx="910" cy="200" rx="310" ry="245" fill="url(#aura)"/>
-<path d="M0 355H400L470 285H665M1200 65H1098L1040 123" fill="none" stroke="#52f3d1" stroke-opacity=".23" stroke-width="2"/><path d="M0 370H430M760 384H1200" stroke="#617aa0" stroke-opacity=".14"/>
-<g fill="#b8fff2"><circle cx="456" cy="285" r="3"><animate attributeName="opacity" values=".2;1;.2" dur="2.8s" repeatCount="indefinite"/></circle><circle cx="1040" cy="123" r="3"><animate attributeName="opacity" values="1;.2;1" dur="3.6s" repeatCount="indefinite"/></circle><circle cx="112" cy="319" r="1.6"><animate attributeName="opacity" values=".25;.8;.25" dur="4.2s" repeatCount="indefinite"/></circle><circle cx="604" cy="72" r="1.5"><animate attributeName="opacity" values=".2;.9;.2" dur="3.2s" repeatCount="indefinite"/></circle><circle cx="1170" cy="300" r="1.5"><animate attributeName="opacity" values=".9;.2;.9" dur="4.8s" repeatCount="indefinite"/></circle></g>
-<g font-family="Inter, Segoe UI, Arial, sans-serif">
-<rect x="72" y="52" width="334" height="32" rx="16" fill="#102b34" stroke="#52f3d1" stroke-opacity=".5"/><circle cx="92" cy="68" r="4" fill="#52f3d1"/><text x="108" y="73" fill="#a9f7e8" font-size="12" font-weight="700" letter-spacing="1.5">SOFTWARE ENGINEERING · 1337</text>
-<text x="70" y="164" fill="#f4f8fc" font-size="62" font-weight="800" letter-spacing="-1.5">AMINE KELLA</text><rect x="73" y="186" width="160" height="4" rx="2" fill="url(#edge)"/>
-<text x="72" y="229" fill="#d3deeb" font-size="21" font-weight="600">Backend · Systems · Software</text><text x="72" y="264" fill="#92a8c0" font-size="16">Building APIs and the systems underneath.</text>
-<g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700"><rect x="72" y="300" width="54" height="27" rx="13.5" fill="#10283a" stroke="#52f3d1" stroke-opacity=".45"/><text x="99" y="318" text-anchor="middle" fill="#8df5dd">C</text><rect x="135" y="300" width="64" height="27" rx="13.5" fill="#10283a" stroke="#52f3d1" stroke-opacity=".45"/><text x="167" y="318" text-anchor="middle" fill="#8df5dd">C++</text><rect x="208" y="300" width="78" height="27" rx="13.5" fill="#10283a" stroke="#7ba7ff" stroke-opacity=".45"/><text x="247" y="318" text-anchor="middle" fill="#a6c5ff">JAVA</text><rect x="295" y="300" width="95" height="27" rx="13.5" fill="#221a3c" stroke="#b897ff" stroke-opacity=".5"/><text x="342" y="318" text-anchor="middle" fill="#c9b3ff">DOCKER</text></g>
-<text x="72" y="374" fill="#52f3d1" font-size="12" font-weight="700" letter-spacing="2">BUILD / TRACE / UNDERSTAND</text></g>
-<g>
-<ellipse cx="900" cy="211" rx="171" ry="71" fill="none" stroke="#52f3d1" stroke-opacity=".35" stroke-width="1.5" transform="rotate(-25 900 211)"/>
-<ellipse cx="900" cy="211" rx="171" ry="71" fill="none" stroke="#b18aff" stroke-opacity=".38" stroke-width="1.5"><animateTransform attributeName="transform" type="rotate" from="42 900 211" to="402 900 211" dur="22s" repeatCount="indefinite"/></ellipse>
-<g filter="url(#glow)"><circle r="5" fill="#e5fff9" stroke="#52f3d1" stroke-width="2"><animateMotion dur="8s" repeatCount="indefinite" path="M729 211A171 71 -25 1 0 1071 211A171 71 -25 1 0 729 211"/></circle><circle r="4" fill="#d5c4ff" stroke="#9b7cff" stroke-width="2"><animateMotion dur="11s" repeatCount="indefinite" path="M729 211A171 71 42 1 1 1071 211A171 71 42 1 1 729 211"/></circle></g>
-<g><animateTransform attributeName="transform" type="translate" values="0 2;0 -7;0 2" dur="4.5s" repeatCount="indefinite"/><polygon points="900,88 1007,149 900,211 793,149" fill="url(#mint)" fill-opacity=".93" stroke="#c5fff4" stroke-width="2"/><polygon points="793,149 900,211 900,334 793,272" fill="url(#blue)" fill-opacity=".96" stroke="#79e4df" stroke-width="2"/><polygon points="900,211 1007,149 1007,272 900,334" fill="url(#violet)" fill-opacity=".95" stroke="#c8b9ff" stroke-width="2"/><path d="M900 88V211M793 149L900 211L1007 149M900 211V334" fill="none" stroke="#efffff" stroke-opacity=".63" stroke-width="1.4"/><path d="M813 161L880 200M920 198L986 159M814 250L881 289M921 289L987 250" stroke="#d9ffff" stroke-opacity=".24"/><g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="800" letter-spacing="1"><text x="900" y="156" text-anchor="middle" fill="#06343b">API</text><text x="846" y="244" text-anchor="middle" fill="#e7ffff">SYSTEM</text><text x="952" y="244" text-anchor="middle" fill="#f5edff">DATA</text></g><circle cx="900" cy="211" r="5" fill="#f5ffff" filter="url(#glow)"/></g>
-<g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700" letter-spacing="1"><rect x="723" y="94" width="82" height="23" rx="11.5" fill="#0b1828" stroke="#52f3d1" stroke-opacity=".55"/><text x="764" y="109" text-anchor="middle" fill="#9ff8e8">NETWORK</text><rect x="1012" y="317" width="83" height="23" rx="11.5" fill="#161228" stroke="#b18aff" stroke-opacity=".58"/><text x="1053" y="332" text-anchor="middle" fill="#d0bcff">SECURITY</text><rect x="1051" y="123" width="73" height="23" rx="11.5" fill="#0b1828" stroke="#74a9ff" stroke-opacity=".58"/><text x="1087" y="138" text-anchor="middle" fill="#b4ccff">DOCKER</text></g>
-</g></svg>
+<rect width="1200" height="420" rx="24" fill="url(#bg)"/><rect width="1200" height="420" rx="24" fill="url(#grid)"/><rect width="1200" height="420" rx="24" fill="url(#scan)"/>
+<path d="M0 332H594L658 268H730" stroke="#58FFC6" stroke-opacity=".55" stroke-width="1.2"/><path d="M0 342H586L664 264" stroke="#BCFF5A" stroke-opacity=".12"/>
+<circle cx="658" cy="268" r="3.5" fill="#D3FF5C" filter="url(#glow)"/>
+<rect x="62" y="46" width="402" height="28" rx="14" fill="#0D2119" stroke="#9BFF55" stroke-opacity=".55"/><circle cx="80" cy="60" r="3.5" fill="#BFFF59" filter="url(#glow)"/><text x="94" y="64" fill="#C6FBA4" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1.5">1337 KHOURIBGA  ·  ALX SOFTWARE ENGINEERING</text>
+<text x="62" y="135" fill="#85A99A" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3">SOFTWARE ENGINEERING / FIELD NOTES 01</text>
+<text x="62" y="199" fill="#EFF8F3" font-family="Arial,sans-serif" font-size="62" font-weight="800" letter-spacing="1.5">AMINE KELLA</text>
+<rect x="55" y="125" width="360" height="82" fill="url(#shine)" clip-path="url(#titleMask)" opacity=".5"><animate attributeName="x" values="-420;650" dur="7s" repeatCount="indefinite"/></rect>
+<path d="M63 218H250" stroke="url(#lime)" stroke-width="3" stroke-linecap="round"><animate attributeName="stroke-dasharray" values="12 175;175 12;12 175" dur="5s" repeatCount="indefinite"/></path>
+<text x="62" y="253" fill="#EAF6EE" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="1.3">SYSTEMS  ·  BACKEND  ·  APPLICATION SECURITY</text>
+<text x="62" y="282" fill="#92A89D" font-family="Arial,sans-serif" font-size="13">I build to understand what happens beneath the interface.</text>
+<g font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1.1">
+<rect x="62" y="305" width="60" height="25" rx="12.5" fill="#10271D" stroke="#78F567" stroke-opacity=".6"/><text x="92" y="321" text-anchor="middle" fill="#BDFF9B">C / C++</text>
+<rect x="132" y="305" width="61" height="25" rx="12.5" fill="#10251F" stroke="#5DF6BD" stroke-opacity=".6"/><text x="162" y="321" text-anchor="middle" fill="#A9FFE2">JAVA</text>
+<rect x="203" y="305" width="87" height="25" rx="12.5" fill="#10252C" stroke="#51DEED" stroke-opacity=".55"/><text x="246" y="321" text-anchor="middle" fill="#A6F9FF">DOCKER</text>
+<rect x="300" y="305" width="99" height="25" rx="12.5" fill="#1A1730" stroke="#A78BFF" stroke-opacity=".55"/><text x="349" y="321" text-anchor="middle" fill="#D3C7FF">NETWORKS</text>
+</g>
+<text x="62" y="382" fill="#74A592" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="2">BUILD  /  TRACE  /  IMPROVE</text>
+<!-- orbiting 3D systems cube -->
+<ellipse cx="890" cy="230" rx="210" ry="82" transform="rotate(-27 890 230)" stroke="#51F5C2" stroke-opacity=".32"/><ellipse cx="890" cy="230" rx="176" ry="112" transform="rotate(31 890 230)" stroke="#89E7FF" stroke-opacity=".23"/>
+<path d="M757 191 890 128 1020 191 890 254 757 191Z" fill="url(#top)" stroke="#D9FF9A" stroke-opacity=".8"/>
+<path d="M757 191 890 254V355L757 291V191Z" fill="url(#left)" stroke="#70FFC8" stroke-opacity=".65"/>
+<path d="M890 254 1020 191V291L890 355V254Z" fill="url(#right)" stroke="#8DEBFF" stroke-opacity=".58"/>
+<path d="M757 291 890 355 1020 291" stroke="#A9FFE0" stroke-opacity=".25"/>
+<text x="890" y="194" text-anchor="middle" fill="#081A13" font-family="Arial,sans-serif" font-size="13" font-weight="800" letter-spacing="2">API</text>
+<text x="821" y="286" text-anchor="middle" fill="#E3FFE9" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">SYSTEMS</text>
+<text x="956" y="286" text-anchor="middle" fill="#F3EEFF" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">DATA</text>
+<circle cx="890" cy="254" r="6" fill="#F3FFE6" filter="url(#glow)"><animate attributeName="r" values="4;8;4" dur="2.4s" repeatCount="indefinite"/></circle>
+<circle r="4" fill="#D5FF5E" filter="url(#glow)"><animateMotion dur="6s" repeatCount="indefinite" path="M679 221A210 82 -27 1 0 1101 239A210 82 -27 1 0 679 221"/></circle>
+<circle r="3" fill="#63F4FF" filter="url(#glow)"><animateMotion dur="8s" begin="-3s" repeatCount="indefinite" path="M714 179A176 112 31 1 0 1066 281A176 112 31 1 0 714 179"/></circle>
+<text x="1115" y="382" text-anchor="end" fill="#678377" font-family="Arial,sans-serif" font-size="9" letter-spacing="1.5">AMINEKELL / PROFILE</text>
+</svg>
