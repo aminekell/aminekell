@@ -155,7 +155,7 @@
       animationFrame=window.requestAnimationFrame(render);
       if(reducedMotion){ window.cancelAnimationFrame(animationFrame); render(0); }
     } catch (error) {
-      console.warn("Interactive scene unavailable; showing the static map.", error); fallback.hidden=false; staticMap.hidden=false; canvas.hidden=true; document.querySelector(".scene-hint").hidden=true; document.getElementById("scene-status-label").textContent="STATIC MAP"; sceneShell.classList.add("is-static");
+      console.warn("Interactive scene unavailable; showing the static map.", error); fallback.hidden=false; staticMap.hidden=false; canvas.hidden=true; canvas.setAttribute("aria-hidden", "true"); document.querySelector(".scene-hint").hidden=true; document.getElementById("scene-status-label").textContent="STATIC MAP"; sceneShell.classList.add("is-static");
 
     }
   }
