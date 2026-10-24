@@ -1,1 +1,60 @@
-
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+<title id="title">Minishell and NetPractice: two systems concepts in 3D</title>
+<desc id="desc">An isometric command pipeline carries a parsed command through processes. Beside it, hosts on separate subnets exchange a packet through a router.</desc>
+<defs>
+  <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#07111a"/><stop offset="1" stop-color="#03070b"/></linearGradient>
+  <linearGradient id="mint" x2="1" y2="1"><stop stop-color="#36ffd0"/><stop offset="1" stop-color="#48e68b"/></linearGradient>
+  <linearGradient id="cyan" x2="0" y2="1"><stop stop-color="#1b7188"/><stop offset="1" stop-color="#10303d"/></linearGradient>
+  <linearGradient id="violet" x2="1" y2="0"><stop stop-color="#8e72ff"/><stop offset="1" stop-color="#4161d8"/></linearGradient>
+  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#71ffc1" stroke-opacity=".055"/></pattern>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#49ffd0"/></marker>
+</defs>
+<rect width="1200" height="500" rx="24" fill="url(#bg)"/><rect width="1200" height="500" rx="24" fill="url(#grid)"/>
+<path d="M28 78H1172M600 92V470" stroke="#37f6c4" stroke-opacity=".17"/>
+<text x="46" y="48" fill="#72ffcf" font-family="monospace" font-size="13" letter-spacing="3">CORE SYSTEMS / 01</text>
+<text x="1154" y="48" text-anchor="end" fill="#7696a5" font-family="monospace" font-size="12" letter-spacing="2">COMMANDS &amp; NETWORKS</text>
+<!-- MINISHELL PANEL -->
+<g font-family="monospace">
+<text x="52" y="120" fill="#e8fff7" font-size="24" font-weight="700">MINISHELL</text>
+<text x="52" y="145" fill="#7ba6a7" font-size="12" letter-spacing="1">ONE LINE, A PROCESS GRAPH</text>
+<rect x="52" y="170" width="292" height="54" rx="8" fill="#07151b" stroke="#36ffd0" stroke-opacity=".6"/>
+<circle cx="72" cy="188" r="4" fill="#ff668d"/><circle cx="86" cy="188" r="4" fill="#ffc75b"/><circle cx="100" cy="188" r="4" fill="#49ef9c"/>
+<text x="68" y="210" fill="#e8fff7" font-size="14"><tspan fill="#42ffd0">$</tspan> cat log | grep error</text>
+<!-- isometric floor -->
+<path d="M68 345L278 263L539 365L327 452Z" fill="#08202a" fill-opacity=".8" stroke="#1a6a70" stroke-opacity=".55"/>
+<path d="M108 348L319 267M156 367L367 285M205 386L415 305M255 405L464 324M116 326L377 426M165 307L426 408M214 288L475 389" stroke="#46eac3" stroke-opacity=".1"/>
+<!-- process cubes -->
+<g stroke-width="1.4">
+<path d="M115 315l55-22 55 22-55 22z" fill="#133b3d" stroke="#46ffd0"/><path d="M115 315v49l55 23v-50z" fill="#0b272c" stroke="#46ffd0"/><path d="M170 337v50l55-23v-49z" fill="#10434a" stroke="#46ffd0"/>
+<path d="M271 354l55-22 55 22-55 22z" fill="#203454" stroke="#9e8aff"/><path d="M271 354v49l55 23v-50z" fill="#14253d" stroke="#9e8aff"/><path d="M326 376v50l55-23v-49z" fill="#242b5d" stroke="#9e8aff"/>
+<path d="M420 315l55-22 55 22-55 22z" fill="#123a35" stroke="#46ffd0"/><path d="M420 315v49l55 23v-50z" fill="#0b2727" stroke="#46ffd0"/><path d="M475 337v50l55-23v-49z" fill="#105045" stroke="#46ffd0"/>
+</g>
+<text x="170" y="358" text-anchor="middle" fill="#d9fff5" font-size="11">PARSE</text><text x="326" y="397" text-anchor="middle" fill="#e8e0ff" font-size="11">PIPE</text><text x="475" y="358" text-anchor="middle" fill="#d9fff5" font-size="11">EXEC</text>
+<path d="M224 344L260 359M380 382L409 367" fill="none" stroke="#49ffd0" stroke-width="2" stroke-dasharray="5 7" marker-end="url(#arrow)" filter="url(#glow)"/>
+<circle r="4" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" path="M224 344L260 359L380 382L409 367"/></circle>
+<text x="52" y="474" fill="#73959a" font-size="11" letter-spacing="1.3">TEXT → TOKENS → PROCESSES</text>
+</g>
+<!-- NETPRACTICE PANEL -->
+<g font-family="monospace">
+<text x="642" y="120" fill="#e8fff7" font-size="24" font-weight="700">NETPRACTICE</text>
+<text x="642" y="145" fill="#7ba6a7" font-size="12" letter-spacing="1">ADDRESSING DECIDES REACHABILITY</text>
+<!-- subnet planes -->
+<path d="M648 365L773 310L900 365L775 421Z" fill="#0b2029" stroke="#27576a"/>
+<path d="M927 365L1048 310L1170 365L1049 421Z" fill="#111c31" stroke="#46528a"/>
+<text x="680" y="402" fill="#60dff0" font-size="10">SUBNET A · 10.0.1.0/24</text><text x="946" y="402" fill="#ac9cff" font-size="10">SUBNET B · 10.0.2.0/24</text>
+<!-- router cube -->
+<path d="M858 237l48-20 48 20-48 21z" fill="#174154" stroke="#53f8df"/><path d="M858 237v42l48 21v-42z" fill="#102b3a" stroke="#53f8df"/><path d="M906 258v42l48-21v-42z" fill="#1c405c" stroke="#53f8df"/>
+<path d="M877 254l30-13 30 13-30 13z" fill="#35ffd0" fill-opacity=".28" stroke="#62ffdd"/><text x="906" y="281" text-anchor="middle" fill="#edfffb" font-size="10">ROUTER</text>
+<!-- hosts -->
+<g stroke-width="1.2">
+<path d="M698 286l27-12 27 12-27 12z" fill="#174350" stroke="#55e8f5"/><path d="M698 286v30l27 12v-30z" fill="#0c2632" stroke="#55e8f5"/><path d="M725 298v30l27-12v-30z" fill="#145066" stroke="#55e8f5"/>
+<path d="M1060 285l27-12 27 12-27 12z" fill="#26375a" stroke="#a48aff"/><path d="M1060 285v30l27 12v-30z" fill="#15233b" stroke="#a48aff"/><path d="M1087 297v30l27-12v-30z" fill="#353d71" stroke="#a48aff"/>
+</g>
+<text x="725" y="304" text-anchor="middle" fill="#efffff" font-size="9">HOST A</text><text x="1087" y="303" text-anchor="middle" fill="#f2eaff" font-size="9">HOST B</text>
+<!-- routed link -->
+<path d="M752 300L858 252M954 259L1060 300" fill="none" stroke="#46ffd0" stroke-width="2" stroke-dasharray="5 8" marker-end="url(#arrow)"/>
+<circle r="4" fill="#fff" filter="url(#glow)"><animateMotion dur="3.5s" repeatCount="indefinite" path="M752 300L858 252L954 259L1060 300"/></circle>
+<text x="642" y="474" fill="#73959a" font-size="11" letter-spacing="1.3">IP + MASK + ROUTE → CAN IT REACH?</text>
+</g>
+</svg>
