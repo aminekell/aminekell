@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="assets/profile-banner.svg" alt="Amine Kella — Backend, Systems, Software" width="100%" />
+  <img src="assets/profile-banner.svg" alt="Animated 3D systems banner for Amine Kella" width="100%" />
   <br><br>
   <strong>Software engineering student · 1337 (42 Network)</strong><br>
-  Building backend and systems projects, one layer at a time.
+  Building backend systems and learning how each layer works.
   <br><br>
   <a href="https://www.linkedin.com/in/amine-kella-99914b280/">LinkedIn</a> ·
   <a href="https://github.com/aminekell?tab=repositories">Explore my repositories</a>
@@ -15,6 +15,14 @@
 - **Systems:** C, C++, Linux, Docker, NGINX
 - **Backend:** Java, Spring Boot, REST APIs, PostgreSQL
 - **Web:** JavaScript, TypeScript, React
+
+### Systems in motion
+
+<p align="center">
+  <img src="assets/system-flow-3d.svg" alt="Animated 3D request flow from client through gateway and services to a database" width="100%" />
+</p>
+
+A simple view of how a request can travel through a backend system.
 
 ### Selected work
 
