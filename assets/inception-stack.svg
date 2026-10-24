@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+<title id="title">Inception Docker Compose service map</title>
+<desc id="desc">A 3D-inspired architecture diagram traces an HTTPS request from a client through NGINX on port 443 to WordPress with PHP-FPM and MariaDB. All containers share a bridge network. WordPress and database data use persistent bind-backed volumes. The compose file also defines five bonus services.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="500" gradientUnits="userSpaceOnUse"><stop stop-color="#050907"/><stop offset=".56" stop-color="#071412"/><stop offset="1" stop-color="#100E1B"/></linearGradient>
+  <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#D8FF76"/><stop offset="1" stop-color="#45F0BB"/></linearGradient>
+  <linearGradient id="greenFace" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#0E8D64"/><stop offset="1" stop-color="#082D26"/></linearGradient>
+  <linearGradient id="cyanFace" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#127D91"/><stop offset="1" stop-color="#092A35"/></linearGradient>
+  <linearGradient id="violetFace" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6953AE"/><stop offset="1" stop-color="#211B3D"/></linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="1200" y2="500" gradientUnits="userSpaceOnUse"><stop stop-color="#9EFF65"/><stop offset=".55" stop-color="#46EBD2"/><stop offset="1" stop-color="#A48AFF"/></linearGradient>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#88FFD8" stroke-opacity=".05"/></pattern>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect x="1" y="1" width="1198" height="498" rx="22" fill="url(#bg)" stroke="url(#edge)" stroke-opacity=".48" stroke-width="1.5"/>
+<rect x="2" y="2" width="1196" height="496" rx="21" fill="url(#grid)"/>
+<text x="44" y="50" fill="#F0F8F2" font-family="Arial,sans-serif" font-size="22" font-weight="800" letter-spacing="2.2">INCEPTION / SERVICE MAP</text>
+<text x="45" y="75" fill="#92AAA0" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1.8">DOCKER COMPOSE · REQUEST PATH + PERSISTENT DATA</text>
+<rect x="1005" y="30" width="150" height="28" rx="14" fill="#0C2318" stroke="#9DFF68" stroke-opacity=".58"/>
+<circle cx="1023" cy="44" r="3.5" fill="#C5FF61" filter="url(#glow)"/>
+<text x="1035" y="48" fill="#C9F7A0" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1.1">COMPOSE / MAIN</text>
+<!-- request path -->
+<path d="M147 192H274M426 192H508M685 192H775" stroke="#5EF0C6" stroke-opacity=".55" stroke-width="2" stroke-dasharray="5 8"/>
+<path d="M147 192H274M426 192H508M685 192H775" stroke="#5EF0C6" stroke-opacity=".12" stroke-width="8" filter="url(#glow)"/>
+<circle r="4" fill="#D1FF67" filter="url(#glow)"><animateMotion dur="2.2s" repeatCount="indefinite" path="M147 192H274"/></circle>
+<circle r="3.5" fill="#62F5D0" filter="url(#glow)"><animateMotion dur="1.7s" begin="-0.7s" repeatCount="indefinite" path="M426 192H508"/></circle>
+<circle r="3.5" fill="#C1FF65" filter="url(#glow)"><animateMotion dur="1.8s" begin="-0.4s" repeatCount="indefinite" path="M685 192H775"/></circle>
+<!-- client -->
+<g>
+  <circle cx="94" cy="165" r="19" fill="#0D2A20" stroke="#79FF9A" stroke-opacity=".8"/>
+  <path d="M62 225C66 202 77 192 94 192S122 202 126 225" fill="#0B221B" stroke="#72E9A8" stroke-width="2"/>
+  <text x="94" y="254" text-anchor="middle" fill="#D6F2DE" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="1.2">CLIENT</text>
+  <text x="94" y="273" text-anchor="middle" fill="#81988C" font-family="Arial,sans-serif" font-size="11">HTTPS request</text>
+</g>
+<!-- nginx cube -->
+<g filter="url(#glow)">
+  <path d="M274 157 350 119 426 157 350 195Z" fill="url(#mint)" stroke="#D5FF9C" stroke-opacity=".8"/>
+  <path d="M274 157 350 195V258L274 220Z" fill="url(#greenFace)" stroke="#6FFFC3" stroke-opacity=".7"/>
+  <path d="M350 195 426 157V220L350 258Z" fill="#0C473D" stroke="#79EAE1" stroke-opacity=".55"/>
+</g>
+<text x="350" y="162" text-anchor="middle" fill="#071B12" font-family="Arial,sans-serif" font-size="19" font-weight="900" letter-spacing="1.4">NGINX</text>
+<text x="313" y="221" text-anchor="middle" fill="#D8FFE7" font-family="Arial,sans-serif" font-size="12" font-weight="700">TLS</text>
+<text x="387" y="221" text-anchor="middle" fill="#D4FFFF" font-family="Arial,sans-serif" font-size="12" font-weight="700">443</text>
+<!-- wordpress cube -->
+<g>
+  <path d="M508 157 597 112 685 157 597 202Z" fill="url(#mint)" stroke="#D5FF9C" stroke-opacity=".8"/>
+  <path d="M508 157 597 202V268L508 223Z" fill="url(#cyanFace)" stroke="#61F0D1" stroke-opacity=".72"/>
+  <path d="M597 202 685 157V223L597 268Z" fill="url(#violetFace)" stroke="#B4A2FF" stroke-opacity=".65"/>
+  <path d="M530 168 597 202 663 168" fill="none" stroke="#FFFFFF" stroke-opacity=".2"/>
+</g>
+<text x="597" y="163" text-anchor="middle" fill="#091B14" font-family="Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="1.1">WORDPRESS</text>
+<text x="550" y="228" text-anchor="middle" fill="#D7FFEE" font-family="Arial,sans-serif" font-size="12" font-weight="700">PHP</text>
+<text x="636" y="228" text-anchor="middle" fill="#F1EAFF" font-family="Arial,sans-serif" font-size="12" font-weight="700">FPM</text>
+<!-- mariadb cube -->
+<g>
+  <path d="M775 157 855 117 935 157 855 197Z" fill="url(#mint)" stroke="#D5FF9C" stroke-opacity=".8"/>
+  <path d="M775 157 855 197V260L775 220Z" fill="#0A5948" stroke="#6FFFC3" stroke-opacity=".68"/>
+  <path d="M855 197 935 157V220L855 260Z" fill="#123C42" stroke="#68E9E9" stroke-opacity=".62"/>
+  <path d="M795 167 855 197 915 167M795 183 855 213 915 183" fill="none" stroke="#D7FFF4" stroke-opacity=".36"/>
+</g>
+<text x="855" y="162" text-anchor="middle" fill="#071B12" font-family="Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="1.1">MARIADB</text>
+<text x="855" y="235" text-anchor="middle" fill="#E1FFF5" font-family="Arial,sans-serif" font-size="12" font-weight="700">DATABASE</text>
+<!-- network rail -->
+<path d="M94 291V305H855V278" fill="none" stroke="#67EBC4" stroke-opacity=".36" stroke-width="1.5" stroke-dasharray="4 7"/>
+<rect x="314" y="292" width="554" height="34" rx="17" fill="#091B18" stroke="#58DCC2" stroke-opacity=".55"/>
+<circle cx="337" cy="309" r="4" fill="#5EFFE1" filter="url(#glow)"/>
+<text x="353" y="313" fill="#BBEFE0" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1">SHARED BRIDGE NETWORK / inception_network</text>
+<!-- persistent volumes -->
+<g>
+  <path d="M315 361H535" stroke="#99FF64" stroke-opacity=".36" stroke-dasharray="3 6"/>
+  <rect x="184" y="344" width="352" height="42" rx="12" fill="#0C1B12" stroke="#9CFF62" stroke-opacity=".48"/>
+  <path d="M201 354C209 349 226 349 234 354V374C226 380 209 380 201 374Z" fill="#123A20" stroke="#9CFF62" stroke-opacity=".65"/>
+  <ellipse cx="217.5" cy="354" rx="16.5" ry="5" fill="#1E5830" stroke="#B7FF72" stroke-opacity=".75"/>
+  <text x="248" y="361" fill="#DDF6CD" font-family="Arial,sans-serif" font-size="12" font-weight="700">wordpress_data</text>
+  <text x="248" y="377" fill="#91A58D" font-family="Arial,sans-serif" font-size="10">bind-backed · /var/www/html</text>
+</g>
+<g>
+  <path d="M665 361H885" stroke="#62E6E0" stroke-opacity=".36" stroke-dasharray="3 6"/>
+  <rect x="548" y="344" width="352" height="42" rx="12" fill="#09191B" stroke="#58E6DB" stroke-opacity=".48"/>
+  <path d="M565 354C573 349 590 349 598 354V374C590 380 573 380 565 374Z" fill="#12393B" stroke="#69F1E7" stroke-opacity=".65"/>
+  <ellipse cx="581.5" cy="354" rx="16.5" ry="5" fill="#1A5351" stroke="#8BFFF1" stroke-opacity=".75"/>
+  <text x="612" y="361" fill="#D5F8F1" font-family="Arial,sans-serif" font-size="12" font-weight="700">mariadb_data</text>
+  <text x="612" y="377" fill="#8FAAA5" font-family="Arial,sans-serif" font-size="10">bind-backed · /var/lib/mysql</text>
+</g>
+<text x="44" y="423" fill="#8FA79A" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1.7">ALSO DECLARED IN COMPOSE</text>
+<g font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing=".5">
+  <rect x="44" y="439" width="142" height="30" rx="15" fill="#0D2118" stroke="#91F36B" stroke-opacity=".45"/><text x="115" y="458" text-anchor="middle" fill="#C9F4B6">STATIC SITE</text>
+  <rect x="198" y="439" width="116" height="30" rx="15" fill="#0D2118" stroke="#91F36B" stroke-opacity=".45"/><text x="256" y="458" text-anchor="middle" fill="#C9F4B6">ADMINER</text>
+  <rect x="326" y="439" width="104" height="30" rx="15" fill="#0C1F22" stroke="#5BE1D2" stroke-opacity=".45"/><text x="378" y="458" text-anchor="middle" fill="#B8F8EE">REDIS</text>
+  <rect x="442" y="439" width="94" height="30" rx="15" fill="#0C1F22" stroke="#5BE1D2" stroke-opacity=".45"/><text x="489" y="458" text-anchor="middle" fill="#B8F8EE">FTP</text>
+  <rect x="548" y="439" width="142" height="30" rx="15" fill="#17142A" stroke="#A892FF" stroke-opacity=".48"/><text x="619" y="458" text-anchor="middle" fill="#D4C9FF">PORTAINER</text>
+</g>
+<text x="1155" y="459" text-anchor="end" fill="#71877C" font-family="Arial,sans-serif" font-size="10" letter-spacing="1">SYSTEM MAP / 01</text>
+</svg>
