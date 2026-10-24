@@ -2,6 +2,10 @@
   <img src="assets/profile-banner.svg" alt="Amine Kella in a neon systems illustration with a three-dimensional API cube" width="100%" />
 </div>
 
+<div align="center">
+  <a href="https://aminekell.github.io/aminekell/"><strong>↗ OPEN THE INTERACTIVE SYSTEMS ATLAS</strong></a>
+</div>
+
 ---
 
 ### 01 / Perspective
