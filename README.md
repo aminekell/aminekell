@@ -1,60 +1,51 @@
 <div align="center">
-  <img src="assets/profile-banner.svg" alt="Animated 3D systems banner for Amine Kella" width="100%" />
-  <br><br>
-  <strong>Software engineering student · 1337 (42 Network)</strong><br>
-  Building backend systems and learning how each layer works.
-  <br><br>
-  <a href="https://www.linkedin.com/in/amine-kella-99914b280/">LinkedIn</a> ·
-  <a href="https://github.com/aminekell?tab=repositories">Explore my repositories</a>
+  <img src="assets/profile-banner.svg" alt="Amine Kella in a neon systems illustration with a three-dimensional API cube" width="100%" />
 </div>
 
 ---
 
-### What I work with
+### 01 / Perspective
 
-- **Systems:** C, C++, Linux, Docker, NGINX
-- **Backend:** Java, Spring Boot, REST APIs, PostgreSQL
-- **Web:** JavaScript, TypeScript, React
+I’m a software engineering learner at **1337 Khouribga (42 Network)** and in **ALX Software Engineering**. I’m drawn to the hidden mechanics of software: network boundaries, service relationships, and the assumptions behind a reliable system.
 
-### Systems in motion
+### 02 / Toolkit in progress
+
+- **Systems** — C, C++, Linux
+- **Backend** — Java, Spring Boot, REST APIs, PostgreSQL
+- **Web** — JavaScript, TypeScript, React, HTML, CSS
+- **Delivery** — Docker, NGINX, Git
+
+### 03 / Fieldwork — Inception
+
+[Inception](https://github.com/aminekell/Inception) is a Docker Compose environment. Its configuration routes HTTPS through NGINX to WordPress with PHP-FPM and MariaDB, connects services over a bridge network, and persists site and database data in bind-backed volumes. The same Compose file also declares a static site, Adminer, Redis, FTP, and Portainer.
 
 <p align="center">
-  <img src="assets/system-flow-3d.svg" alt="Animated 3D request flow from client through gateway and services to a database" width="100%" />
+  <img src="assets/inception-stack.svg" alt="Inception configuration map: client to NGINX over HTTPS, then WordPress with PHP-FPM and MariaDB; bridge network, persistent bind-backed volumes, and five additional declared services" width="100%" />
 </p>
-
-A simple view of how a request can travel through a backend system.
-
-### Rate limiting
 
 <p align="center">
-  <img src="assets/rate-limit-3d.svg" alt="Animated 3D token bucket rate limiter showing allowed requests and 429 responses" width="100%" />
+  <a href="https://github.com/aminekell/Inception/blob/main/srcs/docker-compose.yml">Inspect the Compose configuration</a>
 </p>
 
-A token bucket helps accept normal traffic while slowing bursts.
+### 04 / A systems concept — Token buckets
 
-### Selected work
+A token bucket allows short bursts while limiting the sustained request rate. When the bucket is empty, an API can reject a request with HTTP 429 and refill tokens over time.
 
-| Project | What it is |
-|---|---|
-| [Inception](https://github.com/aminekell/Inception) | A Docker Compose stack with WordPress, MariaDB, NGINX, and bonus services. |
-| [Java_Days](https://github.com/aminekell/Java_Days) | Java exercises and small object-oriented practice projects. |
+<p align="center">
+  <img src="assets/rate-limit-3d.svg" alt="Animated token bucket concept: available tokens admit requests; an empty bucket routes a request to HTTP 429 while tokens refill" width="100%" />
+</p>
 
-### Contribution snake
+### 05 / Activity
 
-<p align="center"><sub>Animated snake based on GitHub contribution activity.</sub></p>
+This animation traces the contribution cells GitHub reports for my account.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aminekell/aminekell/output/github-contribution-grid-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aminekell/aminekell/output/github-contribution-grid-snake.svg" />
-  <img alt="Animated snake moving through my GitHub contribution grid" src="https://raw.githubusercontent.com/aminekell/aminekell/output/github-contribution-grid-snake.svg" width="100%" />
+  <img alt="Animated snake tracing Amine Kella’s authentic GitHub contribution grid" src="https://raw.githubusercontent.com/aminekell/aminekell/output/github-contribution-grid-snake.svg" width="100%" />
 </picture>
 
-### Currently curious about
-
-Application security · rate limiting · networking · system design
-
----
-
 <p align="center">
-  <sub>Learning by building. Improving by understanding.</sub>
+  <img src="assets/next-trace.svg" alt="Animated neon signal around a three-dimensional systems node, ending with an invitation to connect" width="100%" />
+  <a href="https://www.linkedin.com/in/amine-kella-99914b280/">LinkedIn</a> · <a href="https://github.com/aminekell?tab=repositories">Public repositories</a>
 </p>
