@@ -1,53 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
-  <title id="title">Amine Kella — Backend, Systems, Software</title>
-  <desc id="desc">A dark navy banner with cyan and violet accents, a developer terminal card, and the phrase: from APIs to the systems underneath.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#07111d"/>
-      <stop offset="0.58" stop-color="#0a1526"/>
-      <stop offset="1" stop-color="#101126"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#52f3d1"/>
-      <stop offset="1" stop-color="#9b8cff"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#40e6d2" stop-opacity=".22"/>
-      <stop offset="1" stop-color="#40e6d2" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M32 0H0V32" fill="none" stroke="#8aa7c7" stroke-opacity=".08" stroke-width="1"/>
-    </pattern>
-  </defs>
-  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
-  <rect width="1200" height="360" rx="28" fill="url(#grid)"/>
-  <ellipse cx="815" cy="132" rx="330" ry="250" fill="url(#glow)"/>
-  <path d="M0 302H420L495 230H706" fill="none" stroke="#52f3d1" stroke-opacity=".22" stroke-width="2"/>
-  <path d="M905 0V46L963 104H1200" fill="none" stroke="#9b8cff" stroke-opacity=".25" stroke-width="2"/>
-  <circle cx="495" cy="230" r="4" fill="#52f3d1"/>
-  <circle cx="963" cy="104" r="4" fill="#9b8cff"/>
-
-  <g font-family="Inter, Segoe UI, Arial, sans-serif">
-    <rect x="72" y="55" width="294" height="30" rx="15" fill="#112b36" stroke="#52f3d1" stroke-opacity=".4"/>
-    <circle cx="91" cy="70" r="4" fill="#52f3d1"/>
-    <text x="106" y="75" fill="#a9f7e8" font-size="12" font-weight="700" letter-spacing="1.8">BACKEND · SYSTEMS · SOFTWARE</text>
-
-    <text x="70" y="165" fill="#f3f7fb" font-size="59" font-weight="800" letter-spacing="-1.4">AMINE KELLA</text>
-    <rect x="73" y="188" width="104" height="4" rx="2" fill="url(#accent)"/>
-    <text x="72" y="226" fill="#c9d6e4" font-size="22" font-weight="500">From APIs to the systems underneath.</text>
-    <text x="72" y="270" fill="#8fa5bb" font-size="16">Software engineering student · 1337 (42 Network)</text>
-    <text x="72" y="316" fill="#52f3d1" font-size="13" font-weight="700" letter-spacing="1.4">BUILD  /  UNDERSTAND  /  IMPROVE</text>
-
-    <g transform="translate(755 82)">
-      <rect width="370" height="196" rx="18" fill="#08111d" fill-opacity=".9" stroke="#a7c3dc" stroke-opacity=".24"/>
-      <path d="M0 48H370" stroke="#a7c3dc" stroke-opacity=".18"/>
-      <circle cx="24" cy="24" r="5" fill="#ff6b7a"/>
-      <circle cx="43" cy="24" r="5" fill="#ffd166"/>
-      <circle cx="62" cy="24" r="5" fill="#52f3d1"/>
-      <text x="25" y="82" fill="#9b8cff" font-size="14" font-family="monospace">$ amine --focus</text>
-      <text x="25" y="113" fill="#d9e6f2" font-size="16" font-family="monospace">backend APIs</text>
-      <text x="25" y="141" fill="#d9e6f2" font-size="16" font-family="monospace">networks + systems</text>
-      <text x="25" y="169" fill="#52f3d1" font-size="14" font-family="monospace">status: always learning_</text>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+<title id="title">Amine Kella — Backend and Systems Developer</title>
+<desc id="desc">An animated neon isometric cube with orbiting data nodes, representing backend systems, APIs, and software engineering.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050b16"/><stop offset=".55" stop-color="#0a1426"/><stop offset="1" stop-color="#17112d"/></linearGradient>
+<linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9bffe6"/><stop offset="1" stop-color="#27c7b8"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1689b8"/><stop offset="1" stop-color="#10446e"/></linearGradient>
+<linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9b7cff"/><stop offset="1" stop-color="#49319e"/></linearGradient>
+<linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#52f3d1"/><stop offset=".5" stop-color="#70a5ff"/><stop offset="1" stop-color="#c98cff"/></linearGradient>
+<radialGradient id="aura"><stop offset="0" stop-color="#42e8ce" stop-opacity=".23"/><stop offset="1" stop-color="#42e8ce" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#94acd1" stroke-opacity=".07" stroke-width="1"/></pattern>
+<filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="420" rx="28" fill="url(#bg)"/><rect width="1200" height="420" rx="28" fill="url(#grid)"/><ellipse cx="910" cy="200" rx="310" ry="245" fill="url(#aura)"/>
+<path d="M0 355H400L470 285H665M1200 65H1098L1040 123" fill="none" stroke="#52f3d1" stroke-opacity=".23" stroke-width="2"/><path d="M0 370H430M760 384H1200" stroke="#617aa0" stroke-opacity=".14"/>
+<g fill="#b8fff2"><circle cx="456" cy="285" r="3"><animate attributeName="opacity" values=".2;1;.2" dur="2.8s" repeatCount="indefinite"/></circle><circle cx="1040" cy="123" r="3"><animate attributeName="opacity" values="1;.2;1" dur="3.6s" repeatCount="indefinite"/></circle><circle cx="112" cy="319" r="1.6"><animate attributeName="opacity" values=".25;.8;.25" dur="4.2s" repeatCount="indefinite"/></circle><circle cx="604" cy="72" r="1.5"><animate attributeName="opacity" values=".2;.9;.2" dur="3.2s" repeatCount="indefinite"/></circle><circle cx="1170" cy="300" r="1.5"><animate attributeName="opacity" values=".9;.2;.9" dur="4.8s" repeatCount="indefinite"/></circle></g>
+<g font-family="Inter, Segoe UI, Arial, sans-serif">
+<rect x="72" y="52" width="334" height="32" rx="16" fill="#102b34" stroke="#52f3d1" stroke-opacity=".5"/><circle cx="92" cy="68" r="4" fill="#52f3d1"/><text x="108" y="73" fill="#a9f7e8" font-size="12" font-weight="700" letter-spacing="1.5">SOFTWARE ENGINEERING · 1337</text>
+<text x="70" y="164" fill="#f4f8fc" font-size="62" font-weight="800" letter-spacing="-1.5">AMINE KELLA</text><rect x="73" y="186" width="160" height="4" rx="2" fill="url(#edge)"/>
+<text x="72" y="229" fill="#d3deeb" font-size="21" font-weight="600">Backend · Systems · Software</text><text x="72" y="264" fill="#92a8c0" font-size="16">Building APIs and the systems underneath.</text>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700"><rect x="72" y="300" width="54" height="27" rx="13.5" fill="#10283a" stroke="#52f3d1" stroke-opacity=".45"/><text x="99" y="318" text-anchor="middle" fill="#8df5dd">C</text><rect x="135" y="300" width="64" height="27" rx="13.5" fill="#10283a" stroke="#52f3d1" stroke-opacity=".45"/><text x="167" y="318" text-anchor="middle" fill="#8df5dd">C++</text><rect x="208" y="300" width="78" height="27" rx="13.5" fill="#10283a" stroke="#7ba7ff" stroke-opacity=".45"/><text x="247" y="318" text-anchor="middle" fill="#a6c5ff">JAVA</text><rect x="295" y="300" width="95" height="27" rx="13.5" fill="#221a3c" stroke="#b897ff" stroke-opacity=".5"/><text x="342" y="318" text-anchor="middle" fill="#c9b3ff">DOCKER</text></g>
+<text x="72" y="374" fill="#52f3d1" font-size="12" font-weight="700" letter-spacing="2">BUILD / TRACE / UNDERSTAND</text></g>
+<g>
+<ellipse cx="900" cy="211" rx="171" ry="71" fill="none" stroke="#52f3d1" stroke-opacity=".35" stroke-width="1.5" transform="rotate(-25 900 211)"/>
+<ellipse cx="900" cy="211" rx="171" ry="71" fill="none" stroke="#b18aff" stroke-opacity=".38" stroke-width="1.5"><animateTransform attributeName="transform" type="rotate" from="42 900 211" to="402 900 211" dur="22s" repeatCount="indefinite"/></ellipse>
+<g filter="url(#glow)"><circle r="5" fill="#e5fff9" stroke="#52f3d1" stroke-width="2"><animateMotion dur="8s" repeatCount="indefinite" path="M729 211A171 71 -25 1 0 1071 211A171 71 -25 1 0 729 211"/></circle><circle r="4" fill="#d5c4ff" stroke="#9b7cff" stroke-width="2"><animateMotion dur="11s" repeatCount="indefinite" path="M729 211A171 71 42 1 1 1071 211A171 71 42 1 1 729 211"/></circle></g>
+<g><animateTransform attributeName="transform" type="translate" values="0 2;0 -7;0 2" dur="4.5s" repeatCount="indefinite"/><polygon points="900,88 1007,149 900,211 793,149" fill="url(#mint)" fill-opacity=".93" stroke="#c5fff4" stroke-width="2"/><polygon points="793,149 900,211 900,334 793,272" fill="url(#blue)" fill-opacity=".96" stroke="#79e4df" stroke-width="2"/><polygon points="900,211 1007,149 1007,272 900,334" fill="url(#violet)" fill-opacity=".95" stroke="#c8b9ff" stroke-width="2"/><path d="M900 88V211M793 149L900 211L1007 149M900 211V334" fill="none" stroke="#efffff" stroke-opacity=".63" stroke-width="1.4"/><path d="M813 161L880 200M920 198L986 159M814 250L881 289M921 289L987 250" stroke="#d9ffff" stroke-opacity=".24"/><g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="800" letter-spacing="1"><text x="900" y="156" text-anchor="middle" fill="#06343b">API</text><text x="846" y="244" text-anchor="middle" fill="#e7ffff">SYSTEM</text><text x="952" y="244" text-anchor="middle" fill="#f5edff">DATA</text></g><circle cx="900" cy="211" r="5" fill="#f5ffff" filter="url(#glow)"/></g>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700" letter-spacing="1"><rect x="723" y="94" width="82" height="23" rx="11.5" fill="#0b1828" stroke="#52f3d1" stroke-opacity=".55"/><text x="764" y="109" text-anchor="middle" fill="#9ff8e8">NETWORK</text><rect x="1012" y="317" width="83" height="23" rx="11.5" fill="#161228" stroke="#b18aff" stroke-opacity=".58"/><text x="1053" y="332" text-anchor="middle" fill="#d0bcff">SECURITY</text><rect x="1051" y="123" width="73" height="23" rx="11.5" fill="#0b1828" stroke="#74a9ff" stroke-opacity=".58"/><text x="1087" y="138" text-anchor="middle" fill="#b4ccff">DOCKER</text></g>
+</g></svg>
