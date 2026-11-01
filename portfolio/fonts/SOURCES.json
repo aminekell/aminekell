@@ -1,0 +1,37 @@
+{
+  "dm-sans": {
+    "source": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/dmsans/DMSans%5Bopsz%2Cwght%5D.ttf",
+    "revision": "6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec",
+    "upstream_bytes": 240164,
+    "output_bytes": 31052,
+    "sha256": "50ce80e467b8439cb968317a649f764a0d48afd24d353f9157214f9687586474",
+    "axes": [
+      {
+        "tag": "wght",
+        "min": 400,
+        "max": 700
+      }
+    ],
+    "optical_size_fixed": 14
+  },
+  "IBMPlexMono-Regular-Latin1.woff2": {
+    "source": "https://raw.githubusercontent.com/IBM/plex/71f558992315a12ca1f06a2215d57962a1992162/packages/plex-mono/fonts/split/woff2/IBMPlexMono-Regular-Latin1.woff2",
+    "bytes": 17544,
+    "sha256": "e8993d946649b9d01abb1ed06d574b19d8ea3e66b5c3948602db335c44c18e56"
+  },
+  "IBMPlexMono-Regular-Pi.woff2": {
+    "source": "https://raw.githubusercontent.com/IBM/plex/71f558992315a12ca1f06a2215d57962a1992162/packages/plex-mono/fonts/split/woff2/IBMPlexMono-Regular-Pi.woff2",
+    "bytes": 13780,
+    "sha256": "b8002770aa636f544ba43e124da6a227301769754f295eae26e16475b469c767"
+  },
+  "IBMPlexMono-Medium-Latin1.woff2": {
+    "source": "https://raw.githubusercontent.com/IBM/plex/71f558992315a12ca1f06a2215d57962a1992162/packages/plex-mono/fonts/split/woff2/IBMPlexMono-Medium-Latin1.woff2",
+    "bytes": 17868,
+    "sha256": "41201b658a328b9d00368215c2f1102770f80b15952ab82631e4006255e6365d"
+  },
+  "IBMPlexMono-Medium-Pi.woff2": {
+    "source": "https://raw.githubusercontent.com/IBM/plex/71f558992315a12ca1f06a2215d57962a1992162/packages/plex-mono/fonts/split/woff2/IBMPlexMono-Medium-Pi.woff2",
+    "bytes": 13968,
+    "sha256": "92bd18415e8c43a2569f615e4e84a94b1b1c4e0377ba9d8f4d894bbf6ffcc39d"
+  }
+}
