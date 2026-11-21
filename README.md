@@ -6,7 +6,7 @@
 </a>
 
 <p align="center">
-  <a href="https://aminekell.github.io/aminekell/#engineer"><strong>Explore my portfolio ↗</strong></a>
+  <a href="https://aminekell.github.io/aminekell/"><strong>Explore my portfolio ↗</strong></a>
   &nbsp; · &nbsp;
   <a href="https://github.com/aminekell?tab=repositories">Repositories</a>
   &nbsp; · &nbsp;
@@ -23,7 +23,7 @@ My current focus is **Java, Spring Boot, and backend development**, grounded in 
 
 | Project | What I explored |
 | :--- | :--- |
-| **[Project Ø](https://aminekell.github.io/aminekell/)** | My interactive portfolio. Small experiments make networks, processes, and raycasting visible. |
+| **[Portfolio](https://aminekell.github.io/aminekell/)** | Selected projects, source code, and a separate page for browser experiments. |
 | **[HirePath · ft_transcendence](https://github.com/aminekell/42-ft-transcendence)** | A team recruitment platform with React, NestJS, and Spring Boot. I worked on company profiles, onboarding, and dashboard integrations. |
 | **[Inception](https://github.com/aminekell/Inception)** | Docker Compose, NGINX, WordPress, and MariaDB. HTTPS, service networking, and persistent storage. |
 | **[Minishell](https://github.com/aminekell/42-minishell)** | A shell built around parsing, processes, pipes, and redirections. |
