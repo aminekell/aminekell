@@ -23,7 +23,7 @@ My current focus is **Java, Spring Boot, and backend development**, grounded in 
 
 | Project | What I explored |
 | :--- | :--- |
-| **[Portfolio](https://aminekell.github.io/aminekell/)** | Selected projects, source code, and a separate page for browser experiments. |
+| **[Portfolio](https://aminekell.github.io/aminekell/)** | Selected projects, source code, and browser experiments. |
 | **[HirePath · ft_transcendence](https://github.com/aminekell/42-ft-transcendence)** | A team recruitment platform with React, NestJS, and Spring Boot. I worked on company profiles, onboarding, and dashboard integrations. |
 | **[Inception](https://github.com/aminekell/Inception)** | Docker Compose, NGINX, WordPress, and MariaDB. HTTPS, service networking, and persistent storage. |
 | **[Minishell](https://github.com/aminekell/42-minishell)** | A shell built around parsing, processes, pipes, and redirections. |

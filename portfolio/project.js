@@ -1,5 +1,5 @@
 import { networkTrace, pipelineTrace, architectureTrace, philosophersState, castRay, generateAutomaton } from './simulations.js';
-import { Instrument } from './world.js';
+import { Instrument } from './static-world.js';
 
 const $ = id => document.getElementById(id);
 const realities = {
@@ -45,24 +45,13 @@ try {
   if(!instrument.ctx)throw new Error('Canvas 2D unavailable');
 } catch {
   instrument?.destroy();instrument=null;
-  $('world').hidden=true;$('world-fallback').hidden=false;
+  $('world').hidden=true;$('landmarks').hidden=true;$('world-fallback').hidden=false;
   $('renderer-status').textContent='READABLE MODE · CANVAS UNAVAILABLE';
   $('field-hint').textContent='USE THE SIX REALITY CONTROLS BELOW';
 }
-function compile() {
-  instrument?.compile();
-  $('compile-label').textContent='Follow the signal';
-  $('field-hint').textContent=innerWidth<720?'SELECT A NUMBERED LANDMARK':'DRAG TO REORIENT · SELECT A LANDMARK';
-  $('orbit-reset').hidden=false;
-}
-$('compile').addEventListener('click',()=>{
-  const already=instrument?.compiled??true;compile();
-  if(already) $('laboratory').scrollIntoView({behavior:state.still?'instant':'smooth'});
-});
-$('orbit-reset').addEventListener('click',()=>instrument?.reset());
-window.addEventListener('resize',()=>{if(instrument?.compiled)$('field-hint').textContent=innerWidth<720?'SELECT A NUMBERED LANDMARK':'DRAG TO REORIENT · SELECT A LANDMARK';});
 $('fold').addEventListener('click',()=>{
-  state.folded=!state.folded;compile();instrument?.setFold(state.folded);
+  state.folded=!state.folded;
+  instrument?.setFold(state.folded);
   $('fold').setAttribute('aria-pressed',String(state.folded));
   $('surface-label').textContent=state.folded?'STRUCTURE → CAUSAL DIAGRAM':'INFORMATION → STRUCTURE';
   inspectState();
@@ -71,19 +60,18 @@ function toggleXray(force) {
   state.xray=force??!state.xray;
   $('inspector').hidden=!state.xray;
   $('xray').setAttribute('aria-pressed',String(state.xray));
-  $('field').classList.toggle('is-inspecting',state.xray);
   instrument?.setInspecting(state.xray);
   inspectState();
 }
 $('xray').addEventListener('click',()=>toggleXray());
 $('motion').setAttribute('aria-pressed',String(state.still));
 $('motion').addEventListener('click',()=>{
-  state.still=!state.still;instrument?.setPaused(state.still);
+  state.still=!state.still;
   $('motion').setAttribute('aria-pressed',String(state.still));
   if(state.still)setPlaying(false);
 });
 motionPreference.addEventListener('change',e=>{
- state.still=e.matches;instrument?.setPaused(e.matches);
+ state.still=e.matches;
  $('motion').setAttribute('aria-pressed',String(e.matches));if(e.matches)setPlaying(false);
 });
 document.addEventListener('keydown',e=>{
@@ -126,7 +114,8 @@ function selectReality(id,scroll=false,push=true,project=null) {
  $('lab-number').textContent=data.number;
  $('lab-provenance').textContent=data.provenance;
  document.querySelectorAll('[data-reality]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.reality===id)));
- if(instrument){instrument.select(id);compile();}
+ instrument?.select(id);
+ $('time-play').hidden=id==='geometry';
  $('discovery-count').textContent=`${String(visited.size).padStart(2,'0')} / 06 PERSPECTIVES VISITED`;
  if(visited.size===6){$('discovery-message').textContent='THE SYSTEMS CONNECT. THE INSTRUMENT IS ONE OF THEM.';$('convergence').hidden=false;}
  createControls();updateModel();
@@ -317,7 +306,7 @@ function setPlaying(value) {
 }
 function tick(now) {
  if(!state.playing||document.hidden||!labVisible)return;
- if(now-lastTick>=90){lastTick=now;state.time=Math.min(100,state.time+1);if(state.reality==='process'&&state.processVariant==='philosophers'||state.reality==='geometry')updateModel();else renderTime();if(state.time===100){setPlaying(false);return;}}
+ if(now-lastTick>=90){lastTick=now;state.time=Math.min(100,state.time+1);if(state.reality==='process'&&state.processVariant==='philosophers')updateModel();else renderTime();if(state.time===100){setPlaying(false);return;}}
  playFrame=requestAnimationFrame(tick);
 }
 $('time-play').addEventListener('click',()=>setPlaying(!state.playing));
