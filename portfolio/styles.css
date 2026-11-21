@@ -247,7 +247,16 @@ button, a, input, select, summary { outline-offset: 5px; }
 .project-records a:hover { color: var(--orange); border-color: var(--orange); }
 .project-records button { background: transparent; border: 0; padding: 0; border-bottom: 1px solid var(--ink); font: 9px/1.8 var(--mono); }
 .project-records button:hover { color: var(--orange); border-color: var(--orange); }
-.source-note, .evidence-note { color: var(--quiet); font: 8px/1.9 var(--mono); margin-top: 20px; }
+.project-links { display: flex; flex-wrap: wrap; gap: 6px 12px; }
+.evidence-note { color: var(--quiet); font: 8px/1.9 var(--mono); margin-top: 20px; }
+.project-index { padding-block: 14px; border-bottom: 1px solid var(--line); }
+.project-index summary { cursor: pointer; color: var(--ink); font-size: 12px; }
+.project-index-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px 50px; padding-top: 20px; }
+.project-index h4 { margin: 0 0 8px; color: var(--ink); font: 500 16px/1.3 var(--sans); }
+.project-index ul { list-style: none; padding: 0; margin: 0; }
+.project-index li { padding-block: 8px; border-bottom: 1px solid var(--line); }
+.project-index li a { color: var(--ink); font-size: 11px; text-underline-offset: 3px; }
+.project-index li span { display: block; color: var(--muted); font: 12px/1.5 var(--sans); }
 .evidence-note a { color: var(--muted); }
 .footer { min-height: 100px; border-top: 1px solid var(--ink); display: flex; align-items: center; justify-content: space-between; gap: 24px; color: var(--muted); font: 8px/1.9 var(--mono); }
 .footer-mark { color: var(--ink); font: 26px var(--sans); letter-spacing: -.07em; text-decoration: none; }

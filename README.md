@@ -6,7 +6,7 @@
 </a>
 
 <p align="center">
-  <a href="https://aminekell.github.io/aminekell/"><strong>Explore my portfolio ↗</strong></a>
+  <a href="https://aminekell.github.io/aminekell/#engineer"><strong>Explore my portfolio ↗</strong></a>
   &nbsp; · &nbsp;
   <a href="https://github.com/aminekell?tab=repositories">Repositories</a>
   &nbsp; · &nbsp;
@@ -24,10 +24,12 @@ My current focus is **Java, Spring Boot, and backend development**, grounded in 
 | Project | What I explored |
 | :--- | :--- |
 | **[Project Ø](https://aminekell.github.io/aminekell/)** | My interactive portfolio. Small experiments make networks, processes, and raycasting visible. |
-| **ft_transcendence** | A team web application connecting a frontend, backend services, and a database. |
+| **[HirePath · ft_transcendence](https://github.com/aminekell/42-ft-transcendence)** | A team recruitment platform with React, NestJS, and Spring Boot. I worked on company profiles, onboarding, and dashboard integrations. |
 | **[Inception](https://github.com/aminekell/Inception)** | Docker Compose, NGINX, WordPress, and MariaDB. HTTPS, service networking, and persistent storage. |
-| **minishell** | A shell built around parsing, processes, pipes, and redirections. |
-| **cub3d** | A first-person view built from a 2D map using raycasting. |
+| **[Minishell](https://github.com/aminekell/42-minishell)** | A shell built around parsing, processes, pipes, and redirections. |
+| **[cub3D](https://github.com/aminekell/42-cub3d)** | A first-person view built from a 2D map using raycasting. |
+| **[ft_irc](https://github.com/aminekell/42-ft-irc)** | A C++98 IRC server with nonblocking sockets, channels, and message routing. |
+| **[Philosophers](https://github.com/aminekell/42-philosophers)** | A C simulation exploring concurrency with POSIX threads, mutexes, and semaphores. |
 
 ### 02 / My workbench
 
@@ -40,7 +42,19 @@ My current focus is **Java, Spring Boot, and backend development**, grounded in 
 
 ### 03 / Foundations
 
-The 1337 curriculum took me through memory, concurrency, networking, and graphics. **NetPractice**, **ft_irc**, **Philosophers**, and the **C++ modules** are part of that path.
+The 1337 curriculum took me through memory, concurrency, networking, and graphics. Explore the source and build instructions for each published project.
+
+<details>
+<summary><strong>Browse all 21 published 42 projects</strong></summary>
+
+| Area | Repositories |
+| --- | --- |
+| Applications and infrastructure | [HirePath](https://github.com/aminekell/42-ft-transcendence) |
+| Systems and C libraries | [Minishell](https://github.com/aminekell/42-minishell) · [Philosophers](https://github.com/aminekell/42-philosophers) · [Minitalk](https://github.com/aminekell/42-minitalk) · [Libft](https://github.com/aminekell/42-libft) · [ft_printf](https://github.com/aminekell/42-ft-printf) · [get_next_line](https://github.com/aminekell/42-get-next-line) |
+| Networking and graphics | [ft_irc](https://github.com/aminekell/42-ft-irc) · [NetPractice](https://github.com/aminekell/42-netpractice) · [cub3D](https://github.com/aminekell/42-cub3d) · [fract-ol](https://github.com/aminekell/42-fractol) |
+| C++98 modules | [C++ 00 · Fundamentals](https://github.com/aminekell/42-cpp00) · [C++ 01 · Memory and references](https://github.com/aminekell/42-cpp01) · [C++ 02 · Fixed point](https://github.com/aminekell/42-cpp02) · [C++ 03 · Inheritance](https://github.com/aminekell/42-cpp03) · [C++ 04 · Polymorphism](https://github.com/aminekell/42-cpp04) · [C++ 05 · Exceptions](https://github.com/aminekell/42-cpp05) · [C++ 06 · Casts](https://github.com/aminekell/42-cpp06) · [C++ 07 · Templates](https://github.com/aminekell/42-cpp07) · [C++ 08 · Containers](https://github.com/aminekell/42-cpp08) · [C++ 09 · STL algorithms](https://github.com/aminekell/42-cpp09) |
+
+</details>
 
 <details>
 <summary><strong>Open my full course record</strong> — projects, C++ modules, and exams</summary>

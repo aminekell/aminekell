@@ -138,6 +138,7 @@ function selectReality(id,scroll=false,push=true,project=null) {
 }
 document.querySelectorAll('.reality-nav [data-reality]').forEach(b=>b.addEventListener('click',()=>selectReality(b.dataset.reality)));
 document.querySelectorAll('[data-open-reality]').forEach(b=>b.addEventListener('click',()=>selectReality(b.dataset.openReality,true,true,b.dataset.project)));
+document.querySelector('a[href="#project-index"]').addEventListener('click',()=>{$('project-index').open=true;});
 document.querySelector('.reality-nav').addEventListener('keydown',e=>{
  if(!['ArrowDown','ArrowUp','ArrowRight','ArrowLeft','Home','End'].includes(e.key))return;
  e.preventDefault();const buttons=[...document.querySelectorAll('.reality-nav button')],i=buttons.indexOf(e.target);
@@ -271,9 +272,17 @@ function updateModel() {
  for(const stage of labModel.stages||[]) {
   const li=document.createElement('li'),b=document.createElement('b');b.textContent=stage.label;li.append(b,document.createTextNode(stage.detail));$('trace-list').append(li);
  }
- const hasSource=state.reality==='architecture'&&state.project==='inception'||state.reality==='interface';
- $('lab-source').hidden=!hasSource;
- $('lab-source').href=state.reality==='architecture'?'https://github.com/aminekell/Inception/blob/main/srcs/docker-compose.yml':'https://github.com/aminekell/aminekell/tree/main/portfolio';
+ const sources={
+  computation:['aminekell/tree/main/portfolio','Experiment source'],
+  network:state.networkVariant==='irc'?['42-ft-irc','ft_irc repository']:['42-netpractice','NetPractice repository'],
+  process:state.processVariant==='philosophers'?['42-philosophers','Philosophers repository']:['42-minishell','Minishell repository'],
+  architecture:state.project==='inception'?['Inception/blob/main/srcs/docker-compose.yml','Inception Compose file']:['42-ft-transcendence','HirePath repository'],
+  geometry:['42-cub3d','cub3D repository'],
+  interface:['aminekell/tree/main/portfolio','Portfolio source']
+ };
+ const [path,label]=sources[state.reality];
+ $('lab-source').href='https://github.com/aminekell/'+path;
+ $('lab-source').textContent=label+' ↗';
  renderTime();ensureLabRenderer();inspectState();
 }
 function renderTime() {
