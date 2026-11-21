@@ -4,6 +4,18 @@ const TAU = Math.PI * 2;
 const IDS = ['computation','network','process','architecture','geometry','interface'];
 const LABELS = ['Information','Networks','Processes','Architecture','Geometry','Interface'];
 const ORANGE = '#d74219';
+const YAW = -.24, PITCH = .83;
+const COS_YAW = Math.cos(YAW), SIN_YAW = Math.sin(YAW);
+const COS_PITCH = Math.cos(PITCH), SIN_PITCH = Math.sin(PITCH);
+
+function perspectivePoint([x, y, z]) {
+  const rotatedX = x * COS_YAW - y * SIN_YAW;
+  const rotatedY = x * SIN_YAW + y * COS_YAW;
+  const height = rotatedY * COS_PITCH - z * SIN_PITCH;
+  const depth = rotatedY * SIN_PITCH + z * COS_PITCH;
+  const perspective = 7 / (7 + depth);
+  return [rotatedX * perspective, height * perspective, depth];
+}
 
 export function surfacePoint(u, v) {
   const radius = 1.72 + .52 * Math.cos(3 * u) + v * .64 * Math.cos(1.5 * u);
@@ -17,10 +29,6 @@ export class Instrument {
     this.onStats = onStats;
     this.active = 0;
     this.fold = 0;
-    this.cosYaw = Math.cos(-.24);
-    this.sinYaw = Math.sin(-.24);
-    this.cosPitch = Math.cos(.83);
-    this.sinPitch = Math.sin(.83);
     this.raf = 0;
     this.visible = true;
     this.width = 0;
@@ -36,10 +44,19 @@ export class Instrument {
       b.append(dot,label); b.addEventListener('click',()=>onSelect(id));
       landmarks.append(b); return b;
     });
-    // Build once. Rotations and projection use these immutable coordinates.
+    // Project the fixed viewpoint once and measure it before fitting the canvas.
+    this.bounds = {left: Infinity, right: -Infinity, top: Infinity, bottom: -Infinity};
+    const bounds = this.bounds;
     for(let vIndex=0; vIndex<65; vIndex++) {
       const v = vIndex/64*2-1, points=[];
-      for(let i=0;i<=180;i++) points.push(surfacePoint(i/180*TAU,v));
+      for(let index=0;index<=180;index++) {
+        const point = perspectivePoint(surfacePoint(index/180*TAU,v));
+        bounds.left = Math.min(bounds.left, point[0]);
+        bounds.right = Math.max(bounds.right, point[0]);
+        bounds.top = Math.min(bounds.top, point[1]);
+        bounds.bottom = Math.max(bounds.bottom, point[1]);
+        points.push(point);
+      }
       this.geometry.push({points,v});
     }
     this.resizeObserver = new ResizeObserver(()=>this.invalidate());
@@ -66,22 +83,25 @@ export class Instrument {
   setInspecting(inspecting) {this.inspecting=inspecting;this.invalidate();}
   invalidate() { if(!this.raf && this.visible && !document.hidden && this.ctx)this.raf=requestAnimationFrame(()=>this.draw()); }
   stop() { cancelAnimationFrame(this.raf); this.raf=0; }
-  project(p, index=0, v=0) {
-    const mobile=this.width<650;
-    const cx=this.width*(mobile?.50:.65), cy=this.height*(mobile?.71:.52);
-    const scale=mobile?this.width*.17:Math.min(this.width*.14,this.height*.27);
-    const x=p[0]*this.cosYaw-p[1]*this.sinYaw;
-    const z=p[0]*this.sinYaw+p[1]*this.cosYaw;
-    const y=z*this.cosPitch-p[2]*this.sinPitch;
-    const depth=z*this.sinPitch+p[2]*this.cosPitch;
-    const perspective=7/(7+depth);
-    const px=cx+x*scale*perspective;
-    const py=cy+y*scale*perspective;
-    // The continuous u parameter becomes diagram position; v becomes lane width.
-    const u=index/180;
-    const diagramX=mobile?this.width*.17+(u%(.5))/.5*this.width*.66:this.width*.42+u*this.width*.47;
-    const diagramY=mobile?this.height*.65+(u<.5?0:75)+v*9:this.height*.51+Math.sin(u*TAU)*48+v*11;
-    return [px+(diagramX-px)*this.fold,py+(diagramY-py)*this.fold,depth];
+  fitDrawing() {
+    this.compact = matchMedia('(max-width: 760px)').matches;
+    const {left, right, top, bottom} = this.bounds;
+    const start = this.compact ? this.width * .07 : this.width * .34;
+    const end = this.width * .96;
+    const availableHeight = this.height * .88;
+    this.scale = Math.min((end - start) / (right - left), availableHeight / (bottom - top));
+    this.centerX = (start + end) / 2 - (left + right) * this.scale / 2;
+    this.centerY = this.height * .50 - (top + bottom) * this.scale / 2;
+  }
+  project(point, index=0, v=0) {
+    const [x, y, depth] = point;
+    if(!this.fold)return [this.centerX + x * this.scale, this.centerY + y * this.scale, depth];
+
+    const u = index / 180;
+    const start = this.compact ? .08 : .39;
+    const span = this.compact ? .84 : .49;
+    const diagramY = this.height * .51 + Math.sin(u * TAU) * Math.min(48, this.height * .2) + v * 11;
+    return [this.width * (start + u * span), diagramY, depth];
   }
   draw() {
     this.raf=0;
@@ -94,7 +114,8 @@ export class Instrument {
       this.canvas.width=Math.round(rect.width*dpr);this.canvas.height=Math.round(rect.height*dpr);
     }
     const ctx=this.ctx;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,this.width,this.height);
-    const detail=this.width<650?2:1;
+    this.fitDrawing();
+    const detail=this.compact?2:1;
     ctx.lineWidth=.64;
     for(let j=0;j<this.geometry.length;j+=detail) {
       const curve=this.geometry[j];
@@ -125,11 +146,11 @@ export class Instrument {
       j===0?ctx.moveTo(point[0],point[1]):ctx.lineTo(point[0],point[1]);
     }
     ctx.strokeStyle=ORANGE;ctx.lineWidth=1.6;ctx.stroke();
-    this.markers.forEach((marker,index)=>{
+    if(!this.compact)this.markers.forEach((marker,index)=>{
       const i=Math.round((index+.4)/6*180);
       const p=this.project(this.geometry[index%2?64:0].points[i],i,index%2?1:-1);
       marker.style.left=`${Math.min(this.width-90,Math.max(15,p[0]))}px`;
-      marker.style.top=`${Math.min(this.height-65,Math.max(this.width<650?360:50,p[1]))}px`;
+      marker.style.top=`${Math.min(this.height-65,Math.max(30,p[1]))}px`;
     });
     if(this.inspecting) {
       ctx.lineWidth=.7;ctx.strokeStyle='rgba(215,66,25,.35)';
@@ -138,7 +159,7 @@ export class Instrument {
         ctx.strokeRect(p[0]-2,p[1]-2,4,4);
       }
       ctx.font='9px monospace';ctx.fillStyle=ORANGE;
-      ctx.fillText('r(u,v) → R(yaw,pitch) → perspective → path',this.width<650?10:this.width*.42,this.height-76);
+      ctx.fillText('r(u,v) → R(yaw,pitch) → perspective → path',this.compact?8:this.width*.42,this.height-(this.compact?14:76));
     }
     this.onStats?.({paths:Math.ceil(65/detail)+30,samples:181,drawCpuMs:Number((performance.now()-started).toFixed(2)),dpr,fold:Number(this.fold.toFixed(3))});
   }

@@ -4,27 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#efeee8">
-  <meta name="description" content="Amine Kella's computational fieldwork. An interactive instrument for exploring processes, networks, infrastructure, and the mathematics behind the pixels.">
+  <meta name="description" content="Amine Kella's computational fieldwork. Selected backend and systems projects by Amine Kella, a software engineering student at 1337 Khouribga.">
   <meta property="og:title" content="Project Ø — Amine Kella">
   <meta property="og:description" content="Nothing exists in isolation. Explore the hidden mechanics of software.">
   <meta property="og:type" content="website">
   <title>Project Ø — The Causal Instrument · Amine Kella</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23efeee8'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23222722' stroke-width='3'/%3E%3Cpath d='m16 52 32-40' stroke='%23d74219' stroke-width='5'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="project.css">
-  <script type="module" src="project.js"></script>
+  <link rel="stylesheet" href="fieldwork.css">
+  <script type="module" src="fieldwork.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#engineer">Skip to portfolio</a>
   <header class="masthead">
     <a class="identity" href="#instrument" aria-label="Project Ø, return to the top"><span class="identity-symbol">Ø</span><span>PROJECT Ø<small>AMINE KELLA / COMPUTATIONAL FIELDWORK</small></span></a>
-    <div class="masthead-note">AN EXPERIMENT IN<br>MAKING SYSTEMS VISIBLE</div>
+    <div class="masthead-note">BACKEND &amp; SYSTEMS<br>1337 KHOURIBGA</div>
     <nav class="mode-switch" aria-label="Experience mode"><a href="#instrument" id="explorer-link" aria-current="page">Explorer <span>↗</span></a><a href="#engineer" id="engineer-link">Engineer <span>↗</span></a></nav>
   </header>
   <main>
     <section class="instrument" id="instrument" aria-labelledby="instrument-title">
       <div class="instrument-topline mono"><span><i class="live-dot"></i> FIELD 001 / THE CAUSAL INSTRUMENT</span><span id="renderer-status">STATIC FIELD MAP</span></div>
       <div class="field" id="field">
-        <div class="field-copy"><p class="eyebrow">EVERY SYSTEM BEGINS WITH A SIGNAL.</p><h1 id="instrument-title">Nothing exists<br>in <em>isolation.</em></h1><p class="field-lede">A small input. A chain of consequences.<br>Explore the hidden mechanics of software.</p><a class="signal-button" href="#laboratory"><span class="signal-glyph" aria-hidden="true">↗</span><span>Explore the systems</span></a></div>
+        <div class="field-copy">
+          <p class="eyebrow">AMINE KELLA · SOFTWARE ENGINEERING STUDENT</p>
+          <h1 id="instrument-title">Nothing exists<br>in <em>isolation.</em></h1>
+          <p class="field-lede">I’m Amine, a software engineering student at 1337 Khouribga. I build backend services and write C and C++ to understand how Linux systems work.</p>
+          <div class="field-actions">
+            <a class="signal-button" href="#project-records">View my projects <span aria-hidden="true">↗</span></a>
+            <a class="field-secondary" href="#laboratory">Try an experiment <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
         <canvas id="world" aria-hidden="true"></canvas>
         <img src="fallback-map.svg" id="world-fallback" alt="A connected map of six software engineering systems" hidden>
         <div class="landmarks" id="landmarks" role="group" aria-label="Enter a technical reality" hidden></div>
@@ -62,20 +70,40 @@
     </section>
     <section class="engineer" id="engineer" aria-labelledby="engineer-heading">
       <div class="section-kicker mono"><span>02 — THE ENGINEERING RECORD</span><a href="#instrument">RETURN TO THE INSTRUMENT ↑</a></div>
-      <div class="engineer-intro"><div><p class="eyebrow">THE PERSON BEHIND THE SYSTEMS</p><h2 id="engineer-heading">Amine Kella<span>.</span></h2><p class="engineer-role">Software engineering student.<br>Systems curious. Backend focused.</p></div><div class="engineer-about"><p>I’m drawn to the hidden mechanics of software: network boundaries, service relationships, and the assumptions behind a reliable system.</p><p>My learning path includes the <b>1337 coding-school curriculum</b> and <b>ALX Software Engineering</b>. This instrument turns that learning into experiments you can investigate.</p><div class="contact-links"><a href="https://github.com/aminekell" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/amine-kella-99914b280/" target="_blank" rel="noreferrer">LinkedIn / Contact ↗</a><button type="button" id="print-record">Print engineering record ↗</button></div><p class="record-note">Printable portfolio record. A verified CV file has not been supplied.</p></div></div>
+      <div class="engineer-intro"><div><p class="eyebrow">THE PERSON BEHIND THE SYSTEMS</p><h2 id="engineer-heading">Amine Kella<span>.</span></h2><p class="engineer-role">Software engineering student.<br>Systems curious. Backend focused.</p></div><div class="engineer-about"><p>I’m drawn to the hidden mechanics of software: network boundaries, service relationships, and the assumptions behind a reliable system.</p><p>My learning path includes the <b>1337 coding-school curriculum</b> and <b>ALX Software Engineering</b>. This instrument turns that learning into experiments you can investigate.</p><div class="contact-links"><a href="https://github.com/aminekell" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/amine-kella-99914b280/" target="_blank" rel="noreferrer">LinkedIn / Contact ↗</a><button type="button" id="print-record">Print engineering record ↗</button></div><p class="record-note">Printable portfolio record. Use your browser’s print dialog to save a PDF.</p></div></div>
       <div class="toolkit"><div><span class="eyebrow">SYSTEMS</span><p>C · C++ · Linux</p></div><div><span class="eyebrow">BACKEND</span><p>Java · Spring Boot<br>REST APIs · PostgreSQL</p></div><div><span class="eyebrow">INTERFACE</span><p>JavaScript · TypeScript<br>React · HTML · CSS</p></div><div><span class="eyebrow">DELIVERY</span><p>Docker · NGINX · Git</p></div></div>
       <p class="skills-note">A workbench in progress, reflecting coursework and learning rather than equal depth in every tool.</p>
-      <div class="projects-heading"><h3>Selected fieldwork</h3><span class="mono">REAL PROJECTS. VISIBLE PRINCIPLES.</span></div>
-      <div class="project-records" id="project-records">
-        <article><span class="mono">01 / CONTAINER INFRASTRUCTURE</span><h3>Inception</h3><p>Docker Compose connects NGINX, WordPress with PHP-FPM, and MariaDB. Bridge networking separates services; bind-backed volumes preserve site and database data.</p><div><button data-open-reality="architecture" data-project="inception">Run the experiment ↗</button><a href="https://github.com/aminekell/Inception" target="_blank" rel="noreferrer">Repository ↗</a></div></article>
-        <article><span class="mono">02 / TEAM APPLICATION</span><h3>HirePath / ft_transcendence</h3><p>A team recruitment platform built with React, NestJS, Spring Boot, and PostgreSQL. My work focused on company profiles, onboarding, and dashboard integrations. The experiment follows a simulated authenticated profile request.</p><div><button data-open-reality="architecture" data-project="transcendence">Trace a request ↗</button><a href="https://github.com/aminekell/42-ft-transcendence" target="_blank" rel="noreferrer">Repository ↗</a></div></article>
-        <article><span class="mono">03 / SYSTEMS PROGRAMMING</span><h3>minishell</h3><p>Parsing, processes, pipes, and redirections. A bounded browser model makes a pipeline’s intermediate output inspectable without executing host commands.</p><div><button data-open-reality="process" data-project="pipeline">Follow a stream ↗</button><a href="https://github.com/aminekell/42-minishell" target="_blank" rel="noreferrer">Repository ↗</a></div></article>
-        <article><span class="mono">04 / REAL-TIME GEOMETRY</span><h3>cub3d</h3><p>A 2D grid becomes a first-person view through raycasting. The experiment exposes the map, ray intersections, perpendicular distance, and projected wall columns.</p><div><button data-open-reality="geometry">Look behind the pixels ↗</button><a href="https://github.com/aminekell/42-cub3d" target="_blank" rel="noreferrer">Repository ↗</a></div></article>
-        <article><span class="mono">05 / NETWORKS &amp; COMMUNICATION</span><h3>NetPractice / ft_irc</h3><p>Addresses and routes determine reachability. A TCP chat server connects clients through channels. Investigate subnet boundaries and a bounded channel fan-out model.</p><div><button data-open-reality="network">Find a route ↗</button><span class="project-links"><a href="https://github.com/aminekell/42-netpractice" target="_blank" rel="noreferrer">NetPractice ↗</a><a href="https://github.com/aminekell/42-ft-irc" target="_blank" rel="noreferrer">ft_irc ↗</a></span></div></article>
-        <article><span class="mono">06 / CONCURRENCY &amp; FOUNDATIONS</span><h3>Philosophers / Libft / C++</h3><p>Shared resources and coordination; reusable C building blocks for memory, strings, and lists; ten C++ modules progressing through classes, templates, and containers.</p><div><button data-open-reality="process" data-project="philosophers">Explore contention ↗</button><span class="project-links"><a href="https://github.com/aminekell/42-philosophers" target="_blank" rel="noreferrer">Philosophers ↗</a><a href="https://github.com/aminekell/42-libft" target="_blank" rel="noreferrer">Libft ↗</a><a href="#project-index">C++ modules ↓</a></span></div></article>
+      <div class="projects-heading" id="project-records"><h3>Selected projects</h3><a href="#project-index">All 21 repositories ↓</a></div>
+      <div class="project-records">
+        <article class="featured-project">
+          <div class="featured-overview">
+            <span class="eyebrow">TEAM PROJECT · REACT, NESTJS, SPRING BOOT</span>
+            <h4>HirePath</h4>
+            <p>A recruitment platform for building professional profiles, finding jobs, and tracking applications.</p>
+          </div>
+          <div class="featured-contribution">
+            <h5>My contribution</h5>
+            <p>I built company onboarding and profile management, including the forms, backend validation, and image uploads. I also built a company dashboard that uses existing offer and application APIs to show recruitment activity.</p>
+            <div class="project-links">
+              <a href="https://github.com/aminekell/42-ft-transcendence#akella---developer">Contribution notes ↗</a>
+              <a href="https://github.com/aminekell/42-ft-transcendence">Repository ↗</a>
+              <button type="button" data-open-reality="architecture" data-project="transcendence">Trace a request ↗</button>
+            </div>
+          </div>
+        </article>
+        <article><span class="mono">CONTAINER INFRASTRUCTURE</span><h4>Inception</h4><p>Three containers run NGINX, WordPress with PHP-FPM, and MariaDB. NGINX terminates HTTPS, and bind-backed volumes keep the site and database data across restarts.</p><div><button data-open-reality="architecture" data-project="inception">Run the experiment ↗</button><a href="https://github.com/aminekell/Inception" target="_blank" rel="noreferrer">Repository ↗</a></div></article>
+        <article><span class="mono">SYSTEMS PROGRAMMING</span><h4>Minishell</h4><p>A C shell that handles quoting, environment variables, built-ins, pipelines, and redirection. The browser demo shows what passes between commands in a pipeline.</p><div><button data-open-reality="process" data-project="pipeline">Follow a stream ↗</button><a href="https://github.com/aminekell/42-minishell" target="_blank" rel="noreferrer">Repository ↗</a></div></article>
+        <article><span class="mono">REAL-TIME GEOMETRY</span><h4>cub3D</h4><p>A 2D grid becomes a first-person view through raycasting. The experiment exposes the map, ray intersections, perpendicular distance, and projected wall columns.</p><div><button data-open-reality="geometry">Look behind the pixels ↗</button><a href="https://github.com/aminekell/42-cub3d" target="_blank" rel="noreferrer">Repository ↗</a></div></article>
+        <article><span class="mono">NETWORKS &amp; COMMUNICATION</span><h4>NetPractice / ft_irc</h4><p>Addresses and routes determine reachability. A TCP chat server connects clients through channels. Investigate subnet boundaries and a bounded channel fan-out model.</p><div><button data-open-reality="network">Find a route ↗</button><span class="project-links"><a href="https://github.com/aminekell/42-netpractice" target="_blank" rel="noreferrer">NetPractice ↗</a><a href="https://github.com/aminekell/42-ft-irc" target="_blank" rel="noreferrer">ft_irc ↗</a></span></div></article>
+        <article><span class="mono">CONCURRENCY &amp; FOUNDATIONS</span><h4>Philosophers / Libft / C++</h4><p>Shared resources and coordination; reusable C building blocks for memory, strings, and lists; ten C++ modules progressing through classes, templates, and containers.</p><div><button data-open-reality="process" data-project="philosophers">Explore contention ↗</button><span class="project-links"><a href="https://github.com/aminekell/42-philosophers" target="_blank" rel="noreferrer">Philosophers ↗</a><a href="https://github.com/aminekell/42-libft" target="_blank" rel="noreferrer">Libft ↗</a><a href="#project-index">C++ modules ↓</a></span></div></article>
       </div>
       <details class="evidence-note project-index" id="project-index">
         <summary>Browse all 21 published 42 projects</summary>
+        <div class="index-filter" id="index-filter" hidden>
+          <label for="repository-search">Filter by project or technology</label>
+          <input id="repository-search" type="search" placeholder="Try C++, networking, or Docker" autocomplete="off">
+          <output id="repository-count" for="repository-search" aria-live="polite"></output>
+        </div>
         <div class="project-index-grid">
           <section><h4>Applications and infrastructure</h4><ul>
             <li><a href="https://github.com/aminekell/42-ft-transcendence" target="_blank" rel="noreferrer">HirePath ↗</a><span>A recruitment and professional networking platform built with React, NestJS, Spring Boot, and Docker Compose.</span></li>

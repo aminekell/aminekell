@@ -7,7 +7,7 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const source=resolve(root,'portfolio');
 const files=await readdir(source,{recursive:true,withFileTypes:true});
 const pages=['index.html','lab.html'];
-const entryFiles=['.gitkeep',...pages,'project.css','project.js','static-world.js','simulations.js','lab-renderer.js','fallback-map.svg'];
+const entryFiles=['.gitkeep',...pages,'fieldwork.css','fieldwork.js','field-map.js','simulations.js','lab-renderer.js','fallback-map.svg'];
 const filePaths=files.filter(f=>f.isFile()).map(f=>resolve(f.parentPath,f.name))
  .filter(file=>entryFiles.some(name=>file===resolve(source,name))||file.startsWith(resolve(source,'fonts')+'/'));
 for(const required of entryFiles) {
@@ -39,7 +39,7 @@ for(const page of pages) {
   await stat(resolve(source,ref));
  }
  if(page==='index.html') {
-  const app=await readFile(resolve(source,'project.js'),'utf8');
+  const app=await readFile(resolve(source,'fieldwork.js'),'utf8');
   for(const match of app.matchAll(/\$\('([^']+)'\)/g))if(!ids.includes(match[1]))throw new Error(`Missing DOM target ${match[1]}`);
  }
 }

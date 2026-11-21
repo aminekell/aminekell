@@ -1,5 +1,5 @@
 import { networkTrace, pipelineTrace, architectureTrace, philosophersState, castRay, generateAutomaton } from './simulations.js';
-import { Instrument } from './static-world.js';
+import { Instrument } from './field-map.js';
 
 const $ = id => document.getElementById(id);
 const realities = {
@@ -89,12 +89,18 @@ function setMode(engineer) {
 }
 function navigateHash() {
  const id=location.hash.slice(1);
- setMode(id==='engineer');
- if(realities[id])selectReality(id,false,false);
+ const target=document.getElementById(id);
+ setMode(Boolean(target && $('engineer').contains(target)));
+ if(id==='project-index')$('project-index').open=true;
+ if(realities[id])selectReality(id,true,false);
 }
 window.addEventListener('hashchange',navigateHash);
-window.addEventListener('popstate',navigateHash);
-$('engineer-link').addEventListener('click',()=>{setMode(true);});
+document.querySelectorAll('a[href="#engineer"], a[href="#project-records"], a[href="#project-index"]').forEach(link=>{
+ link.addEventListener('click',()=>{
+  setMode(true);
+  if(link.hash==='#project-index')$('project-index').open=true;
+ });
+});
 $('explorer-link').addEventListener('click',()=>{setMode(false);});
 document.querySelectorAll('[href="#instrument"]').forEach(link=>link.addEventListener('click',()=>setMode(false)));
 $('print-record').addEventListener('click',()=>window.print());
@@ -119,7 +125,7 @@ function selectReality(id,scroll=false,push=true,project=null) {
  $('discovery-count').textContent=`${String(visited.size).padStart(2,'0')} / 06 PERSPECTIVES VISITED`;
  if(visited.size===6){$('discovery-message').textContent='THE SYSTEMS CONNECT. THE INSTRUMENT IS ONE OF THEM.';$('convergence').hidden=false;}
  createControls();updateModel();
- if(push)history.pushState(null,'',`#${id}`);
+ if(push&&location.hash!==`#${id}`)history.pushState(null,'',`#${id}`);
  if(scroll){
   $('lab-heading').setAttribute('tabindex','-1');$('lab-heading').focus({preventScroll:true});
   $('laboratory').scrollIntoView({behavior:state.still?'instant':'smooth',block:'start'});
@@ -127,7 +133,28 @@ function selectReality(id,scroll=false,push=true,project=null) {
 }
 document.querySelectorAll('.reality-nav [data-reality]').forEach(b=>b.addEventListener('click',()=>selectReality(b.dataset.reality)));
 document.querySelectorAll('[data-open-reality]').forEach(b=>b.addEventListener('click',()=>selectReality(b.dataset.openReality,true,true,b.dataset.project)));
-document.querySelector('a[href="#project-index"]').addEventListener('click',()=>{$('project-index').open=true;});
+const repositoryGroups=[...$('project-index').querySelectorAll('.project-index-grid section')].map(group=>({
+ group,
+ items:[...group.querySelectorAll('li')].map(item=>({item,text:item.textContent.toLowerCase()}))
+}));
+function filterRepositories() {
+ const terms=$('repository-search').value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+ let matches=0;
+ for(const {group,items} of repositoryGroups) {
+  let groupMatches=0;
+  for(const {item,text} of items) {
+   const visible=terms.every(term=>text.includes(term));
+   item.hidden=!visible;
+   if(visible)groupMatches++;
+  }
+  group.hidden=groupMatches===0;
+  matches+=groupMatches;
+ }
+ $('repository-count').textContent=matches===0?'No matching projects':`${matches} ${matches===1?'project':'projects'}`;
+}
+$('repository-search').addEventListener('input',filterRepositories);
+$('index-filter').hidden=false;
+filterRepositories();
 document.querySelector('.reality-nav').addEventListener('keydown',e=>{
  if(!['ArrowDown','ArrowUp','ArrowRight','ArrowLeft','Home','End'].includes(e.key))return;
  e.preventDefault();const buttons=[...document.querySelectorAll('.reality-nav button')],i=buttons.indexOf(e.target);
