@@ -3,10 +3,143 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=./#laboratory">
-  <title>Project Ø — Experiments</title>
+  <meta name="theme-color" content="#efeee8">
+  <meta name="description" content="Amine Kella's computational fieldwork. Selected backend and systems projects by Amine Kella, a software engineering student at 1337 Khouribga.">
+  <meta property="og:title" content="Project Ø — Amine Kella">
+  <meta property="og:description" content="Nothing exists in isolation. Explore the hidden mechanics of software.">
+  <meta property="og:type" content="website">
+  <title>Project Ø — The Causal Instrument · Amine Kella</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23efeee8'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23222722' stroke-width='3'/%3E%3Cpath d='m16 52 32-40' stroke='%23d74219' stroke-width='5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="fieldwork.css">
+  <script type="module" src="fieldwork.js"></script>
 </head>
 <body>
-  <p><a href="./#laboratory">Go to the Project Ø experiments</a></p>
+  <a class="skip-link" href="#engineer">Skip to portfolio</a>
+  <header class="masthead">
+    <a class="identity" href="#instrument" aria-label="Project Ø, return to the top"><span class="identity-symbol">Ø</span><span>PROJECT Ø<small>AMINE KELLA / COMPUTATIONAL FIELDWORK</small></span></a>
+    <div class="masthead-note">BACKEND &amp; SYSTEMS<br>1337 KHOURIBGA</div>
+    <nav class="mode-switch" aria-label="Experience mode"><a href="#instrument" id="explorer-link" aria-current="page">Explorer <span>↗</span></a><a href="#engineer" id="engineer-link">Engineer <span>↗</span></a></nav>
+  </header>
+  <main>
+    <section class="instrument" id="instrument" aria-labelledby="instrument-title">
+      <div class="instrument-topline mono"><span><i class="live-dot"></i> FIELD 001 / THE CAUSAL INSTRUMENT</span><span id="renderer-status">STATIC FIELD MAP</span></div>
+      <div class="field" id="field">
+        <div class="field-copy">
+          <p class="eyebrow">AMINE KELLA · SOFTWARE ENGINEERING STUDENT</p>
+          <h1 id="instrument-title">Nothing exists<br>in <em>isolation.</em></h1>
+          <p class="field-lede">I’m Amine, a software engineering student at 1337 Khouribga. I build backend services and write C and C++ to understand how Linux systems work.</p>
+          <div class="field-actions">
+            <a class="signal-button" href="#project-records">View my projects <span aria-hidden="true">↗</span></a>
+            <a class="field-secondary" href="#laboratory">Try an experiment <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <canvas id="world" aria-hidden="true"></canvas>
+        <img src="fallback-map.svg" id="world-fallback" alt="A connected map of six software engineering systems" hidden>
+        <div class="landmarks" id="landmarks" role="group" aria-label="Enter a technical reality" hidden></div>
+        <div class="field-annotation mono" aria-hidden="true"><span class="annotation-cross">+</span><span>FIG. Ø.1<br>ONE SURFACE. SIX PERSPECTIVES.<br><b id="surface-label">INFORMATION → STRUCTURE</b></span></div>
+        <div class="field-scale mono" aria-hidden="true"><span>0</span><i></i><span>1</span><i></i><span>∞</span></div>
+        <div class="field-caption mono" id="field-hint">SELECT A LANDMARK TO OPEN AN EXPERIMENT</div>
+      </div>
+      <div class="instrument-toolbar"><span class="mono toolbar-label">CHANGE YOUR PERSPECTIVE</span><div class="tool-actions"><button id="fold" type="button" aria-pressed="false"><span aria-hidden="true">⌗</span> Fold to diagram</button><button id="xray" type="button" aria-pressed="false"><span aria-hidden="true">⊞</span> Reality inspector <kbd>X</kbd></button><button id="motion" type="button" aria-pressed="false"><span aria-hidden="true">Ⅱ</span> Stillness</button></div><span class="toolbar-end mono">EXPERIMENTAL PORTFOLIO / V.01</span></div>
+      <aside class="inspector" id="inspector" hidden aria-labelledby="inspector-heading"><div><p class="eyebrow">THE ILLUSION, EXPOSED</p><h2 id="inspector-heading">This is what you’re looking at.</h2><p>A projected mathematical ribbon, drawn with ordinary lines. The field map is drawn once and updates when you select a landmark or switch views.</p><a href="https://github.com/aminekell/aminekell/tree/main/portfolio" target="_blank" rel="noreferrer">Inspect the actual source ↗</a></div><pre id="inspector-state" aria-label="Current rendering state"></pre><ol><li><b>01 / STATE</b> A bounded, deterministic model</li><li><b>02 / GEOMETRY</b> Parametric ribbon → 3D coordinates</li><li><b>03 / PROJECTION</b> Rotation → perspective → 2D paths</li><li><b>04 / INTERFACE</b> Semantic HTML, independent of canvas</li></ol></aside>
+    </section>
+    <section class="laboratory" id="laboratory" aria-labelledby="lab-heading">
+      <div class="section-kicker mono"><span>01 — ENTER THE SYSTEM</span><span>ALL EXPERIMENTS RUN LOCALLY · NO LIVE INFRASTRUCTURE</span></div>
+      <div class="reality-layout">
+        <nav class="reality-nav" aria-label="Technical realities">
+          <button data-reality="computation" aria-pressed="true"><span>01</span><b>Information</b><small>The first principle</small><i>↗</i></button>
+          <button data-reality="network" aria-pressed="false"><span>02</span><b>Networks</b><small>NetPractice / ft_irc</small><i>↗</i></button>
+          <button data-reality="process" aria-pressed="false"><span>03</span><b>Processes</b><small>minishell / Philosophers</small><i>↗</i></button>
+          <button data-reality="architecture" aria-pressed="false"><span>04</span><b>Architecture</b><small>Inception / transcendence</small><i>↗</i></button>
+          <button data-reality="geometry" aria-pressed="false"><span>05</span><b>Geometry</b><small>cub3d / behind the pixels</small><i>↗</i></button>
+          <button data-reality="interface" aria-pressed="false"><span>06</span><b>The interface</b><small>The instrument itself</small><i>↗</i></button>
+        </nav>
+        <article class="experiment">
+          <div class="experiment-heading"><div><p class="eyebrow" id="lab-subtitle">REALITY I / THE BIRTH OF COMPUTATION</p><h2 id="lab-heading">One bit.<br>A world of consequence.</h2></div><span class="experiment-number" id="lab-number" aria-hidden="true">01</span></div>
+          <p class="experiment-description" id="lab-description">Every cell follows the same small rule. The emerging structure has no blueprint. Change the rule and discover a different computational world.</p>
+          <div id="lab-controls" class="lab-controls"></div>
+          <div class="simulation-wrap"><canvas id="simulation" aria-hidden="true"></canvas><div id="simulation-fallback" hidden>The visual layer is unavailable. All experiment results remain readable below.</div><div class="simulation-badge mono" id="simulation-badge">BOUNDED EDUCATIONAL MODEL</div></div>
+          <div class="time-controls"><button class="small-button" id="time-play" type="button" aria-label="Play simulation">Play ▷</button><button class="small-button" id="time-step" type="button" aria-label="Step simulation forward">Step +</button><label for="timeline" class="mono">TIME</label><input id="timeline" type="range" min="0" max="100" value="50" aria-label="Simulation time"><output id="time-value" for="timeline" class="mono">050</output><button class="small-button" id="time-reset" type="button" aria-label="Rewind simulation">↶ Reset</button></div>
+          <p class="result-line" id="lab-result" role="status"></p>
+          <details class="trace-details" open><summary>Read the computation <span>+</span></summary><ol id="trace-list"></ol></details>
+          <div class="lab-footer"><span id="lab-provenance">Concept model · connected to C foundations</span><a id="lab-source" href="https://github.com/aminekell/aminekell/tree/main/portfolio" target="_blank" rel="noreferrer">Experiment source ↗</a></div>
+        </article>
+      </div>
+      <div class="discovery-line mono"><span id="discovery-count">01 / 06 PERSPECTIVES VISITED</span><span id="discovery-message">DIFFERENT SYSTEMS. THE SAME QUESTION: WHAT HAPPENS NEXT?</span><button id="converge" type="button">See the connections ↗</button></div>
+      <div class="convergence" id="convergence" hidden><p class="eyebrow">THE FINAL CONVERGENCE</p><h2>The boundary changes.<br>The thinking connects.</h2><p>A bit becomes a process. A process speaks across a network. A service gives that conversation structure. Geometry makes it visible. This interface brings it back to you.</p><a href="#engineer">Meet the engineer behind the instrument ↘</a></div>
+    </section>
+    <section class="engineer" id="engineer" aria-labelledby="engineer-heading">
+      <div class="section-kicker mono"><span>02 — THE ENGINEERING RECORD</span><a href="#instrument">RETURN TO THE INSTRUMENT ↑</a></div>
+      <div class="engineer-intro"><div><p class="eyebrow">THE PERSON BEHIND THE SYSTEMS</p><h2 id="engineer-heading">Amine Kella<span>.</span></h2><p class="engineer-role">Software engineering student.<br>Systems curious. Backend focused.</p></div><div class="engineer-about"><p>I’m drawn to the hidden mechanics of software: network boundaries, service relationships, and the assumptions behind a reliable system.</p><p>My learning path includes the <b>1337 coding-school curriculum</b> and <b>ALX Software Engineering</b>. This instrument turns that learning into experiments you can investigate.</p><div class="contact-links"><a href="https://github.com/aminekell" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/amine-kella-99914b280/" target="_blank" rel="noreferrer">LinkedIn / Contact ↗</a><button type="button" id="print-record">Print engineering record ↗</button></div><p class="record-note">Printable portfolio record. Use your browser’s print dialog to save a PDF.</p></div></div>
+      <div class="toolkit"><div><span class="eyebrow">SYSTEMS</span><p>C · C++ · Linux</p></div><div><span class="eyebrow">BACKEND</span><p>Java · Spring Boot<br>REST APIs · PostgreSQL</p></div><div><span class="eyebrow">INTERFACE</span><p>JavaScript · TypeScript<br>React · HTML · CSS</p></div><div><span class="eyebrow">DELIVERY</span><p>Docker · NGINX · Git</p></div></div>
+      <p class="skills-note">A workbench in progress, reflecting coursework and learning rather than equal depth in every tool.</p>
+      <div class="projects-heading" id="project-records"><h3>Selected projects</h3><a href="#project-index">All 21 repositories ↓</a></div>
+      <div class="project-records">
+        <article class="featured-project">
+          <div class="featured-overview">
+            <span class="eyebrow">TEAM PROJECT · REACT, NESTJS, SPRING BOOT</span>
+            <h4>HirePath</h4>
+            <p>A recruitment platform for building professional profiles, finding jobs, and tracking applications.</p>
+          </div>
+          <div class="featured-contribution">
+            <h5>My contribution</h5>
+            <p>I built company onboarding and profile management, including the forms, backend validation, and image uploads. I also built a company dashboard that uses existing offer and application APIs to show recruitment activity.</p>
+            <div class="project-links">
+              <a href="https://github.com/aminekell/42-ft-transcendence#akella---developer">Contribution notes ↗</a>
+              <a href="https://github.com/aminekell/42-ft-transcendence">Repository ↗</a>
+              <button type="button" data-open-reality="architecture" data-project="transcendence">Trace a request ↗</button>
+            </div>
+          </div>
+        </article>
+        <article><span class="mono">CONTAINER INFRASTRUCTURE</span><h4>Inception</h4><p>Three containers run NGINX, WordPress with PHP-FPM, and MariaDB. NGINX terminates HTTPS, and bind-backed volumes keep the site and database data across restarts.</p><div><button data-open-reality="architecture" data-project="inception">Run the experiment ↗</button><a href="https://github.com/aminekell/Inception" target="_blank" rel="noreferrer">Repository ↗</a></div></article>
+        <article><span class="mono">SYSTEMS PROGRAMMING</span><h4>Minishell</h4><p>A C shell that handles quoting, environment variables, built-ins, pipelines, and redirection. The browser demo shows what passes between commands in a pipeline.</p><div><button data-open-reality="process" data-project="pipeline">Follow a stream ↗</button><a href="https://github.com/aminekell/42-minishell" target="_blank" rel="noreferrer">Repository ↗</a></div></article>
+        <article><span class="mono">REAL-TIME GEOMETRY</span><h4>cub3D</h4><p>A 2D grid becomes a first-person view through raycasting. The experiment exposes the map, ray intersections, perpendicular distance, and projected wall columns.</p><div><button data-open-reality="geometry">Look behind the pixels ↗</button><a href="https://github.com/aminekell/42-cub3d" target="_blank" rel="noreferrer">Repository ↗</a></div></article>
+        <article><span class="mono">NETWORKS &amp; COMMUNICATION</span><h4>NetPractice / ft_irc</h4><p>Addresses and routes determine reachability. A TCP chat server connects clients through channels. Investigate subnet boundaries and a bounded channel fan-out model.</p><div><button data-open-reality="network">Find a route ↗</button><span class="project-links"><a href="https://github.com/aminekell/42-netpractice" target="_blank" rel="noreferrer">NetPractice ↗</a><a href="https://github.com/aminekell/42-ft-irc" target="_blank" rel="noreferrer">ft_irc ↗</a></span></div></article>
+        <article><span class="mono">CONCURRENCY &amp; FOUNDATIONS</span><h4>Philosophers / Libft / C++</h4><p>Shared resources and coordination; reusable C building blocks for memory, strings, and lists; ten C++ modules progressing through classes, templates, and containers.</p><div><button data-open-reality="process" data-project="philosophers">Explore contention ↗</button><span class="project-links"><a href="https://github.com/aminekell/42-philosophers" target="_blank" rel="noreferrer">Philosophers ↗</a><a href="https://github.com/aminekell/42-libft" target="_blank" rel="noreferrer">Libft ↗</a><a href="#project-index">C++ modules ↓</a></span></div></article>
+      </div>
+      <details class="evidence-note project-index" id="project-index">
+        <summary>Browse all 21 published 42 projects</summary>
+        <div class="index-filter" id="index-filter" hidden>
+          <label for="repository-search">Filter by project or technology</label>
+          <input id="repository-search" type="search" placeholder="Try C++, networking, or Docker" autocomplete="off">
+          <output id="repository-count" for="repository-search" aria-live="polite"></output>
+        </div>
+        <div class="project-index-grid">
+          <section><h4>Applications and infrastructure</h4><ul>
+            <li><a href="https://github.com/aminekell/42-ft-transcendence" target="_blank" rel="noreferrer">HirePath ↗</a><span>A recruitment and professional networking platform built with React, NestJS, Spring Boot, and Docker Compose.</span></li>
+          </ul></section>
+          <section><h4>Systems and C libraries</h4><ul>
+            <li><a href="https://github.com/aminekell/42-minishell" target="_blank" rel="noreferrer">Minishell ↗</a><span>A Unix shell in C with command parsing, environment expansion, pipelines, redirections, and built-ins.</span></li>
+            <li><a href="https://github.com/aminekell/42-philosophers" target="_blank" rel="noreferrer">Philosophers ↗</a><span>A C version of the dining philosophers problem using POSIX threads, mutexes, and a process-based bonus.</span></li>
+            <li><a href="https://github.com/aminekell/42-minitalk" target="_blank" rel="noreferrer">Minitalk ↗</a><span>A C client and server that transmit messages one bit at a time using POSIX signals.</span></li>
+            <li><a href="https://github.com/aminekell/42-libft" target="_blank" rel="noreferrer">Libft ↗</a><span>A C static library of string, memory, conversion, file-descriptor, and linked-list utilities.</span></li>
+            <li><a href="https://github.com/aminekell/42-ft-printf" target="_blank" rel="noreferrer">ft_printf ↗</a><span>A C implementation of a subset of printf using variadic arguments and a static library.</span></li>
+            <li><a href="https://github.com/aminekell/42-get-next-line" target="_blank" rel="noreferrer">get_next_line ↗</a><span>A buffered C function that reads one line at a time from a file descriptor, with a multi-descriptor bonus.</span></li>
+          </ul></section>
+          <section><h4>Networking and graphics</h4><ul>
+            <li><a href="https://github.com/aminekell/42-ft-irc" target="_blank" rel="noreferrer">ft_irc ↗</a><span>A C++98 IRC server with nonblocking sockets, client registration, messaging, and channel moderation.</span></li>
+            <li><a href="https://github.com/aminekell/42-netpractice" target="_blank" rel="noreferrer">NetPractice ↗</a><span>Ten 42 NetPractice configurations covering IPv4 addressing, subnet masks, gateways, and static routes.</span></li>
+            <li><a href="https://github.com/aminekell/42-cub3d" target="_blank" rel="noreferrer">cub3D ↗</a><span>A C and MiniLibX raycasting engine with textured walls, map validation, and a bonus minimap.</span></li>
+            <li><a href="https://github.com/aminekell/42-fractol" target="_blank" rel="noreferrer">fract-ol ↗</a><span>An interactive MiniLibX viewer for Mandelbrot, Julia, and Tricorn fractals in C.</span></li>
+          </ul></section>
+          <section><h4>C++98 modules</h4><ul>
+            <li><a href="https://github.com/aminekell/42-cpp00" target="_blank" rel="noreferrer">C++ 00 · Fundamentals ↗</a><span>C++98 exercises in console I/O, basic classes, and encapsulation.</span></li>
+            <li><a href="https://github.com/aminekell/42-cpp01" target="_blank" rel="noreferrer">C++ 01 · Memory and references ↗</a><span>C++98 exercises on object lifetime, pointers, references, file streams, and member-function pointers.</span></li>
+            <li><a href="https://github.com/aminekell/42-cpp02" target="_blank" rel="noreferrer">C++ 02 · Fixed point ↗</a><span>A C++98 fixed-point type that progresses from copy semantics to arithmetic and comparison operators.</span></li>
+            <li><a href="https://github.com/aminekell/42-cpp03" target="_blank" rel="noreferrer">C++ 03 · Inheritance ↗</a><span>A family of C++98 combat classes that illustrates inheritance, constructors, and specialized behavior.</span></li>
+            <li><a href="https://github.com/aminekell/42-cpp04" target="_blank" rel="noreferrer">C++ 04 · Polymorphism ↗</a><span>C++98 exercises in virtual dispatch, deep copying, abstract classes, and interface-based design.</span></li>
+            <li><a href="https://github.com/aminekell/42-cpp05" target="_blank" rel="noreferrer">C++ 05 · Exceptions ↗</a><span>A C++98 form workflow that uses exceptions to enforce grade, signing, and execution rules.</span></li>
+            <li><a href="https://github.com/aminekell/42-cpp06" target="_blank" rel="noreferrer">C++ 06 · Casts ↗</a><span>C++98 examples of scalar conversion, pointer serialization, and run-time type identification.</span></li>
+            <li><a href="https://github.com/aminekell/42-cpp07" target="_blank" rel="noreferrer">C++ 07 · Templates ↗</a><span>Type-generic C++98 functions and a checked array template with value semantics.</span></li>
+            <li><a href="https://github.com/aminekell/42-cpp08" target="_blank" rel="noreferrer">C++ 08 · Containers ↗</a><span>C++98 exercises using standard containers, iterators, searching, and stack adaptation.</span></li>
+            <li><a href="https://github.com/aminekell/42-cpp09" target="_blank" rel="noreferrer">C++ 09 · STL algorithms ↗</a><span>Three C++98 programs for historical price lookup, postfix evaluation, and merge-insertion sorting.</span></li>
+          </ul></section>
+        </div>
+      </details>
+      <details class="evidence-note"><summary>About the simulations</summary><p>The experiments are browser-based educational models of the linked projects. They use local inputs and synthetic data to illustrate the behavior of networks, processes, services, and raycasting.</p><a href="https://github.com/aminekell/aminekell" target="_blank" rel="noreferrer">Portfolio repository and evidence notes ↗</a></details>
+    </section>
+  </main>
+  <footer><a class="footer-mark" href="#instrument">Ø</a><p>Understanding is a form of making.</p><span class="mono">AMINE KELLA<br>PROJECT Ø / 2026</span><a href="https://www.linkedin.com/in/amine-kella-99914b280/" target="_blank" rel="noreferrer">Start a conversation ↗</a></footer>
+  <noscript><div class="noscript-note">Interactive experiments need JavaScript. <a href="#engineer">Read the complete engineering record →</a></div></noscript>
 </body>
 </html>

@@ -38,7 +38,7 @@ for(const page of pages) {
   if(ref.startsWith('/'))throw new Error(`Root-relative asset breaks project Pages: ${ref}`);
   await stat(resolve(source,ref));
  }
- if(page==='index.html') {
+ if(page==='lab.html') {
   const app=await readFile(resolve(source,'fieldwork.js'),'utf8');
   for(const match of app.matchAll(/\$\('([^']+)'\)/g))if(!ids.includes(match[1]))throw new Error(`Missing DOM target ${match[1]}`);
  }
