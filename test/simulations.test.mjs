@@ -39,6 +39,11 @@ test("safe pipeline preserves literal data, ASCII translation and UTF-8 byte cou
   assert.equal(pipelineTrace("echo café | tr a-z A-Z").output, "CAFé\n");
   assert.equal(pipelineTrace("echo café | wc -c").output, "6\n");
   assert.equal(pipelineTrace('echo "a|b" | wc -c').output, "4\n");
+  assert.deepEqual(
+    pipelineTrace("echo 'a|b' | tr a-z A-Z").stages.filter(stage => stage.output).map(stage => stage.output),
+    ["a|b\n", "A|B\n"],
+    "stage previews preserve a quoted pipe as literal data"
+  );
   assert.equal(pipelineTrace("echo '' | wc -c").output, "1\n");
   assert.equal(pipelineTrace("echo").output, "\n");
   assert.equal(parsePipeline("echo hi | tr a-z A-Z").commands.length, 2);

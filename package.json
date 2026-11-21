@@ -1,9 +1,9 @@
 {
-  "name": "project-zero-causal-instrument",
+  "name": "amine-kella-in-between",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Buildless computational portfolio for Amine Kella",
+  "description": "In Between — an interactive editorial portfolio for Amine Kella",
   "scripts": {
     "dev": "python3 -m http.server 4173 --bind 127.0.0.1 --directory portfolio",
     "test": "node --test test/*.test.mjs",

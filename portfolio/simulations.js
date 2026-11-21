@@ -119,7 +119,7 @@ export function pipelineTrace(command = "echo hello | tr a-z A-Z | wc -c") {
     if (name === "echo") output = `${args.join(" ")}\n`;
     if (name === "tr") output = output.replace(/[a-z]/g, char => char.toUpperCase());
     if (name === "wc") output = `${new TextEncoder().encode(output).length}\n`;
-    stages.push({ label: name.toUpperCase(), detail: name === "wc" ? `Counts UTF-8 bytes, including echo's trailing newline. Output: ${output.trim()}.` : `stdout contains ${JSON.stringify(output)}.` });
+    stages.push({ label: name.toUpperCase(), output, detail: name === "wc" ? `Counts UTF-8 bytes, including echo's trailing newline. Output: ${output.trim()}.` : `stdout contains ${JSON.stringify(output)}.` });
     if (index < parsed.commands.length - 1) stages.push({ label: "PIPE", detail: `Stage ${index + 1} stdout (fd 1) connects to stage ${index + 2} stdin (fd 0). Each command is a separate simulated process.` });
   }
   stages.push({ label: "STDOUT", detail: `The last process writes ${JSON.stringify(output)} to the terminal.` });
