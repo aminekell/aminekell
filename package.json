@@ -1,9 +1,9 @@
 {
-  "name": "amine-kella-in-between",
+  "name": "amine-kella-portfolio",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "In Between — an interactive editorial portfolio for Amine Kella",
+  "description": "Amine Kella — an interactive personal portfolio",
   "scripts": {
     "dev": "python3 -m http.server 4173 --bind 127.0.0.1 --directory portfolio",
     "test": "node --test test/*.test.mjs",

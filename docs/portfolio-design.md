@@ -1,12 +1,12 @@
-# In Between — Amine Kella
+# Amine Kella — portfolio design
 
-A new portfolio direction, implemented on 21 November 2026.
+A personal portfolio direction, implemented on 21 November 2026. The user requested their name as the visual identity.
 
 ## The premise
 
 The part Amine is interested in is often invisible: between a command and a process, a grid and a view, a request and its database. The portfolio follows those intervals as a readable typographic essay.
 
-The oversized title gives that idea a visual identity. Project navigation is a set of concrete questions. Each project has a different composition based on its subject: a sentence split by a pipe, two interpretations of a map, offset service layers, and a question answered by a system.
+The visual identity is Amine Kella’s own name: an oversized sans-serif first name balanced against a contrasting italic surname. The page title, social metadata, footer, and AK favicon use that same personal identity. Project navigation is a set of concrete questions. Each project has a different composition based on its subject: a sentence split by a pipe, two interpretations of a map, offset service layers, and a question answered by a system.
 
 The old scientific instrument, projected ribbon, six interchangeable experiment tabs, and project-card layout are replaced. There is no entrance gate, automatic animation loop, sound, custom cursor, drag-only navigation, or scroll interception.
 

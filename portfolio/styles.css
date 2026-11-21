@@ -152,93 +152,65 @@ em {
   text-decoration:underline
 }
 .opening {
-  padding-top:3.3rem
+  padding-top:3rem;
 }
 .opening-top {
   display:flex;
   justify-content:space-between;
-  gap:2rem
+  gap:2rem;
 }
-.opening-question {
-  font:1.65rem/1.35 var(--serif);
-  letter-spacing:-.025em
+.opening-role {
+  font-size:1rem;
+  line-height:1.5;
+}
+.opening-role span {
+  display:block;
+  margin-top:.45rem;
+  color:var(--muted);
+  font-size:.8rem;
 }
 .opening-intro {
-  margin-right:3.5rem;
   font-size:1rem;
-  line-height:1.5
-}
-.opening-intro em {
-  font-size:1.2rem;
-  color:var(--blue)
-}
-.opening-intro>span {
-  display:block;
-  margin-top:1.1rem;
+  line-height:1.5;
   color:var(--muted);
-  font-size:.85rem
+  text-align:right;
 }
-.opening h1 {
-  margin-top:1.3rem
+.opening .name-composition {
+  display:grid;
+  margin-top:2.4rem;
+  gap:0;
 }
-.in-word {
-  display:flex;
-  align-items:center;
-  gap:3rem;
-  font:italic clamp(5rem,10.5vw,10.5rem)/.9 var(--serif);
-  color:var(--blue);
-  letter-spacing:-.075em
-}
-.opening-aside {
-  font: .85rem/1.6 var(--mono);
-  letter-spacing:-.025em;
-  color:var(--muted);
-  padding-top:2rem
-}
-.between-word {
+.name-first {
   display:block;
-  font:italic clamp(6rem,25vw,25rem)/.88 var(--serif);
-  letter-spacing:-.085em;
-  margin-left:-.055em;
-  white-space:nowrap
+  font:500 clamp(5rem,16.5vw,16rem)/.84 var(--sans);
+  text-transform:uppercase;
+  letter-spacing:-.075em;
 }
-.period {
+.name-last {
+  display:block;
+  justify-self:end;
+  padding-right:.04em;
+  margin-top:-.035em;
+  font:italic 400 clamp(6rem,26vw,24rem)/.88 var(--serif);
+  letter-spacing:-.08em;
   color:var(--blue);
-  font-style:normal
+}
+.name-stop {
+  color:var(--ink);
 }
 .opening-bottom {
   display:flex;
+  justify-content:space-between;
   align-items:center;
-  gap:1.25rem;
-  margin-top:2.1rem;
+  flex-wrap:wrap;
+  gap:1rem 2rem;
+  margin-top:2rem;
   padding:1.3rem 0;
-  border-block:1px solid var(--ink)
+  border-block:1px solid var(--ink);
 }
-.endpoint {
-  font: .85rem var(--mono);
-  white-space:nowrap
-}
-.thread {
-  position:relative;
-  display:flex;
-  align-items:center;
-  flex:1;
-  min-width:3rem;
-  height:16px
-}
-.thread>span {
-  height:1px;
-  flex:1;
-  background:var(--blue)
-}
-.thread i {
-  width:7px;
-  height:7px;
-  border:1px solid var(--blue);
-  border-radius:100%
-}
-.thread i:first-child {
-  background:var(--blue)
+.opening-focus {
+  font-size:.875rem;
+  color:var(--muted);
 }
 .text-link {
   font-size:.95rem;
@@ -253,14 +225,6 @@ em {
 }
 .opening-bottom .text-link {
   margin-left:3rem
-}
-.opening-foot {
-  display:flex;
-  justify-content:space-between;
-  gap:2rem;
-  padding-top:1rem;
-  font-size:.8rem;
-  color:var(--muted)
 }
 .work-index {
   padding-block:8.5rem 9rem
@@ -948,9 +912,6 @@ footer>span {
   color:var(--muted)
 }
 @media(min-width:1700px) {
-  .between-word {
-    font-size:25rem
-  }
   .opening {
     padding-top:4rem
   }
@@ -1036,36 +997,12 @@ footer>span {
   .opening-top {
     gap:1.5rem
   }
-  .opening-question {
-    font-size:1.15rem;
-    max-width:13rem
-  }
   .opening-intro {
     font-size:.85rem;
     max-width:10rem
   }
-  .opening-intro em {
-    font-size:1rem
-  }
-  .opening-intro>span {
-    font-size:.75rem;
-    margin-top:.8rem
-  }
   .opening h1 {
     margin-top:2rem
-  }
-  .in-word {
-    font-size:5.5rem;
-    gap:2rem
-  }
-  .opening-aside {
-    font-size:.75rem;
-    padding-top:.5rem
-  }
-  .between-word {
-    font-size:25.8vw;
-    letter-spacing:-.09em;
-    margin-top:.6rem
   }
   .opening-bottom {
     flex-wrap:wrap;
@@ -1082,12 +1019,6 @@ footer>span {
     font-size:.9rem;
     border:0;
     color:var(--blue)
-  }
-  .opening-foot {
-    font-size:.75rem
-  }
-  .opening-foot span:last-child {
-    display:none
   }
   .work-index {
     padding-block:5rem
@@ -1474,12 +1405,6 @@ footer>span {
   .opening h1 {
     font-size:80pt
   }
-  .between-word {
-    font-size:100pt
-  }
-  .in-word {
-    font-size:50pt
-  }
   .opening-top,.opening-bottom,.opening-foot,.masthead nav,.pipeline-form,.room-controls,.stack-action button,.contact,footer,.question-index,.signature {
     display:none!important
   }
@@ -1748,4 +1673,22 @@ footer>span {
 
 @media (max-width:700px) {
   .command-line input { font-size:1rem; }
+}
+
+@media (max-width:700px) {
+  .opening { padding-top:2rem; }
+  .opening-top { gap:1.2rem; }
+  .opening-role { max-width:13rem; font-size:1rem; }
+  .opening-role span { max-width:12rem; font-size:.75rem; }
+  .opening-intro { max-width:7rem; margin:0; font-size:.875rem; }
+  .opening .name-composition { margin-top:3rem; }
+  .name-first { font-size:26vw; letter-spacing:-.08em; }
+  .name-last { font-size:31vw; line-height:1; margin-top:.05em; }
+  .opening-bottom { margin-top:2rem; }
+  .opening-focus { font-size:.8rem; }
+  .opening-bottom .text-link { margin-left:0; }
+}
+@media print {
+  .opening .name-first { font-size:75pt; }
+  .opening .name-last { font-size:95pt; }
 }
