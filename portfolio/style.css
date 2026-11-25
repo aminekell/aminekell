@@ -1526,3 +1526,106 @@ code, pre, kbd { font-family: var(--font-code); }
 ::-webkit-scrollbar-track { background: var(--paper); }
 ::-webkit-scrollbar-thumb { background: var(--gray-400); border: 2px solid var(--paper); }
 ::-webkit-scrollbar-thumb:hover { background: var(--crimson); }
+
+/* Manga project scenes */
+.depth-spread { margin-block: clamp(2rem, 6vw, 5rem); }
+.depth-panel {
+  background: #f5f0e8;
+  color: #111;
+  border: 3px solid #111;
+  box-shadow: .45rem .45rem 0 #111;
+  margin: 0;
+  padding: clamp(.85rem, 3vw, 2rem);
+}
+.depth-panel figcaption { display: grid; gap: .35rem; }
+.depth-panel figcaption strong { font: 1em/1 var(--font-heading, sans-serif); font-size: clamp(2rem, 6vw, 5rem); }
+.depth-panel figcaption span { font: .85rem/1.35 var(--font-mono, monospace); }
+.depth-panel p { max-width: 63ch; margin-block: .8rem 0; }
+.depth-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(15rem, 43vw, 29rem);
+  overflow: hidden;
+  margin-block: 1rem;
+  border: 2px solid #111;
+  background: radial-gradient(circle, #1114 1px, transparent 1.5px) 0 0 / 8px 8px, #e9e0d2;
+  perspective: 900px;
+}
+.depth-button {
+  padding: .65rem .85rem;
+  min-height: 44px;
+  border: 2px solid #111;
+  background: #111;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+.depth-button:hover { background: #a8102d; }
+.depth-button:focus-visible { outline: 3px solid #a8102d; outline-offset: 3px; }
+.depth-choices { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .65rem; }
+.depth-panel [hidden] { display: none; }
+.depth-stack, .depth-cutaway {
+  display: grid;
+  gap: .6rem;
+  width: min(65%, 23rem);
+  transform-style: preserve-3d;
+}
+.depth-stack { transform: rotateX(32deg) rotateZ(-10deg); }
+.depth-stack span, .depth-plane {
+  display: grid;
+  place-items: center;
+  min-height: 2.45rem;
+  padding-inline: .4rem;
+  border: 3px solid #111;
+  background: #fffaf2;
+  box-shadow: 5px 5px 0 #111;
+  text-align: center;
+  font-weight: bold;
+}
+.depth-stack span:nth-child(1) { transform: translateZ(40px); }
+.depth-stack span:nth-child(2) { transform: translateZ(26px); }
+.depth-stack span:nth-child(3) { transform: translateZ(13px); }
+.depth-stack span:last-child { background: #111; color: #fff; }
+.depth-panel.is-stopped [data-stack-service] { transform: translateX(15%) translateZ(26px); background: #f3c5c7; }
+.depth-cutaway { position: relative; transform: rotateX(2deg); }
+.depth-panel.is-open .depth-cutaway { transform: rotateX(26deg) rotateY(-16deg); }
+.depth-panel.is-open .depth-plane:nth-child(1) { transform: translateZ(45px); }
+.depth-panel.is-open .depth-plane:nth-child(2) { transform: translateZ(30px); }
+.depth-panel.is-open .depth-plane:nth-child(3) { transform: translateZ(15px); }
+.depth-signal {
+  position: absolute; left: 8%; top: 10%; width: 12px; height: 12px;
+  background: #dc143c; border: 1px solid #fff; border-radius: 50%; opacity: 0;
+}
+.depth-panel.is-open .depth-signal { opacity: 1; top: 89%; transform: translateZ(48px); }
+.depth-impact {
+  position: absolute; inset: auto .4rem .25rem auto; display: none;
+  color: #a8102d; background: #fffaf2; border: 2px solid #111; padding: .15em;
+  font: clamp(1.7rem, 5vw, 3.6rem)/1 var(--font-heading, sans-serif);
+}
+.depth-panel.is-open .depth-impact { display: block; }
+.depth-ray {
+  width: min(82%, 32rem);
+  aspect-ratio: 400 / 220;
+  position: relative;
+  transform: rotateX(32deg);
+  transform-style: preserve-3d;
+}
+.depth-ray svg { position: absolute; inset: 0; width: 100%; height: 100%; border: 3px solid #111; }
+.depth-corridor { opacity: 0; }
+.depth-panel.is-projected .depth-ray { transform: rotateX(0); }
+.depth-panel.is-projected .depth-map { opacity: 0; }
+.depth-panel.is-projected .depth-corridor { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .depth-stack span, .depth-cutaway, .depth-plane, .depth-ray { transition: transform .65s cubic-bezier(.2,.8,.3,1); }
+  .depth-ray svg { transition: opacity .35s ease; }
+  .depth-panel.is-open .depth-signal { animation: manga-request-flight .85s ease-out both; }
+  .depth-panel.is-open .depth-impact { animation: manga-impact .14s .76s both; }
+}
+@keyframes manga-request-flight { from { top: 10%; } to { top: 89%; } }
+@keyframes manga-impact { from { opacity: 0; scale: 1.25; } to { opacity: 1; scale: 1; } }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .splash-hero { perspective: 900px; }
+  .splash-hero .protagonist { rotate: y 0deg; transition: rotate .4s ease-out; }
+  .splash-hero:hover .protagonist { rotate: y -11deg; }
+}

@@ -1029,6 +1029,17 @@
         </div>
       </div>
 
+      <div class="manga-page depth-spread">
+        <figure class="depth-panel depth-panel--stack" data-depth-panel>
+          <figcaption><strong>What survives a shutdown?</strong><span>Inception · container model</span></figcaption>
+          <div class="depth-stage depth-stage--stack" aria-hidden="true">
+            <div class="depth-stack"><span>NGINX</span><span data-stack-service>WordPress</span><span>MariaDB</span><span>Persistent volume</span></div>
+          </div>
+          <button class="depth-button" type="button" data-depth-action="container" hidden>Stop WordPress</button>
+          <p data-depth-status role="status">WordPress is running. The persistent volume holds its site files.</p>
+        </figure>
+      </div>
+
       <!-- Arc 1: Inception -->
       <div class="manga-page">
         <article class="project-arc" data-project="inception" aria-labelledby="arc-inception-title">
@@ -1128,6 +1139,29 @@
             </div>
           </div>
         </article>
+      </div>
+
+      <div class="manga-page depth-spread">
+        <figure class="depth-panel depth-panel--request" data-depth-panel>
+          <figcaption><strong>The page with two endings</strong><span>HirePath · illustrative request model</span></figcaption>
+          <p class="depth-premise">A company owner edits their name and logo. The upload service is about to go down.</p>
+          <div class="depth-stage depth-stage--request" aria-hidden="true">
+            <div class="depth-cutaway">
+              <span class="depth-plane">Browser</span><span class="depth-plane">Gateway</span>
+              <span class="depth-plane">Company service</span><span class="depth-plane">Image storage</span>
+              <span class="depth-signal"></span>
+            </div>
+            <b class="depth-impact">503</b>
+          </div>
+          <div class="depth-actions" data-request-controls hidden>
+            <button class="depth-button" type="button" data-depth-action="trace">Run save request</button>
+            <div class="depth-choices" data-request-choices hidden>
+              <button class="depth-button" type="button" data-depth-action="partial">Publish name, keep old logo</button>
+              <button class="depth-button" type="button" data-depth-action="draft">Keep both edits as a draft</button>
+            </div>
+          </div>
+          <p data-depth-status role="status">If the upload fails, the interface has to explain which edits survived.</p>
+        </figure>
       </div>
 
       <!-- Arc 2: ft_transcendence -->
@@ -1321,6 +1355,30 @@
             </div>
           </div>
         </article>
+      </div>
+
+      <div class="manga-page depth-spread">
+        <figure class="depth-panel depth-panel--ray" data-depth-panel>
+          <figcaption><strong>A floor plan becomes a corridor</strong><span>cub3D · projection schematic</span></figcaption>
+          <div class="depth-stage depth-stage--ray" aria-hidden="true">
+            <div class="depth-ray">
+              <svg class="depth-map" viewBox="0 0 400 220">
+                <defs><pattern id="depth-map-grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#999"/></pattern></defs>
+                <rect width="400" height="220" fill="#f5f0e8"/>
+                <rect x="46" y="22" width="308" height="176" fill="url(#depth-map-grid)" stroke="#111" stroke-width="8"/>
+                <path d="M134 22v44m132-44v44" stroke="#111" stroke-width="8"/>
+                <path d="M200 176V24" stroke="#dc143c" stroke-width="4"/><circle cx="200" cy="176" r="8" fill="#dc143c"/>
+              </svg>
+              <svg class="depth-corridor" viewBox="0 0 400 220">
+                <rect width="400" height="220" fill="#f5f0e8"/>
+                <path d="M0 0L165 87H235L400 0M0 220L165 133H235L400 220M165 87v46m70-46v46M0 54l165 47m-165 66l165-47m235-66L235 101m165 66l-165-47" fill="none" stroke="#111" stroke-width="5"/>
+                <path d="M200 210V110" stroke="#dc143c" stroke-width="4"/><circle cx="200" cy="110" r="5" fill="#dc143c"/>
+              </svg>
+            </div>
+          </div>
+          <button class="depth-button" type="button" data-depth-action="ray" hidden>Show first-person projection</button>
+          <p data-depth-status role="status">Map view. The red ray marks the distance to the first wall.</p>
+        </figure>
       </div>
 
       <!-- Parallel Side Skirmishes: Project Ø, cub3d, Philosophers -->

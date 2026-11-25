@@ -876,3 +876,60 @@ if (document.readyState === 'loading') {
 } else {
   initPortfolio();
 }
+
+function initMangaDepthScenes() {
+  document.querySelectorAll('[data-depth-panel]').forEach((panel) => {
+    const status = panel.querySelector('[data-depth-status]');
+    const choices = panel.querySelector('[data-request-choices]');
+    const trace = panel.querySelector('[data-depth-action="trace"]');
+    const company = panel.querySelector('.depth-cutaway .depth-plane:nth-child(3)');
+
+    panel.querySelectorAll('[hidden]:not([data-request-choices])').forEach((control) => {
+      control.hidden = false;
+    });
+
+    panel.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-depth-action]');
+      if (!button) return;
+
+      switch (button.dataset.depthAction) {
+        case 'container': {
+          const stopped = panel.classList.toggle('is-stopped');
+          button.textContent = stopped ? 'Start WordPress' : 'Stop WordPress';
+          status.textContent = stopped
+            ? 'WordPress stopped. Dynamic pages are unavailable, but the site files are still on the persistent volume.'
+            : 'WordPress is running. It can read the existing site files from the same volume.';
+          break;
+        }
+        case 'ray': {
+          const projected = panel.classList.toggle('is-projected');
+          button.textContent = projected ? 'Show floor plan' : 'Show first-person projection';
+          status.textContent = projected
+            ? 'First-person view. A nearer wall fills more of the view. The red line marks the same center ray.'
+            : 'Map view. The red ray marks the distance to the first wall.';
+          break;
+        }
+        case 'trace':
+          panel.classList.remove('is-open');
+          // Commit the reset so replay restarts the packet animation.
+          panel.querySelector('.depth-signal').getBoundingClientRect();
+          panel.classList.add('is-open');
+          choices.hidden = false;
+          company.textContent = 'Company service';
+          trace.textContent = 'Replay save request';
+          status.textContent = '503. The logo upload failed. What should the interface publish?';
+          break;
+        case 'partial':
+          company.textContent = 'Company name published';
+          status.textContent = 'The new name is published with the old logo. The interface offers to retry the upload.';
+          break;
+        case 'draft':
+          company.textContent = 'Company edits held as draft';
+          status.textContent = 'Nothing new is published. Both edits stay in the draft so the user can retry together.';
+          break;
+      }
+    });
+  });
+}
+
+initMangaDepthScenes();
