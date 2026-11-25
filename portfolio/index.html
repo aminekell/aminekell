@@ -1141,27 +1141,117 @@
         </article>
       </div>
 
-      <div class="manga-page depth-spread">
-        <figure class="depth-panel depth-panel--request" data-depth-panel>
-          <figcaption><strong>The page with two endings</strong><span>HirePath · illustrative request model</span></figcaption>
-          <p class="depth-premise">A company owner edits their name and logo. The upload service is about to go down.</p>
-          <div class="depth-stage depth-stage--request" aria-hidden="true">
-            <div class="depth-cutaway">
-              <span class="depth-plane">Browser</span><span class="depth-plane">Gateway</span>
-              <span class="depth-plane">Company service</span><span class="depth-plane">Image storage</span>
-              <span class="depth-signal"></span>
+      <div class="manga-page hirepath-page">
+        <section class="hirepath-sequence" data-hirepath-sequence aria-labelledby="hirepath-sequence-title">
+          <header class="hirepath-sequence__intro">
+            <p class="hirepath-kicker">Volume 01 / HirePath / illustrative model</p>
+            <h3 id="hirepath-sequence-title">THE PANEL THAT<br>SWALLOWED THE PAGE</h3>
+            <p>One save. One crimson signal. Follow it through the gutter.</p>
+            <a class="hirepath-skip" href="#hirepath-work">Skip sequence</a>
+          </header>
+
+          <div class="hirepath-track" data-sequence-track>
+            <div class="hirepath-stage" data-sequence-stage>
+              <canvas class="hirepath-canvas" data-sequence-canvas aria-hidden="true"></canvas>
+              <div class="hirepath-hud" data-sequence-hud aria-live="polite">
+                <p class="hirepath-beat" data-sequence-beat>01 / THE PRINTED PAGE</p>
+                <h4 data-sequence-heading>A quiet spread. One small signal.</h4>
+                <p class="hirepath-caption" data-sequence-caption>The owner edits the company profile and presses Save.</p>
+                <p class="hirepath-node-label" data-sequence-node>PROFILE / READY TO SAVE</p>
+                <div class="hirepath-question" data-sequence-question hidden>
+                  <p class="hirepath-question__prompt">The logo failed. Should we publish the new name anyway?</p>
+                  <div class="hirepath-choices">
+                    <button class="hirepath-choice" type="button" data-sequence-choice="partial" aria-pressed="false">Publish the new name with the old logo</button>
+                    <button class="hirepath-choice" type="button" data-sequence-choice="draft" aria-pressed="false">Keep both edits as a draft</button>
+                  </div>
+                  <p class="hirepath-consequence" data-sequence-outcome hidden></p>
+                  <p class="hirepath-result" data-sequence-status role="status">The request stopped at image storage. Choose what the interface should publish.</p>
+                </div>
+              </div>
             </div>
-            <b class="depth-impact">503</b>
           </div>
-          <div class="depth-actions" data-request-controls hidden>
-            <button class="depth-button" type="button" data-depth-action="trace">Run save request</button>
-            <div class="depth-choices" data-request-choices hidden>
-              <button class="depth-button" type="button" data-depth-action="partial">Publish name, keep old logo</button>
-              <button class="depth-button" type="button" data-depth-action="draft">Keep both edits as a draft</button>
+
+          <div class="hirepath-fallback" data-sequence-fallback>
+            <article class="fallback-panel fallback-panel--spread">
+              <div class="fallback-paper fallback-paper--profile">
+                <p class="fallback-panel__tag">01 / THE PRINTED PAGE</p>
+                <h4>COMPANY PROFILE</h4>
+                <p class="fallback-speech">“A new name deserves the right mark.”</p>
+                <div class="fallback-owner" aria-hidden="true">
+                  <svg viewBox="0 0 160 210">
+                    <path d="M22 210c4-48 18-68 58-72 40 4 54 24 58 72" fill="#111"/>
+                    <path d="M48 91c0-38 12-61 34-61s35 23 35 61c0 31-14 54-35 54S48 122 48 91Z" fill="#f5f0e8" stroke="#111" stroke-width="7"/>
+                    <path d="M43 83 48 37 74 16 111 27 128 65 119 78 108 49 83 44 59 59Z" fill="#111"/>
+                    <path d="M71 91h3m29 0h3m-22 20 9 2" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M45 154 80 178l36-24" fill="none" stroke="#f5f0e8" stroke-width="5"/>
+                  </svg>
+                </div>
+                <div class="fallback-form">
+                  <span>COMPANY NAME</span><b>Northstar Works</b>
+                  <span>NEW LOGO</span><b class="fallback-file">northstar-mark.svg</b>
+                  <span class="fallback-save">SAVE CHANGES<i aria-hidden="true"></i></span>
+                </div>
+              </div>
+              <div class="fallback-paper fallback-paper--right">
+                <span class="fallback-ink-gutter" aria-hidden="true"></span>
+                <p class="fallback-panel__tag">A REQUEST LEAVES THE PAGE</p>
+                <div class="fallback-arrow" aria-hidden="true">↓</div>
+                <p>The red mark is small enough to miss.</p>
+              </div>
+            </article>
+
+            <article class="fallback-panel fallback-panel--hinge">
+              <p class="fallback-panel__tag">02 / THE GUTTER OPENS</p>
+              <h4>The page has an underside.</h4>
+              <div class="fallback-layers" aria-label="The flat page separates into printed layers">
+                <span>INK FRAME</span><span>FOREGROUND ART</span><span>HALFTONE SHADOW</span><span>PAPER / GUTTER</span>
+              </div>
+              <p class="fallback-caption">The page peels at its hinge. For a moment, print and system occupy the same frame.</p>
+            </article>
+
+            <article class="fallback-panel fallback-panel--route">
+              <p class="fallback-panel__tag">03 / INSIDE THE REQUEST</p>
+              <h4>One route. Four spaces.</h4>
+              <ol class="fallback-route">
+                <li><b>01</b><span>BROWSER</span><small>profile save</small></li>
+                <li><b>02</b><span>GATEWAY</span><small>request routed</small></li>
+                <li><b>03</b><span>COMPANY SERVICE</span><small>name accepted</small></li>
+                <li><b>04</b><span>IMAGE STORAGE</span><small>logo upload</small></li>
+              </ol>
+              <p class="fallback-caption">An illustrative cross-section, drawn in ink and followed by a crimson signal.</p>
+            </article>
+
+            <article class="fallback-panel fallback-panel--failure">
+              <p class="fallback-panel__tag">04 / THE FAILURE SPREAD</p>
+              <div class="fallback-503" aria-label="Service unavailable">503</div>
+              <p class="fallback-question">The logo failed. Should we publish the new name anyway?</p>
+              <div class="hirepath-choices">
+                <button class="hirepath-choice" type="button" data-sequence-choice="partial" aria-pressed="false">Publish the new name with the old logo</button>
+                <button class="hirepath-choice" type="button" data-sequence-choice="draft" aria-pressed="false">Keep both edits as a draft</button>
+              </div>
+              <p class="hirepath-result" data-fallback-status role="status">Choose an ending. The illustration does not send a real request.</p>
+              <p class="fallback-outcome" data-sequence-outcome hidden></p>
+            </article>
+
+            <article class="fallback-panel fallback-panel--return">
+              <p class="fallback-panel__tag">05 / BACK TO THE PAGE</p>
+              <h4>The machine folds flat.</h4>
+              <div class="fallback-return-page" aria-hidden="true"><span>COMPANY PROFILE</span><b>•</b></div>
+              <p class="fallback-caption">The system closes into paper. One red mark remains where the failure happened.</p>
+            </article>
+          </div>
+
+          <div class="hirepath-contribution" id="hirepath-work">
+            <p class="hirepath-kicker">The real work / Team project</p>
+            <h4>Company onboarding, profiles, and uploads.</h4>
+            <p><strong>My contribution:</strong> company onboarding and profile management, backend validation, company dashboard work, and image uploads.</p>
+            <p><strong>Team work:</strong> HirePath was built with a team across the frontend, gateway, services, and storage. This sequence is an illustrative model, not a replay of a production incident.</p>
+            <div class="hirepath-links">
+              <a href="https://github.com/aminekell/42-ft-transcendence#akella---developer" target="_blank" rel="noopener noreferrer">Read my contribution notes</a>
+              <a href="https://github.com/aminekell/42-ft-transcendence" target="_blank" rel="noopener noreferrer">Explore the team project</a>
             </div>
           </div>
-          <p data-depth-status role="status">If the upload fails, the interface has to explain which edits survived.</p>
-        </figure>
+        </section>
       </div>
 
       <!-- Arc 2: ft_transcendence -->

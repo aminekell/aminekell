@@ -7,7 +7,11 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const source=resolve(root,'portfolio');
 const files=await readdir(source,{recursive:true,withFileTypes:true});
 const pages=['index.html','lab.html'];
-const entryFiles=['.gitkeep',...pages,'style.css','main.js','fieldwork.css','fieldwork.js','field-map.js','simulations.js','lab-renderer.js','fallback-map.svg'];
+const entryFiles=[
+ '.gitkeep', ...pages, 'style.css', 'main.js', 'hirepath-scene.js',
+ 'vendor/three.module.js', 'vendor/THREE-LICENSE.txt',
+ 'fieldwork.css', 'fieldwork.js', 'field-map.js', 'simulations.js', 'lab-renderer.js', 'fallback-map.svg',
+];
 const filePaths=files.filter(f=>f.isFile()).map(f=>resolve(f.parentPath,f.name))
  .filter(file=>entryFiles.some(name=>file===resolve(source,name))||file.startsWith(resolve(source,'fonts')+'/'));
 for(const required of entryFiles) {

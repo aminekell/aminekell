@@ -933,3 +933,65 @@ function initMangaDepthScenes() {
 }
 
 initMangaDepthScenes();
+
+function initHirePathSequence() {
+  const sequence = document.querySelector('[data-hirepath-sequence]');
+  if (!sequence) return;
+
+  const setReadingMode = (message) => {
+    const status = sequence.querySelector('[data-fallback-status]');
+    if (status) status.textContent = message;
+  };
+
+  sequence.addEventListener('click', (event) => {
+    const choice = event.target.closest('[data-sequence-choice]');
+    if (!choice) return;
+
+    const outcome = choice.dataset.sequenceChoice;
+    const partial = outcome === 'partial';
+    const message = partial
+      ? 'The new name is published with the old logo. The upload can be retried.'
+      : 'Both edits stay together as a draft. Nothing new is published yet.';
+    sequence.dataset.outcome = outcome;
+
+    sequence.querySelectorAll('[data-sequence-choice]').forEach((button) => {
+      button.setAttribute('aria-pressed', String(button === choice));
+    });
+    sequence.querySelectorAll('[data-sequence-status], [data-fallback-status]').forEach((status) => {
+      status.textContent = message;
+    });
+    sequence.querySelectorAll('[data-sequence-outcome]').forEach((result) => {
+      result.hidden = false;
+      result.textContent = partial
+        ? 'PUBLISHED: Northstar Studio / old logo retained'
+        : 'DRAFT: Northstar Studio + new logo / nothing published';
+    });
+  });
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setReadingMode('Illustrated reading mode: motion is reduced. The decision and both endings remain available below.');
+    return;
+  }
+
+  let started = false;
+  const loadWhenNear = () => {
+    if (started) return;
+    const rect = sequence.getBoundingClientRect();
+    if (rect.top > window.innerHeight + 700 || rect.bottom < -700) return;
+    started = true;
+    window.removeEventListener('scroll', checkPosition);
+    window.removeEventListener('resize', checkPosition);
+    import('./hirepath-scene.js')
+      .then(({ initHirePathSequence: initScene }) => initScene(sequence))
+      .catch((error) => {
+        console.error('HirePath 3D scene could not be loaded; keeping the illustrated sequence available.', error);
+        setReadingMode('Illustrated reading mode: the 3D scene could not be loaded. The decision and both endings remain available below.');
+      });
+  };
+  const checkPosition = createRafScheduler(loadWhenNear);
+  window.addEventListener('scroll', checkPosition, { passive: true });
+  window.addEventListener('resize', checkPosition, { passive: true });
+  checkPosition();
+}
+
+initHirePathSequence();
