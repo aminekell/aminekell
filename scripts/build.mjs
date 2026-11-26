@@ -9,6 +9,8 @@ const files=await readdir(source,{recursive:true,withFileTypes:true});
 const pages=['index.html','lab.html'];
 const entryFiles=[
  '.gitkeep', ...pages, 'style.css', 'main.js', 'hirepath-scene.js',
+ 'ink-eclipse.js', 'chapter-motion.js', 'cinematic-motion.js', 'project-depth-scenes.js',
+ 'assets/ink-eclipse-spread.webp',
  'vendor/three.module.js', 'vendor/THREE-LICENSE.txt',
  'fieldwork.css', 'fieldwork.js', 'field-map.js', 'simulations.js', 'lab-renderer.js', 'fallback-map.svg',
 ];

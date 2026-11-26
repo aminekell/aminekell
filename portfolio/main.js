@@ -103,8 +103,34 @@ function findActiveChapterIndex(chapters, viewportRatio = 0.5) {
    1. PRELOADER & SPLASH ENTRANCE
    ========================================================================== */
 
+let releaseChapterAnchor = () => {};
+
+function anchorChapter(target) {
+  releaseChapterAnchor();
+  const align = () => target.scrollIntoView({behavior: 'instant'});
+  align();
+
+  // Keep links accurate while lazy panels change the height above the target.
+  const observer = new ResizeObserver(align);
+  const input = new AbortController();
+  const timeout = setTimeout(() => releaseChapterAnchor(), 2800);
+  releaseChapterAnchor = () => {
+    clearTimeout(timeout);
+    observer.disconnect();
+    input.abort();
+  };
+  observer.observe(document.getElementById('main-content'));
+  ['wheel', 'touchstart', 'keydown', 'pointerdown', 'popstate'].forEach((type) => {
+    window.addEventListener(type, releaseChapterAnchor, {once: true, passive: true, signal: input.signal});
+  });
+}
+
 /** Trigger splash page entrance animations after preloader dismissal. */
 function triggerEntranceAnimations() {
+  // Restore a chapter deep link after the opening overlay releases the page.
+  const linkedChapter = document.getElementById(location.hash.slice(1));
+  if (linkedChapter) anchorChapter(linkedChapter);
+
   const megaTitles = document.querySelectorAll('.title-mega');
   megaTitles.forEach((title, index) => {
     if (isReducedMotion() || index === 0) {
@@ -879,56 +905,27 @@ if (document.readyState === 'loading') {
 
 function initMangaDepthScenes() {
   document.querySelectorAll('[data-depth-panel]').forEach((panel) => {
+    const button = panel.querySelector('[data-depth-action]');
     const status = panel.querySelector('[data-depth-status]');
-    const choices = panel.querySelector('[data-request-choices]');
-    const trace = panel.querySelector('[data-depth-action="trace"]');
-    const company = panel.querySelector('.depth-cutaway .depth-plane:nth-child(3)');
+    const inception = button.dataset.depthAction === 'container';
+    const stateClass = inception ? 'is-stopped' : 'is-projected';
+    const copy = inception ? [
+      ['Stop WordPress', 'WordPress is running. The persistent volume holds its site files.'],
+      ['Start WordPress', 'WordPress stopped. Dynamic pages are unavailable, but the site files are still on the persistent volume.'],
+    ] : [
+      ['Show first-person projection', 'Map view. The red ray marks the distance to the first wall.'],
+      ['Show floor plan', 'First-person view. A nearer wall fills more of the view. The red line marks the same center ray.'],
+    ];
 
-    panel.querySelectorAll('[hidden]:not([data-request-choices])').forEach((control) => {
-      control.hidden = false;
-    });
+    function setState(alternate) {
+      if (panel.classList.contains(stateClass) === alternate) return;
+      panel.classList.toggle(stateClass, alternate);
+      [button.textContent, status.textContent] = copy[Number(alternate)];
+    }
 
-    panel.addEventListener('click', (event) => {
-      const button = event.target.closest('[data-depth-action]');
-      if (!button) return;
-
-      switch (button.dataset.depthAction) {
-        case 'container': {
-          const stopped = panel.classList.toggle('is-stopped');
-          button.textContent = stopped ? 'Start WordPress' : 'Stop WordPress';
-          status.textContent = stopped
-            ? 'WordPress stopped. Dynamic pages are unavailable, but the site files are still on the persistent volume.'
-            : 'WordPress is running. It can read the existing site files from the same volume.';
-          break;
-        }
-        case 'ray': {
-          const projected = panel.classList.toggle('is-projected');
-          button.textContent = projected ? 'Show floor plan' : 'Show first-person projection';
-          status.textContent = projected
-            ? 'First-person view. A nearer wall fills more of the view. The red line marks the same center ray.'
-            : 'Map view. The red ray marks the distance to the first wall.';
-          break;
-        }
-        case 'trace':
-          panel.classList.remove('is-open');
-          // Commit the reset so replay restarts the packet animation.
-          panel.querySelector('.depth-signal').getBoundingClientRect();
-          panel.classList.add('is-open');
-          choices.hidden = false;
-          company.textContent = 'Company service';
-          trace.textContent = 'Replay save request';
-          status.textContent = '503. The logo upload failed. What should the interface publish?';
-          break;
-        case 'partial':
-          company.textContent = 'Company name published';
-          status.textContent = 'The new name is published with the old logo. The interface offers to retry the upload.';
-          break;
-        case 'draft':
-          company.textContent = 'Company edits held as draft';
-          status.textContent = 'Nothing new is published. Both edits stay in the draft so the user can retry together.';
-          break;
-      }
-    });
+    button.hidden = false;
+    button.addEventListener('click', () => setState(!panel.classList.contains(stateClass)));
+    panel.addEventListener('depth-scroll-state', (event) => setState(event.detail));
   });
 }
 
@@ -937,6 +934,18 @@ initMangaDepthScenes();
 function initHirePathSequence() {
   const sequence = document.querySelector('[data-hirepath-sequence]');
   if (!sequence) return;
+
+  const contribution = sequence.querySelector('#hirepath-work');
+  document.querySelectorAll('a[href="#hirepath-work"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      if (location.hash !== '#hirepath-work') history.pushState(null, '', '#hirepath-work');
+      contribution.focus({preventScroll: true});
+      anchorChapter(contribution);
+    });
+  });
+  sequence.querySelector('[data-fallback-controls]').hidden = false;
 
   const setReadingMode = (message) => {
     const status = sequence.querySelector('[data-fallback-status]');
@@ -955,7 +964,7 @@ function initHirePathSequence() {
     sequence.dataset.outcome = outcome;
 
     sequence.querySelectorAll('[data-sequence-choice]').forEach((button) => {
-      button.setAttribute('aria-pressed', String(button === choice));
+      button.setAttribute('aria-pressed', String(button.dataset.sequenceChoice === outcome));
     });
     sequence.querySelectorAll('[data-sequence-status], [data-fallback-status]').forEach((status) => {
       status.textContent = message;
@@ -976,7 +985,7 @@ function initHirePathSequence() {
   let started = false;
   const loadWhenNear = () => {
     if (started) return;
-    const rect = sequence.getBoundingClientRect();
+    const rect = sequence.querySelector('.hirepath-sequence__intro').getBoundingClientRect();
     if (rect.top > window.innerHeight + 700 || rect.bottom < -700) return;
     started = true;
     window.removeEventListener('scroll', checkPosition);
@@ -995,3 +1004,75 @@ function initHirePathSequence() {
 }
 
 initHirePathSequence();
+
+function loadProjectDepthScenes() {
+  if (isReducedMotion() || !('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      observer.unobserve(entry.target);
+      import('./project-depth-scenes.js')
+        .then(({initProjectDepthScene}) => initProjectDepthScene(entry.target))
+        .catch((error) => console.info('The illustrated project scene is available.', error));
+    }
+  }, {rootMargin: '250px'});
+  document.querySelectorAll('.depth-panel--stack, .depth-panel--ray').forEach((panel) => observer.observe(panel));
+}
+
+loadProjectDepthScenes();
+
+function loadInkEclipse() {
+  const scene = document.querySelector('[data-ink-eclipse]');
+  if (!scene || isReducedMotion() || !('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    observer.disconnect();
+    import('./ink-eclipse.js')
+      .then(({initInkEclipse}) => initInkEclipse(scene))
+      .catch((error) => console.info('The illustrated Ink Eclipse interlude is available.', error));
+  }, {rootMargin: '300px'});
+  observer.observe(scene);
+}
+
+loadInkEclipse();
+
+function loadChapterMotion() {
+  if (isReducedMotion() || !('IntersectionObserver' in window)) return;
+  const panels = [...document.querySelectorAll('[data-motion-folio]')];
+  if (!panels.length) return;
+  const loader = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    loader.disconnect();
+    import('./chapter-motion.js')
+      .then(({initChapterMotion}) => initChapterMotion(panels))
+      .catch((error) => console.info('The printed chapter panels are available.', error));
+  }, {rootMargin: '260px'});
+  panels.forEach((panel) => loader.observe(panel));
+}
+
+loadChapterMotion();
+
+function initPrintedDepth() {
+  if (isReducedMotion() || !('IntersectionObserver' in window)) return;
+  const active = new Set();
+  const update = createRafScheduler(() => {
+    for (const panel of active) {
+      const bounds = panel.getBoundingClientRect();
+      const progress = Math.max(0, Math.min(1, (innerHeight - bounds.top) / (innerHeight + bounds.height)));
+      const eased = progress * progress * (3 - 2 * progress);
+      panel.style.setProperty('--print-travel', eased.toFixed(4));
+    }
+  });
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) active.add(entry.target);
+      else active.delete(entry.target);
+    }
+    update();
+  });
+  document.querySelectorAll('[data-printed-depth]').forEach((panel) => observer.observe(panel));
+  window.addEventListener('scroll', update, {passive: true});
+  window.addEventListener('resize', update, {passive: true});
+}
+
+initPrintedDepth();

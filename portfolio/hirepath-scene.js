@@ -1,20 +1,39 @@
 import * as THREE from './vendor/three.module.js';
+import {addPrintAtmosphere, cameraPath} from './cinematic-motion.js';
 
-const KEYFRAMES = [
+const SHOTS = [
   { at: 0, camera: [0, 0, 17], target: [0, 0, 0], fov: 36, hinge: 0, separation: 0, signal: [4.25, -2.35, 0.18], label: 'PROFILE / READY TO SAVE' },
   { at: 0.14, camera: [2.4, -1.15, 11], target: [3.8, -2.1, 0], fov: 34, hinge: 0, separation: 0.12, signal: [4.25, -2.35, 0.18], label: 'SAVE / REQUEST CREATED' },
-  { at: 0.28, camera: [0.2, 1.5, 17.5], target: [0, -2, -3.8], fov: 46, hinge: -1.12, separation: 1.1, signal: [0, -3.25, -1.8], label: 'GUTTER / SIGNAL FALLING' },
-  { at: 0.38, camera: [0, 0.5, 15.5], target: [0, -4.5, -5.3], fov: 44, hinge: -1.12, separation: 2.4, signal: [3.5, -4.5, -4.15], label: 'BROWSER / PROFILE SAVE' },
-  { at: 0.49, camera: [2.4, -3.8, -2.4], target: [3.5, -4.5, -8.7], fov: 42, hinge: -1.12, separation: 2.7, signal: [3.5, -4.5, -4.5], label: 'BROWSER / PROFILE SAVE' },
-  { at: 0.59, camera: [-0.7, -2.3, -6.2], target: [-1.2, -2.7, -10.6], fov: 42, hinge: -1.12, separation: 2.9, signal: [-1.2, -2.7, -9.2], label: 'GATEWAY / REQUEST ROUTED' },
-  { at: 0.68, camera: [0.7, -1, -11.2], target: [1.25, -1, -15.8], fov: 42, hinge: -1.12, separation: 3, signal: [1.25, -1, -14.4], label: 'COMPANY SERVICE / NAME ACCEPTED' },
-  { at: 0.719, camera: [0.7, -1, -11.2], target: [1.25, -1, -15.8], fov: 42, hinge: -1.12, separation: 3, signal: [1.25, -1, -14.4], label: 'COMPANY SERVICE / NAME ACCEPTED' },
+  { at: 0.28, camera: [0.2, 1.5, 17.5], target: [0, -.65, -3.8], fov: 46, hinge: -1.12, separation: 1.1, signal: [0, -3.25, -1.8], label: 'GUTTER / SIGNAL FALLING' },
+  { at: 0.38, camera: [1.1, 2.6, 18.5], target: [0, -1.55, -5.3], fov: 43, hinge: -1.12, separation: 2.4, signal: [3.5, -4.5, -4.15], label: 'BROWSER / PROFILE SAVE' },
+  { at: 0.49, camera: [2.4, -3.8, -1.35], target: [3.5, -4.5, -8.7], fov: 42, hinge: -1.12, separation: 2.7, signal: [3.5, -4.5, -4.5], label: 'BROWSER / PROFILE SAVE' },
+  { at: 0.59, camera: [-0.7, -2.3, -4.85], target: [-1.2, -2.7, -10.6], fov: 42, hinge: -1.12, separation: 2.9, signal: [-1.2, -2.7, -9.2], label: 'GATEWAY / REQUEST ROUTED' },
+  { at: 0.68, camera: [0.7, -1, -10], target: [1.25, -1, -15.8], fov: 42, hinge: -1.12, separation: 3, signal: [1.25, -1, -14.4], label: 'COMPANY SERVICE / NAME ACCEPTED' },
+  { at: 0.703, camera: [.35, .1, -14.2], target: [0, .1, -20], fov: 47, hinge: -1.12, separation: 3, signal: [0, 0, -18.52], label: 'IMAGE STORAGE / UPLOAD INTAKE' },
   { at: 0.72, camera: [0, 0.1, -10], target: [0, 0, -18.7], fov: 48, hinge: -1.12, separation: 3, signal: [0, 0, -18.52], label: 'IMAGE STORAGE / UPLOAD FAILED' },
   { at: 0.76, camera: [0, 0.1, -10], target: [0, 0, -18.7], fov: 48, hinge: -1.12, separation: 3, signal: [0, 0, -18.52], label: 'IMAGE STORAGE / UPLOAD FAILED' },
   { at: 0.84, camera: [0, 0.1, -10], target: [0, 0, -18.7], fov: 48, hinge: -1.12, separation: 3, signal: [0, 0, -18.52], label: '503 / THE FAILURE SPREAD' },
   { at: 0.92, camera: [0, 0.2, -2.5], target: [0, 0, -7], fov: 40, hinge: -0.6, separation: 1.3, signal: [4, -0.5, 0.18], label: 'FOLDING THE MACHINE BACK INTO PAPER' },
   { at: 1, camera: [0, 0, 17], target: [0, 0, 0], fov: 36, hinge: 0, separation: 0, signal: [4, -0.5, 0.18], label: 'ONE CRIMSON MARK REMAINS' },
 ];
+const KEYFRAMES = SHOTS.map((shot, index) => ({
+  ...shot,
+  name: ['Printed spread', 'Save', 'Open hinge', 'Cutaway', 'Browser', 'Gateway', 'Company', 'Archive intake', 'Storage failure', 'Freeze', 'Decision', 'Fold', 'Crimson mark'][index],
+  pageRotation: shot.hinge * 0.65,
+  signalIntensity: index === 0 ? 0 : index >= 8 && index <= 10 ? 0.45 : 1,
+  environment: index >= 2 && index <= 10 ? 1 : 0,
+  lighting: index >= 2 && index <= 7 ? 2.2 : 0.85,
+}));
+
+
+// Two independent tracks preserve the frame-accurate cut into the 503.
+const CAMERA_TRACKS = [KEYFRAMES.filter(({at}) => at < .72), KEYFRAMES.filter(({at}) => at >= .72)].map((track) => {
+  const times = track.map(({at}) => at);
+  return {
+    eye: cameraPath(times, track.map(({camera}) => camera)),
+    look: cameraPath(times, track.map(({target}) => target)),
+  };
+});
 
 const BEATS = [
   { at: 0, beat: '01 / THE PRINTED PAGE', heading: 'A quiet spread. One small signal.', caption: 'The owner edits the company profile and presses Save.' },
@@ -31,6 +50,7 @@ const MOBILE_SIGNAL_KEYFRAMES = [
   [0.49, [0, 0, -4.5]],
   [0.59, [-1.2, 0.3, -9.2]],
   [0.68, [1.25, -0.15, -14.4]],
+  [0.703, [0, 0, -18.52]],
   [0.76, [0, 0, -18.52]],
   [0.84, [0, 0, -18.52]],
   [0.92, [1.35, -2.65, 0.18]],
@@ -46,26 +66,34 @@ function frameAt(progress, mobile = false) {
   while (index < KEYFRAMES.length - 2 && progress > KEYFRAMES[index + 1].at) index++;
   const from = KEYFRAMES[index];
   const to = KEYFRAMES[index + 1];
-  const amount = clamp((progress - from.at) / (to.at - from.at), 0, 1);
+  const linear = clamp((progress - from.at) / (to.at - from.at), 0, 1);
+  const eased = linear * linear * (3 - 2 * linear);
+  const amount = from.at === 0.703 ? Number(linear >= 1) : lerp(linear, eased, .34);
   const signalPath = mobile ? MOBILE_SIGNAL_KEYFRAMES : KEYFRAMES.map(({ at, signal }) => [at, signal]);
   let signalIndex = 0;
   while (signalIndex < signalPath.length - 2 && progress > signalPath[signalIndex + 1][0]) signalIndex++;
   const signalFrom = signalPath[signalIndex];
   const signalTo = signalPath[signalIndex + 1];
   const signalAmount = clamp((progress - signalFrom[0]) / (signalTo[0] - signalFrom[0]), 0, 1);
+  const cut = CAMERA_TRACKS[Number(progress >= .72)];
   const frame = {
-    camera: lerpVector(from.camera, to.camera, amount),
-    target: lerpVector(from.target, to.target, amount),
+    camera: cut.eye(progress, []),
+    target: cut.look(progress, []),
     signal: lerpVector(signalFrom[1], signalTo[1], signalAmount),
     fov: lerp(from.fov, to.fov, amount),
     hinge: lerp(from.hinge, to.hinge, amount),
     separation: lerp(from.separation, to.separation, amount),
+    pageRotation: lerp(from.pageRotation, to.pageRotation, amount),
+    signalIntensity: lerp(from.signalIntensity, to.signalIntensity, amount),
+    environment: lerp(from.environment, to.environment, amount),
+    lighting: lerp(from.lighting, to.lighting, amount),
   };
-  if (mobile && progress <= 0.28) {
-    frame.camera[0] *= 0.5;
-    frame.camera[2] += 1.5;
-    frame.target[0] *= 0.35;
-    frame.fov += 6;
+  if (mobile && progress < .38) {
+    const blend = clamp((.38 - progress) / .10, 0, 1);
+    frame.camera[0] *= 1 - .5 * blend;
+    frame.camera[2] += 1.5 * blend;
+    frame.target[0] *= 1 - .65 * blend;
+    frame.fov += 6 * blend;
   }
   if (mobile && progress >= 0.72 && progress <= 0.84) {
     frame.camera[2] = -7.8;
@@ -105,8 +133,8 @@ function paperTexture(kind, mobile = false) {
   ctx.strokeRect(24, 24, width - 48, height - 48);
   ctx.lineWidth = 5;
 
-  const inkText = (text, x, y, size, weight = 700, align = 'left') => {
-    ctx.fillStyle = '#111';
+  const inkText = (text, x, y, size, weight = 700, align = 'left', color = '#111') => {
+    ctx.fillStyle = color;
     ctx.font = `${weight} ${size}px Arial, sans-serif`;
     ctx.textAlign = align;
     ctx.fillText(text, x, y);
@@ -150,10 +178,10 @@ function paperTexture(kind, mobile = false) {
     inkText('northstar-mark.svg', 375, 398, 20, 400);
     panel(530, 470, 245, 100, '#111');
     ctx.fillStyle = '#f5f0e8';
-    inkText('SAVE', 652, 532, 27, 700, 'center');
+    inkText('SAVE', 652, 532, 27, 700, 'center', '#f5f0e8');
   } else if (kind === 'left') {
     panel(55, 55, 790, 180, '#111');
-    inkText('NORTHSTAR WORKS', 90, 132, 42, 700);
+    inkText('NORTHSTAR WORKS', 90, 132, 42, 700, 'left', '#f5f0e8');
     ctx.fillStyle = '#f5f0e8';
     ctx.fillText('COMPANY / PROFILE 04', 90, 190);
     panel(55, 270, 790, 405);
@@ -193,7 +221,7 @@ function paperTexture(kind, mobile = false) {
       inkText('northstar-mark.svg', 375, 1045, 23, 400);
       panel(550, 1115, 250, 90, '#111');
       ctx.fillStyle = '#f5f0e8';
-      inkText('SAVE', 675, 1170, 24, 700, 'center');
+      inkText('SAVE', 675, 1170, 24, 700, 'center', '#f5f0e8');
     } else {
       panel(55, 55, 790, 260, '#fffaf2');
       ctx.beginPath();
@@ -213,7 +241,7 @@ function paperTexture(kind, mobile = false) {
       inkText('northstar-mark.svg', 405, 705, 22, 400);
       panel(530, 900, 245, 100, '#111');
       ctx.fillStyle = '#f5f0e8';
-      inkText('SAVE', 652, 963, 28, 700, 'center');
+      inkText('SAVE', 652, 963, 28, 700, 'center', '#f5f0e8');
     }
   } else if (kind === 'hatch') {
     ctx.save();
@@ -328,7 +356,7 @@ function addCharacter(parent, mobile = false) {
   head.position.set(centerX, centerY + 0.34, 0.15);
   character.add(head);
   const headOutline = new THREE.LineSegments(
-    new THREE.EdgesGeometry(new THREE.CircleGeometry(0.56, 32)),
+    new THREE.EdgesGeometry(head.geometry),
     new THREE.LineBasicMaterial({ color: 0x111111 })
   );
   headOutline.position.copy(head.position);
@@ -355,6 +383,23 @@ function addCharacter(parent, mobile = false) {
   }
   parent.add(character);
   return character;
+}
+
+function pageStock(parent, width, height, x, y, mobile = false) {
+  const tone = new THREE.MeshLambertMaterial({color: 0xd0bea5});
+  const edge = new THREE.LineBasicMaterial({color: 0x635246});
+  const leaf = new THREE.BoxGeometry(width, height, .035);
+  const outline = new THREE.EdgesGeometry(leaf);
+  const stock = new THREE.Group();
+  for (let index = 0; index < (mobile ? 3 : 6); index++) {
+    const sheet = new THREE.Mesh(leaf, tone);
+    sheet.add(new THREE.LineSegments(outline, edge));
+    sheet.position.set(index * .013, -index * .022, -.135 - index * .041);
+    stock.add(sheet);
+  }
+  stock.position.set(x, y, 0);
+  parent.add(stock);
+  return stock;
 }
 
 function addDesktopSpread(scene) {
@@ -409,7 +454,8 @@ function addDesktopSpread(scene) {
   gutter.position.z = 0.05;
   spread.add(gutter);
   scene.add(spread);
-  return { spread, hinge, figure, leftPage, gutter };
+  const stock = [pageStock(leftPage, 6, 8, -3, 0), pageStock(hinge, 6, 8, 3, 0)];
+  return { spread, hinge, figure, leftPage, gutter, stock };
 }
 
 function addMobileSpread(scene) {
@@ -439,68 +485,109 @@ function addMobileSpread(scene) {
   lowerArt.position.set(0, -2.25, 0.03);
   lowerHinge.add(lowerArt);
   addFrame(lowerHinge, 5.8, 4.3, 0.1, 0x111111, 1, 0, -2.25);
-  addCharacter(lowerHinge, true);
+  const figure = addCharacter(lowerHinge, true);
   spread.add(lowerHinge);
 
   const gutter = new THREE.Mesh(new THREE.BoxGeometry(6, 0.13, 0.16), new THREE.MeshBasicMaterial({ color: 0x111111 }));
   gutter.position.z = 0.05;
   spread.add(gutter);
   scene.add(spread);
-  return { spread, hinge: lowerHinge, figure: lowerHinge, leftPage: upper, gutter };
+  const stock = [pageStock(upper, 6, 4.5, 0, 2.25, true), pageStock(lowerHinge, 6, 4.5, 0, -2.25, true)];
+  return { spread, hinge: lowerHinge, figure, leftPage: upper, gutter, stock };
 }
 
 function addMachine(scene, mobile) {
   const stations = [
-    { name: 'Browser', detail: 'PUT /companies/me', kind: 'PROFILE / SAVE', position: [mobile ? 0 : 3.5, mobile ? 0 : -4.5, -4.5] },
+    { name: 'Browser', detail: 'profile submitted', kind: 'PROFILE / SAVE', position: [mobile ? 0 : 3.5, mobile ? 0 : -4.5, -4.5] },
     { name: 'Gateway', detail: 'request routed', kind: 'AUTH / ROUTE', position: [-1.2, mobile ? 0.3 : -2.7, -9.6] },
     { name: 'Company service', detail: 'name accepted', kind: 'PROFILE / UPDATE', position: [1.25, mobile ? -0.15 : -1, -14.8] },
     { name: 'Image storage', detail: 'upload unavailable', kind: 'OBJECT / WRITE', position: [0, 0, -20] },
   ];
   const machine = new THREE.Group();
-  const cardWidth = mobile ? 3.1 : 4.2;
-  const cardHeight = mobile ? 1.8 : 2.4;
-  stations.forEach((station, index) => {
-    const [x, y, z] = station.position;
-    const stationGroup = new THREE.Group();
-    stationGroup.position.set(x, y, z);
-    const halo = new THREE.Mesh(
-      new THREE.PlaneGeometry(cardWidth + 1.1, cardHeight + 1.05),
-      new THREE.MeshBasicMaterial({ map: paperTexture('hatch'), transparent: true, opacity: 0.55, side: THREE.DoubleSide })
-    );
-    halo.position.z = -1.5;
-    stationGroup.add(halo);
+  const bone = new THREE.MeshLambertMaterial({color: 0xe2d7c4});
+  const ink = new THREE.MeshLambertMaterial({color: 0x252022});
+  const edgeInk = new THREE.LineBasicMaterial({color: 0x131112});
+  const indicator = new THREE.MeshBasicMaterial({color: 0xdc143c});
+  const hatch = paperTexture('hatch');
+  const hatchMaterial = new THREE.MeshBasicMaterial({map: hatch, color: 0xad9e8b});
+  const scale = mobile ? 0.77 : 1;
 
-    const box = new THREE.Mesh(
-      new THREE.BoxGeometry(cardWidth, cardHeight, 0.45),
-      new THREE.MeshBasicMaterial({ color: 0xf5f0e8 })
+  function block(group, dimensions, position, material = bone, edges = true) {
+    const geometry = new THREE.BoxGeometry(...dimensions);
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.position.set(...position);
+    if (edges) mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(geometry), edgeInk));
+    group.add(mesh);
+    return mesh;
+  }
+
+  stations.forEach((station, index) => {
+    const chamber = new THREE.Group();
+    chamber.position.set(...station.position);
+    chamber.scale.setScalar(scale);
+    block(chamber, [5.8, .15, 3.3], [0, -1.7, -.85], ink);
+    block(chamber, [5.6, .025, 3.15], [0, -1.61, -.85], hatchMaterial, false);
+
+    if (index === 0) {
+      // A browser frame with a recessed work surface and window controls.
+      block(chamber, [5.4, .42, .48], [0, 1.65, -.7], ink);
+      for (const x of [-2.54, 2.54]) block(chamber, [.3, 3.35, .48], [x, 0, -.7]);
+      for (let i = 0; i < 3; i++) block(chamber, [.18, .1, .025], [-2.25 + .29 * i, 1.65, -.45], bone, false);
+      for (const x of [-1.55, 1.55]) block(chamber, [1.48, .17, 1.05], [x, -.86, -.7]);
+    } else if (index === 1) {
+      // Repeating portal ribs enclose the request route.
+      for (let i = 0; i < (mobile ? 3 : 5); i++) {
+        const z = .5 - i * .65;
+        for (const x of [-2.18, 2.18]) block(chamber, [.19, 3.5, .24], [x, .05, z], i === 0 ? ink : bone);
+        block(chamber, [4.52, .19, .24], [0, 1.82, z], i === 0 ? ink : bone);
+      }
+      for (const x of [-1.4, 1.4]) block(chamber, [.06, .025, 3], [x, -1.58, -.9], indicator, false);
+    } else if (index === 2) {
+      // Two work cells connected across a central service aisle.
+      for (const x of [-1.66, 1.66]) {
+        block(chamber, [1.3, 2.72, 1.35], [x, -.22, -1.28]);
+        for (let i = 0; i < 4; i++) block(chamber, [1.05, .08, .12], [x, -1 + i * .47, -.54], ink, false);
+        block(chamber, [.15, .14, .13], [x + .35, .51, -.54], indicator, false);
+      }
+      block(chamber, [3.5, .25, .55], [0, 1.45, -.92], ink);
+    } else {
+      // A suspended archive with stacked drawers and a broken intake.
+      for (const x of [-2.45, 2.45]) block(chamber, [.19, 4.6, .25], [x, .55, -1], ink);
+      for (let i = 0; i < 4; i++) {
+        block(chamber, [3.55, .38, 1.25], [0, -.84 + i * .55, -1.15], bone);
+        block(chamber, [.85, .05, .06], [0, -.84 + i * .55, -.49], ink, false);
+      }
+      block(chamber, [2.75, .24, .5], [0, 2.08, -.92], ink);
+    }
+
+    const label = new THREE.Mesh(
+      new THREE.PlaneGeometry(2.35, 1.3),
+      new THREE.MeshBasicMaterial({map: makeTextCard(station.name, station.detail, station.kind), side: THREE.DoubleSide})
     );
-    stationGroup.add(box);
-    const card = new THREE.Mesh(
-      new THREE.PlaneGeometry(cardWidth - 0.16, cardHeight - 0.16),
-      new THREE.MeshBasicMaterial({ map: makeTextCard(station.name, station.detail, station.kind), side: THREE.DoubleSide })
-    );
-    card.position.z = 0.24;
-    stationGroup.add(card);
-    addFrame(stationGroup, cardWidth, cardHeight, 0.3);
-    stationGroup.visible = false;
-    station.visual = stationGroup;
-    station.revealAt = [0.34, 0.52, 0.62, 0.72][index];
-    station.hideAt = [0.52, 0.62, 0.72, 0.84][index];
-    machine.add(stationGroup);
+    label.position.set(index % 2 ? -1.5 : 1.5, -.55, .47);
+    chamber.add(label);
+    station.visual = chamber;
+    station.label = label;
+    station.revealAt = [0.34, 0.52, 0.62, 0.68][index];
+    station.hideAt = [0.53, 0.64, 0.703, 0.72][index];
+    machine.add(chamber);
   });
 
-  const routePoints = stations.map((station) => new THREE.Vector3(...station.position));
-  const curve = new THREE.CatmullRomCurve3(routePoints);
-  const baseRoute = new THREE.Mesh(
-    new THREE.TubeGeometry(curve, 90, 0.055, 8, false),
-    new THREE.MeshBasicMaterial({ color: 0x111111 })
-  );
+  const points = Array.from({length: mobile ? 44 : 78}, (_, index) => index);
+  const routePoints = points.map((index) => new THREE.Vector3(...frameAt(.14 + (.72 - .14) * index / (points.length - 1), mobile).signal));
+  const route = new THREE.CurvePath();
+  for (let index = 1; index < routePoints.length; index++) {
+    const previous = routePoints[index - 1];
+    if (previous.distanceToSquared(routePoints[index]) > 0.000001) {
+      route.add(new THREE.LineCurve3(previous, routePoints[index]));
+    }
+  }
   const liveRoute = new THREE.Mesh(
-    new THREE.TubeGeometry(curve, 90, 0.018, 6, false),
-    new THREE.MeshBasicMaterial({ color: 0xdc143c })
+    new THREE.TubeGeometry(route, mobile ? 50 : 96, .031, 6, false),
+    indicator
   );
-  machine.add(baseRoute, liveRoute);
-  const routeLines = [baseRoute, liveRoute];
+  machine.add(liveRoute);
+  const routeLines = [liveRoute];
 
   const signal = new THREE.Group();
   const core = new THREE.Mesh(
@@ -512,6 +599,14 @@ function addMachine(scene, mobile) {
     new THREE.MeshBasicMaterial({ color: 0xdc143c, transparent: true, opacity: 0.17 })
   );
   signal.add(glow, core);
+  const trail = Array.from({length: mobile ? 5 : 10}, (_, index) => {
+    const dot = new THREE.Mesh(core.geometry, new THREE.MeshBasicMaterial({
+      color: 0xdc143c, transparent: true, depthWrite: false, opacity: .32 * (1 - index / (mobile ? 5 : 10)),
+    }));
+    dot.scale.setScalar(.54 - index * .035);
+    machine.add(dot);
+    return dot;
+  });
   machine.add(signal);
 
   const failureSpread = new THREE.Group();
@@ -604,7 +699,7 @@ function addMachine(scene, mobile) {
   };
   machine.add(failureSpread);
   scene.add(machine);
-  return { machine, signal, stations, routeLines, failureSpread, failureDepth, failureWidth, failureHeight, setOutcome };
+  return { machine, signal, glow, trail, stations, routeLines, failureSpread, setOutcome };
 }
 
 function updateCaption(root, progress, previousBeat) {
@@ -650,16 +745,29 @@ export function initHirePathSequence(root) {
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0xd7cebd);
   scene.fog = new THREE.Fog(0xd7cebd, 23, 42);
+  const fill = new THREE.HemisphereLight(0xfff4db, 0x655463, 1.4);
+  const key = new THREE.DirectionalLight(0xffe4c7, 1.1);
+  key.position.set(-4, 6, 5);
+  scene.add(fill, key);
   const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 80);
+  const atmosphere = addPrintAtmosphere(scene, mobile, {near: -1, far: -20});
   const page = mobile ? addMobileSpread(scene) : addDesktopSpread(scene);
   const machine = addMachine(scene, mobile);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.setClearColor(0xd7cebd, 1);
   root.classList.add('is-webgl');
+  const save = root.querySelector('[data-sequence-save]');
+  const goToSave = () => {
+    const top = window.scrollY + track.getBoundingClientRect().top;
+    const length = track.clientHeight - stage.clientHeight;
+    window.scrollTo({top: top + length * .147, behavior: 'smooth'});
+  };
+  save.hidden = false;
+  save.addEventListener('click', goToSave);
 
   let visible = false;
-  let scheduled = false;
+  let animationFrame = 0;
   let lastProgress = -1;
   let currentBeat = -1;
   let lastLabel = '';
@@ -677,6 +785,7 @@ export function initHirePathSequence(root) {
   const resize = () => {
     const width = Math.max(1, stage.clientWidth);
     const height = Math.max(1, stage.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5, 1920 / width, 1200 / height));
     renderer.setSize(width, height, false);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
@@ -686,7 +795,7 @@ export function initHirePathSequence(root) {
   };
 
   const render = () => {
-    scheduled = false;
+    animationFrame = 0;
     if (!visible || document.hidden) return;
     const rect = track.getBoundingClientRect();
     const progress = clamp(-rect.top / Math.max(1, rect.height - stage.clientHeight), 0, 1);
@@ -699,17 +808,31 @@ export function initHirePathSequence(root) {
     camera.updateProjectionMatrix();
     page.hinge.rotation.y = mobile ? 0 : frame.hinge;
     if (mobile) page.hinge.rotation.x = frame.hinge * -0.75;
-    page.spread.rotation.x = mobile ? 0 : frame.hinge * 0.65;
+    page.spread.rotation.x = mobile ? 0 : frame.pageRotation;
+    key.intensity = frame.lighting;
     page.spread.position.z = -frame.separation * 0.35;
     page.leftPage.position.z = -frame.separation * 0.25;
     page.figure.position.z = frame.separation * 0.32;
     page.gutter.position.z = 0.05 + frame.separation * 0.28;
+    page.stock.forEach((stack) => { stack.scale.z = 1 + frame.separation * 1.2; });
+    atmosphere(progress, progress > .24 && progress < .72 ? Math.sin((progress - .24) / .48 * Math.PI) * .23 : 0);
     machine.signal.position.set(...frame.signal);
+    machine.signal.visible = progress > .025;
+    machine.signal.scale.setScalar(.55 + frame.signalIntensity * .55);
+    machine.glow.material.opacity = frame.signalIntensity * .23;
+    machine.failureSpread.visible = progress >= .72 && progress < .86;
+    machine.trail.forEach((dot, index) => {
+      dot.visible = progress >= .23 && progress < .72;
+      if (dot.visible) dot.position.set(...frameAt(Math.max(.14, progress - (index + 1) * .006), mobile).signal);
+    });
     machine.stations.forEach((station) => {
-      station.visual.visible = progress >= station.revealAt && progress < station.hideAt;
+      const cutaway = progress >= .245 && progress < .45;
+      const active = progress >= station.revealAt && progress < station.hideAt;
+      station.visual.visible = frame.environment > 0 && (cutaway || active);
+      station.label.visible = active;
     });
     machine.routeLines.forEach((routeLine) => {
-      routeLine.visible = progress < 0.72;
+      routeLine.visible = progress >= .24 && progress < .72;
     });
 
     const beat = updateCaption(root, progress, currentBeat);
@@ -727,15 +850,15 @@ export function initHirePathSequence(root) {
       lastOutcome = outcome;
     }
     if (progress >= 0.72 && !outcome) {
-      status.textContent = 'The request stopped at image storage. Choose what the interface should publish.';
+      const failurePrompt = 'The request stopped at image storage. Choose what the interface should publish.';
+      if (status.textContent !== failurePrompt) status.textContent = failurePrompt;
     }
     renderer.render(scene, camera);
   };
 
   function schedule() {
-    if (scheduled || !visible || document.hidden) return;
-    scheduled = true;
-    requestAnimationFrame(render);
+    if (animationFrame || !visible || document.hidden) return;
+    animationFrame = requestAnimationFrame(render);
   }
 
   root.addEventListener('click', schedule);
@@ -750,6 +873,35 @@ export function initHirePathSequence(root) {
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', resize, { passive: true });
   document.addEventListener('visibilitychange', onVisibilityChange);
+  const destroy = () => {
+    cancelAnimationFrame(animationFrame);
+    root.removeEventListener('click', schedule);
+    save.hidden = true;
+    save.removeEventListener('click', goToSave);
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', resize);
+    document.removeEventListener('visibilitychange', onVisibilityChange);
+    window.removeEventListener('pagehide', onPageHide);
+    canvas.removeEventListener('webglcontextlost', onContextLost);
+    const resources = new Set();
+    scene.traverse(({geometry, material}) => {
+      if (geometry) resources.add(geometry);
+      if (material?.map) resources.add(material.map);
+      if (material) resources.add(material);
+    });
+    resources.forEach((resource) => resource.dispose());
+    renderer.dispose();
+  };
+  const onPageHide = (event) => {
+    if (!event.persisted) destroy();
+  };
+  const onContextLost = (event) => {
+    event.preventDefault();
+    root.classList.remove('is-webgl');
+    destroy();
+  };
+  window.addEventListener('pagehide', onPageHide);
+  canvas.addEventListener('webglcontextlost', onContextLost);
   resize();
   schedule();
 }

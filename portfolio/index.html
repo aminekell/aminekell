@@ -235,7 +235,7 @@
     <section id="chapter-00" class="chapter chapter--awakening" data-chapter="00" aria-labelledby="ch00-title">
 
       <!-- Page 1: Splash Page -->
-      <div class="manga-page splash-page">
+      <div class="manga-page splash-page splash-page--print">
         <canvas id="ink-canvas" class="ink-canvas" role="presentation" aria-hidden="true"></canvas>
 
         <div class="splash-page__meta" aria-hidden="true">
@@ -245,82 +245,27 @@
 
         <div class="vertical-jp" lang="ja" aria-label="Awakening">覚醒</div>
 
-        <!-- Massive Typography Breaking Borders -->
-        <h1 id="ch00-title" class="splash-title">
-          <span class="title-mega" data-reveal="slam">AMINE</span>
-          <span class="title-mega title-mega--offset" data-reveal="slam">KELLA</span>
-        </h1>
+        <div class="splash-print-title">
+          <h1 id="ch00-title" class="splash-title">
+            <span class="title-mega" data-reveal="slam">AMINE</span>
+            <span class="title-mega title-mega--offset" data-reveal="slam">KELLA</span>
+          </h1>
 
-        <!-- Protagonist Silhouette SVG (~400px tall, seen from behind, looking up at streaming code) -->
-        <div class="splash-hero" data-reveal="panel">
-          <svg class="protagonist" viewBox="0 0 360 440" role="img" aria-label="Manga protagonist seen from behind in a wind-swept jacket looking up at streaming binary code">
-            <!-- Halftone Atmosphere Sky -->
-            <rect x="20" y="10" width="320" height="240" fill="url(#halftone-light)" opacity="0.5"/>
+          <div class="speech-bubble speech-bubble--splash" data-reveal="bubble">
+            <p>1337 software engineering student · Backend &amp; systems</p>
+          </div>
 
-            <!-- Floating Binary & Code Particles Rising Upward -->
-            <g class="code-particles" font-family="JetBrains Mono, monospace" font-weight="700">
-              <text x="48" y="180" font-size="11" fill="var(--black, #0a0a0a)" opacity="0.65">01</text>
-              <text x="64" y="110" font-size="13" fill="var(--crimson, #DC143C)" opacity="0.85">1</text>
-              <text x="86" y="68" font-size="10" fill="var(--black, #0a0a0a)" opacity="0.5">0110</text>
-              <text x="115" y="42" font-size="12" fill="var(--crimson, #DC143C)" opacity="0.75">{ }</text>
-              <text x="155" y="28" font-size="11" fill="var(--black, #0a0a0a)" opacity="0.6">0x01</text>
-              <text x="205" y="36" font-size="13" fill="var(--crimson, #DC143C)" opacity="0.9">101</text>
-              <text x="246" y="64" font-size="10" fill="var(--black, #0a0a0a)" opacity="0.55">fork()</text>
-              <text x="282" y="106" font-size="12" fill="var(--black, #0a0a0a)" opacity="0.6">001</text>
-              <text x="302" y="158" font-size="14" fill="var(--crimson, #DC143C)" opacity="0.8">;</text>
-              <text x="40" y="255" font-size="10" fill="var(--black, #0a0a0a)" opacity="0.45">0</text>
-              <text x="312" y="242" font-size="10" fill="var(--crimson, #DC143C)" opacity="0.65">1</text>
-              <!-- Vertical Stream Traces -->
-              <line x1="72" y1="210" x2="72" y2="54" stroke="var(--black, #0a0a0a)" stroke-width="1" stroke-dasharray="4 6" opacity="0.35"/>
-              <line x1="286" y1="230" x2="286" y2="46" stroke="var(--crimson, #DC143C)" stroke-width="1.2" stroke-dasharray="3 5" opacity="0.55"/>
-              <line x1="184" y1="90" x2="184" y2="16" stroke="var(--black, #0a0a0a)" stroke-width="1" stroke-dasharray="2 4" opacity="0.4"/>
-            </g>
+          <nav class="portfolio-shortcuts" aria-label="Start here">
+            <a class="portfolio-shortcuts__work" href="#hirepath-work">View my HirePath work</a>
+            <a href="#ink-eclipse-title">Enter the manga</a>
+          </nav>
 
-            <!-- Ground Shadow & Ink Splash Base -->
-            <ellipse cx="180" cy="414" rx="88" ry="12" fill="var(--black, #0a0a0a)" opacity="0.22"/>
-            <path d="M96 416C125 408 232 406 268 418C226 426 138 426 96 416Z" fill="var(--black, #0a0a0a)"/>
-
-            <!-- Trousers & Boots (Rear View) -->
-            <path d="M148 286L134 398L154 402L160 398L172 320L178 308L186 320L198 398L216 402L224 396L210 286Z" fill="var(--black, #0a0a0a)" stroke="var(--black, #0a0a0a)" stroke-width="2" stroke-linejoin="round"/>
-            <!-- Boots Detail -->
-            <path d="M132 396L158 398L156 412L126 411Z" fill="var(--dark, #1a1a1a)"/>
-            <path d="M196 398L225 396L232 411L198 412Z" fill="var(--dark, #1a1a1a)"/>
-
-            <!-- Wind-Swept Jacket Silhouette -->
-            <path d="M136 144C122 152 106 168 100 198L84 264L104 270L116 226L114 282C96 314 78 338 66 350C88 354 114 344 134 334L142 308L178 312L218 304L238 332C260 338 282 332 296 320C274 304 256 276 244 242L248 268L268 262L252 192C246 164 232 150 216 142L196 126H156Z" fill="var(--black, #0a0a0a)" stroke="var(--black, #0a0a0a)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-
-            <!-- Jacket Fold & Back Seam Lines (in paper ink contrast) -->
-            <path d="M176 136V296" stroke="var(--gray-700, #444)" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M150 162C152 194 148 232 140 278" fill="none" stroke="var(--gray-500, #777)" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M204 160C202 194 208 232 218 274" fill="none" stroke="var(--gray-500, #777)" stroke-width="1.4" stroke-linecap="round"/>
-            <!-- Wind-Swept Hem Creases -->
-            <path d="M116 282C104 308 92 326 80 342" fill="none" stroke="var(--paper, #f5f0e8)" stroke-width="1.3" opacity="0.45" stroke-linecap="round"/>
-            <path d="M238 266C248 292 264 312 280 322" fill="none" stroke="var(--paper, #f5f0e8)" stroke-width="1.3" opacity="0.45" stroke-linecap="round"/>
-
-            <!-- Upturned Collar -->
-            <path d="M144 142L152 114L176 122L204 114L212 142C196 148 160 148 144 142Z" fill="var(--dark, #1a1a1a)" stroke="var(--paper, #f5f0e8)" stroke-width="1.4" stroke-linejoin="round"/>
-
-            <!-- Neck & Head Tilted Upward -->
-            <path d="M164 122V104H190V122Z" fill="var(--black, #0a0a0a)"/>
-            <ellipse cx="177" cy="84" rx="22" ry="26" fill="var(--black, #0a0a0a)"/>
-
-            <!-- Tousled Manga Hair Silhouette -->
-            <path d="M152 94C144 82 146 64 156 54L150 48L164 46L168 36L178 44L192 34L194 46L208 48L202 58C210 68 210 84 200 96L194 106L184 98L174 108L166 98L158 104Z" fill="var(--black, #0a0a0a)" stroke="var(--black, #0a0a0a)" stroke-width="2" stroke-linejoin="round"/>
-            <!-- Hair Strands Highlight -->
-            <path d="M166 56C174 64 182 70 184 82" fill="none" stroke="var(--gray-500, #777)" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M188 52C192 62 194 74 190 86" fill="none" stroke="var(--gray-500, #777)" stroke-width="1.4" stroke-linecap="round"/>
-
-            <!-- Crimson Rim Lighting Along Right Edge -->
-            <path d="M192 35L195 47L208 49L202 59C209 69 208 84 200 95" fill="none" stroke="var(--crimson, #DC143C)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M204 115L214 142C232 150 246 165 252 193L268 261" fill="none" stroke="var(--crimson, #DC143C)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M245 245C258 278 274 304 295 319" fill="none" stroke="var(--crimson, #DC143C)" stroke-width="2.4" stroke-linecap="round"/>
-            <path d="M211 292L224 395" fill="none" stroke="var(--crimson, #DC143C)" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
         </div>
 
-        <!-- Subtitle Speech Bubble -->
-        <div class="speech-bubble speech-bubble--splash" data-reveal="bubble">
-          <p>Software Engineer · System Architect</p>
+        <!-- Ink Eclipse cover art -->
+        <div class="splash-hero" data-reveal="panel">
+          <img class="protagonist splash-print-art" src="assets/ink-eclipse-spread.webp" width="1536" height="1024" fetchpriority="high"
+            alt="Ink illustration of a traveler overlooking a Moroccan-inspired city under a large crimson sun.">
         </div>
 
         <!-- Scroll Indicator -->
@@ -440,6 +385,40 @@
       </div>
     </section>
 
+    <section class="eclipse" data-ink-eclipse aria-labelledby="ink-eclipse-title">
+      <div class="eclipse-intro">
+        <p class="eclipse-kicker"><span class="crimson-mark" aria-hidden="true"></span> Volume 01 · Interlude</p>
+        <h2 id="ink-eclipse-title">Ink Eclipse</h2>
+        <p>A red moon breaks open. There’s a city inside the ink.</p>
+        <a href="#ch01-title" class="eclipse-skip">Skip to The Origin</a>
+      </div>
+      <div class="eclipse-track">
+        <div class="eclipse-stage">
+          <canvas aria-hidden="true"></canvas>
+          <div class="eclipse-hud">
+            <p class="eclipse-kicker" data-eclipse-beat>01 / The red moon</p>
+            <p data-eclipse-caption>A single drop of ink waits on the page.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="eclipse-fallback">
+        <img class="eclipse-print" src="assets/ink-eclipse-spread.webp" width="1536" height="1024" loading="lazy"
+          alt="The printed opening before the crimson sun tears open.">
+        <svg viewBox="0 0 900 350" role="img" aria-label="A red moon fractures above a row of ink-dark towers. The city disappears into a red stamp.">
+          <rect width="900" height="350" fill="#f1e6d3"/>
+          <g fill="none" stroke="#201921" stroke-width="5"><path d="M15 15h279v320H15zM311 15h278v320H311zM606 15h279v320H606z"/></g>
+          <circle cx="154" cy="173" r="89" fill="#c91237"/>
+          <g fill="#c91237"><path d="M397 82h19v23h-19zM430 92h15v20h-15zM458 73h17v25h-17zM482 105h23v17h-23zM513 82h12v18h-12zM423 126h22v20h-22z"/></g>
+          <path d="M328 276v-71h27v-42h31v52h26v-55h29v-27h21v72h29v-43h29v-36h18v50h32v100z" fill="#201921"/>
+          <path d="M447 166v118" stroke="#c91237" stroke-width="4"/>
+          <circle cx="746" cy="173" r="90" fill="none" stroke="#201921" stroke-width="3"/>
+          <circle cx="746" cy="173" r="77" fill="#c91237"/>
+          <path d="M696 203v-16h14v-29h15v20h12v-33h17v25h13v-12h16v21h13v24z" fill="#201921"/>
+        </svg>
+        <figcaption>The moon breaks into fragments. A city rises through the paper, then folds back into a crimson print.</figcaption>
+      </figure>
+    </section>
+
     <!-- 4. CHAPTER 01 — THE ORIGIN -->
     <section id="chapter-01" class="chapter chapter--origin" data-chapter="01" aria-labelledby="ch01-title">
 
@@ -458,20 +437,52 @@
         </div>
       </div>
 
+      <section class="motion-folio" data-motion-folio="origin" aria-labelledby="folio-origin-title">
+        <header class="motion-folio-intro">
+          <h3 id="folio-origin-title">Khouribga rises</h3>
+          <p>The rooftops lift out of the ink, and the road ends at the doorway to 1337.</p>
+          <div class="motion-folio-actions">
+            <span class="crimson-mark" aria-hidden="true"></span>
+            <p class="motion-folio-hint">Scroll to move through the panel. Scroll back to rewind.</p>
+            <a href="#after-folio-origin">Skip panel</a>
+          </div>
+        </header>
+        <div class="motion-folio-track">
+          <div class="motion-folio-stage">
+            <figure class="motion-folio-poster">
+              <svg viewBox="0 0 760 260" role="img" aria-label="A crimson sun behind rising rooftops and a doorway marked 1337.">
+                <rect width="760" height="260" fill="#f3e8d6"/>
+                <rect x="14" y="14" width="732" height="232" fill="url(#halftone-light)" stroke="#201921" stroke-width="4"/>
+                <circle cx="601" cy="83" r="53" fill="#d3163f"/>
+<path d="M26 228v-61h51v-33h63v46h51V94h24V63h18v31h23v68h51v-52h64v59h52v-28h71v23h49v-29h85v33h62v60Z" fill="#201921"/>
+<path d="m335 228 41-68h32l43 68" fill="#f3e8d6"/>
+<path d="M346 158v-42h91v42m-83-10v-24h74v24" fill="none" stroke="#201921" stroke-width="6"/>
+<text x="392" y="145" text-anchor="middle" font-family="monospace" font-size="19" font-weight="bold">1337</text>
+              </svg>
+            </figure>
+            <p class="motion-folio-caption" data-motion-caption></p>
+          </div>
+        </div>
+      </section>
+      <div id="after-folio-origin" tabindex="-1" class="motion-folio-end"></div>
+
       <!-- Chapter 01 — Page 1 -->
       <div class="manga-page">
         <div class="panel-grid grid-origin-1">
 
           <!-- Panel 1 (Wide, Top): Cityscape Silhouette of Khouribga, Morocco -->
-          <article class="manga-panel panel--cityscape" data-reveal="panel">
+          <article class="manga-panel panel--cityscape" data-reveal="panel" data-printed-depth>
             <svg viewBox="0 0 840 240" role="img" aria-label="Silhouette skyline of Khouribga, Morocco featuring architectural blocks and minarets">
               <rect width="840" height="240" fill="var(--paper-light, #faf7f2)"/>
               <rect width="840" height="175" fill="url(#halftone-light)"/>
+              <g class="print-depth-far">
               <!-- Horizon Glow -->
               <circle cx="660" cy="128" r="46" fill="var(--crimson, #DC143C)" opacity="0.22"/>
               <circle cx="660" cy="128" r="28" fill="var(--crimson, #DC143C)" opacity="0.85"/>
               <!-- Distant Plateau Layer -->
               <path d="M0 190L120 172L280 184L440 168L610 182L740 166L840 178V240H0Z" fill="var(--gray-300, #bbb)" opacity="0.5"/>
+              </g>
+              <g class="print-depth-near">
               <!-- Angular Moroccan City Blocks & Minarets -->
               <path d="M0 240V164H52V148H98V176H132V132H184V168H218V142H264V180H310V152H342V92H352V72L360 54L368 72V92H378V154H422V138H478V166H524V128H572V168H604V104H612V86L619 72L626 86V104H634V164H688V140H744V170H788V146H840V240Z" fill="var(--black, #0a0a0a)"/>
               <!-- Subtle Architectural Arch & Window Slits -->
@@ -482,6 +493,7 @@
                 <path d="M615 118C615 112 623 112 623 118V130H615Z"/>
                 <rect x="536" y="140" width="8" height="10"/>
                 <rect x="552" y="140" width="8" height="10"/>
+              </g>
               </g>
             </svg>
             <div class="location-tag">KHOURIBGA, MOROCCO</div>
@@ -706,6 +718,35 @@
           <p class="chapter-title-page__jp" lang="ja">武器庫</p>
         </div>
       </div>
+
+      <section class="motion-folio" data-motion-folio="arsenal" aria-labelledby="folio-arsenal-title">
+        <header class="motion-folio-intro">
+          <h3 id="folio-arsenal-title">The ink forge</h3>
+          <p>Tools lift off the workbench, turn in the air, and lock into a circuit.</p>
+          <div class="motion-folio-actions">
+            <span class="crimson-mark" aria-hidden="true"></span>
+            <p class="motion-folio-hint">Scroll to move through the panel. Scroll back to rewind.</p>
+            <a href="#after-folio-arsenal">Skip panel</a>
+          </div>
+        </header>
+        <div class="motion-folio-track">
+          <div class="motion-folio-stage">
+            <figure class="motion-folio-poster">
+              <svg viewBox="0 0 760 260" role="img" aria-label="A central processor with crimson circuit lines and tools gathering around it.">
+                <rect width="760" height="260" fill="#f3e8d6"/>
+                <rect x="14" y="14" width="732" height="232" fill="url(#halftone-light)" stroke="#201921" stroke-width="4"/>
+                <rect x="183" y="45" width="394" height="177" rx="7" fill="#201921"/>
+<g fill="none" stroke="#d3163f" stroke-width="5"><path d="M105 61h130v55h96m-211 70h126v-49h91m91-25h76V68h142m-212 71h70v47h100M381 88V48m0 125v38"/></g>
+<rect x="335" y="96" width="92" height="73" fill="#f3e8d6" stroke="#201921" stroke-width="4"/>
+<path d="M344 112h74m-74 40h74" stroke="#201921" stroke-width="3"/>
+<text x="381" y="140" text-anchor="middle" font-family="monospace" font-size="19" font-weight="bold">CORE</text>
+              </svg>
+            </figure>
+            <p class="motion-folio-caption" data-motion-caption></p>
+          </div>
+        </div>
+      </section>
+      <div id="after-folio-arsenal" tabindex="-1" class="motion-folio-end"></div>
 
       <!-- Chapter 02 — Page 1: Weapon Display -->
       <div class="manga-page">
@@ -1032,11 +1073,17 @@
       <div class="manga-page depth-spread">
         <figure class="depth-panel depth-panel--stack" data-depth-panel>
           <figcaption><strong>What survives a shutdown?</strong><span>Inception · container model</span></figcaption>
-          <div class="depth-stage depth-stage--stack" aria-hidden="true">
-            <div class="depth-stack"><span>NGINX</span><span data-stack-service>WordPress</span><span>MariaDB</span><span>Persistent volume</span></div>
+          <p class="depth-scroll-hint">Scroll to pull the WordPress container out of the stack. Scroll back to reverse.</p>
+          <div class="depth-scroll-track">
+            <div class="depth-scroll-frame">
+              <div class="depth-stage depth-stage--stack" aria-hidden="true">
+                <p class="depth-project-key">Top to bottom · NGINX / WordPress / MariaDB / Persistent volume</p>
+                <div class="depth-stack"><span>NGINX</span><span data-stack-service>WordPress</span><span>MariaDB</span><span>Persistent volume</span></div>
+              </div>
+              <button class="depth-button" type="button" data-depth-action="container" hidden>Stop WordPress</button>
+              <p data-depth-status role="status">WordPress is running. The persistent volume holds its site files.</p>
+            </div>
           </div>
-          <button class="depth-button" type="button" data-depth-action="container" hidden>Stop WordPress</button>
-          <p data-depth-status role="status">WordPress is running. The persistent volume holds its site files.</p>
         </figure>
       </div>
 
@@ -1144,10 +1191,13 @@
       <div class="manga-page hirepath-page">
         <section class="hirepath-sequence" data-hirepath-sequence aria-labelledby="hirepath-sequence-title">
           <header class="hirepath-sequence__intro">
-            <p class="hirepath-kicker">Volume 01 / HirePath / illustrative model</p>
+            <p class="hirepath-kicker"><span class="crimson-mark" aria-hidden="true"></span> Illustrative system model — not a production trace</p>
             <h3 id="hirepath-sequence-title">THE PANEL THAT<br>SWALLOWED THE PAGE</h3>
             <p>One save. One crimson signal. Follow it through the gutter.</p>
-            <a class="hirepath-skip" href="#hirepath-work">Skip sequence</a>
+            <div class="hirepath-intro-actions">
+              <button class="hirepath-choice" type="button" data-sequence-save hidden>Save company profile</button>
+              <a class="hirepath-skip" href="#hirepath-work">Skip sequence</a>
+            </div>
           </header>
 
           <div class="hirepath-track" data-sequence-track>
@@ -1225,12 +1275,13 @@
               <p class="fallback-panel__tag">04 / THE FAILURE SPREAD</p>
               <div class="fallback-503" aria-label="Service unavailable">503</div>
               <p class="fallback-question">The logo failed. Should we publish the new name anyway?</p>
-              <div class="hirepath-choices">
+              <div class="hirepath-choices" data-fallback-controls hidden>
                 <button class="hirepath-choice" type="button" data-sequence-choice="partial" aria-pressed="false">Publish the new name with the old logo</button>
                 <button class="hirepath-choice" type="button" data-sequence-choice="draft" aria-pressed="false">Keep both edits as a draft</button>
               </div>
               <p class="hirepath-result" data-fallback-status role="status">Choose an ending. The illustration does not send a real request.</p>
               <p class="fallback-outcome" data-sequence-outcome hidden></p>
+              <noscript><p>Publishing keeps the old logo alongside the new name. Saving a draft leaves the public profile unchanged until both edits can be published.</p></noscript>
             </article>
 
             <article class="fallback-panel fallback-panel--return">
@@ -1241,10 +1292,10 @@
             </article>
           </div>
 
-          <div class="hirepath-contribution" id="hirepath-work">
-            <p class="hirepath-kicker">The real work / Team project</p>
-            <h4>Company onboarding, profiles, and uploads.</h4>
-            <p><strong>My contribution:</strong> company onboarding and profile management, backend validation, company dashboard work, and image uploads.</p>
+          <div class="hirepath-contribution" id="hirepath-work" tabindex="-1" aria-labelledby="hirepath-work-title">
+            <p class="hirepath-kicker">HirePath · My role on a team project</p>
+            <h4 id="hirepath-work-title">From company onboarding to a live profile</h4>
+            <p>I worked on company onboarding, profile forms, backend validation, and image uploads. I also connected the company dashboard to the team’s offer and application APIs.</p>
             <p><strong>Team work:</strong> HirePath was built with a team across the frontend, gateway, services, and storage. This sequence is an illustrative model, not a replay of a production incident.</p>
             <div class="hirepath-links">
               <a href="https://github.com/aminekell/42-ft-transcendence#akella---developer" target="_blank" rel="noopener noreferrer">Read my contribution notes</a>
@@ -1450,24 +1501,29 @@
       <div class="manga-page depth-spread">
         <figure class="depth-panel depth-panel--ray" data-depth-panel>
           <figcaption><strong>A floor plan becomes a corridor</strong><span>cub3D · projection schematic</span></figcaption>
-          <div class="depth-stage depth-stage--ray" aria-hidden="true">
-            <div class="depth-ray">
-              <svg class="depth-map" viewBox="0 0 400 220">
-                <defs><pattern id="depth-map-grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#999"/></pattern></defs>
-                <rect width="400" height="220" fill="#f5f0e8"/>
-                <rect x="46" y="22" width="308" height="176" fill="url(#depth-map-grid)" stroke="#111" stroke-width="8"/>
-                <path d="M134 22v44m132-44v44" stroke="#111" stroke-width="8"/>
-                <path d="M200 176V24" stroke="#dc143c" stroke-width="4"/><circle cx="200" cy="176" r="8" fill="#dc143c"/>
-              </svg>
-              <svg class="depth-corridor" viewBox="0 0 400 220">
-                <rect width="400" height="220" fill="#f5f0e8"/>
-                <path d="M0 0L165 87H235L400 0M0 220L165 133H235L400 220M165 87v46m70-46v46M0 54l165 47m-165 66l165-47m235-66L235 101m165 66l-165-47" fill="none" stroke="#111" stroke-width="5"/>
-                <path d="M200 210V110" stroke="#dc143c" stroke-width="4"/><circle cx="200" cy="110" r="5" fill="#dc143c"/>
-              </svg>
+          <p class="depth-scroll-hint">Scroll to descend from the map into the corridor. Scroll back to reverse.</p>
+          <div class="depth-scroll-track">
+            <div class="depth-scroll-frame">
+              <div class="depth-stage depth-stage--ray" aria-hidden="true">
+                <div class="depth-ray">
+                  <svg class="depth-map" viewBox="0 0 400 220">
+                    <defs><pattern id="depth-map-grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#999"/></pattern></defs>
+                    <rect width="400" height="220" fill="#f5f0e8"/>
+                    <rect x="46" y="22" width="308" height="176" fill="url(#depth-map-grid)" stroke="#111" stroke-width="8"/>
+                    <path d="M134 22v44m132-44v44" stroke="#111" stroke-width="8"/>
+                    <path d="M200 176V24" stroke="#dc143c" stroke-width="4"/><circle cx="200" cy="176" r="8" fill="#dc143c"/>
+                  </svg>
+                  <svg class="depth-corridor" viewBox="0 0 400 220">
+                    <rect width="400" height="220" fill="#f5f0e8"/>
+                    <path d="M0 0L165 87H235L400 0M0 220L165 133H235L400 220M165 87v46m70-46v46M0 54l165 47m-165 66l165-47m235-66L235 101m165 66l-165-47" fill="none" stroke="#111" stroke-width="5"/>
+                    <path d="M200 210V110" stroke="#dc143c" stroke-width="4"/><circle cx="200" cy="110" r="5" fill="#dc143c"/>
+                  </svg>
+                </div>
+              </div>
+              <button class="depth-button" type="button" data-depth-action="ray" hidden>Show first-person projection</button>
+              <p data-depth-status role="status">Map view. The red ray marks the distance to the first wall.</p>
             </div>
           </div>
-          <button class="depth-button" type="button" data-depth-action="ray" hidden>Show first-person projection</button>
-          <p data-depth-status role="status">Map view. The red ray marks the distance to the first wall.</p>
         </figure>
       </div>
 
@@ -1539,6 +1595,34 @@
           <p class="chapter-title-page__jp" lang="ja">機械の内部</p>
         </div>
       </div>
+
+      <section class="motion-folio" data-motion-folio="machine" aria-labelledby="folio-machine-title">
+        <header class="motion-folio-intro">
+          <h3 id="folio-machine-title">Between the hops</h3>
+          <p>Follow a crimson packet through the client, DNS, and server gates, then watch it return.</p>
+          <div class="motion-folio-actions">
+            <span class="crimson-mark" aria-hidden="true"></span>
+            <p class="motion-folio-hint">Scroll to move through the panel. Scroll back to rewind.</p>
+            <a href="#after-folio-machine">Skip panel</a>
+          </div>
+        </header>
+        <div class="motion-folio-track">
+          <div class="motion-folio-stage">
+            <figure class="motion-folio-poster">
+              <svg viewBox="0 0 760 260" role="img" aria-label="A crimson packet on a route through four black architectural gateways.">
+                <rect width="760" height="260" fill="#f3e8d6"/>
+                <rect x="14" y="14" width="732" height="232" fill="url(#halftone-light)" stroke="#201921" stroke-width="4"/>
+                <path d="M54 196h652" stroke="#d3163f" stroke-width="6" stroke-dasharray="15 9"/>
+<g fill="none" stroke="#201921" stroke-width="10"><path d="M94 203V76h101v127m56 0V76h101v127m55 0V76h101v127m55 0V76h101v127"/></g>
+<g fill="#201921" font-family="monospace" font-size="17" font-weight="bold" text-anchor="middle"><text x="144" y="58">CLIENT</text><text x="301" y="58">DNS</text><text x="457" y="58">SERVER</text><text x="613" y="58">RETURN</text></g>
+<path d="m385 174 20 21-20 21-20-21Z" fill="#d3163f" stroke="#f3e8d6" stroke-width="4"/>
+              </svg>
+            </figure>
+            <p class="motion-folio-caption" data-motion-caption></p>
+          </div>
+        </div>
+      </section>
+      <div id="after-folio-machine" tabindex="-1" class="motion-folio-end"></div>
 
       <!-- Interactive HTTP Request Visualization -->
       <div class="manga-page http-page">
@@ -1780,18 +1864,48 @@
         </div>
       </div>
 
+      <section class="motion-folio" data-motion-folio="finale" aria-labelledby="folio-finale-title">
+        <header class="motion-folio-intro">
+          <h3 id="folio-finale-title">The last page turns</h3>
+          <p>The reader passes through three hinged pages and reaches the horizon.</p>
+          <div class="motion-folio-actions">
+            <span class="crimson-mark" aria-hidden="true"></span>
+            <p class="motion-folio-hint">Scroll to move through the panel. Scroll back to rewind.</p>
+            <a href="#after-folio-finale">Skip panel</a>
+          </div>
+        </header>
+        <div class="motion-folio-track">
+          <div class="motion-folio-stage">
+            <figure class="motion-folio-poster">
+              <svg viewBox="0 0 760 260" role="img" aria-label="Three hinged pages turn on a road toward a red horizon.">
+                <rect width="760" height="260" fill="#f3e8d6"/>
+                <rect x="14" y="14" width="732" height="232" fill="url(#halftone-light)" stroke="#201921" stroke-width="4"/>
+                <circle cx="380" cy="78" r="44" fill="#d3163f"/>
+<path d="m362 120-141 113h319L398 120" fill="#201921"/>
+<g stroke="#201921" stroke-width="4" fill="#f3e8d6"><path d="m253 40 86 30v142l-86 16zm99 17 92 4v128l-92 18zm108 9 82-23v153l-82-4z"/></g>
+<path d="M365 116h66m-66 13h66m-66 13h48" stroke="#d3163f" stroke-width="3"/>
+              </svg>
+            </figure>
+            <p class="motion-folio-caption" data-motion-caption></p>
+          </div>
+        </div>
+      </section>
+      <div id="after-folio-finale" tabindex="-1" class="motion-folio-end"></div>
+
       <!-- Page 1: The Farewell -->
       <div class="manga-page">
         <div class="panel-grid grid-final-farewell">
-          <article class="manga-panel panel--farewell" data-reveal="panel">
+          <article class="manga-panel panel--farewell" data-reveal="panel" data-printed-depth>
             <h3 class="farewell-heading">THIS STORY ISN'T OVER.</h3>
             <svg viewBox="0 0 1000 420" role="img" aria-label="Protagonist walking along a binary-textured horizon road with jacket blowing in the wind">
               <rect width="1000" height="420" fill="var(--paper-light, #faf7f2)"/>
               <rect width="1000" height="220" fill="url(#halftone-light)" opacity="0.5"/>
 
+              <g class="print-depth-far">
               <!-- Horizon Glow -->
               <circle cx="500" cy="212" r="56" fill="var(--crimson, #DC143C)" opacity="0.2"/>
               <circle cx="500" cy="212" r="24" fill="var(--crimson, #DC143C)" opacity="0.85"/>
+              </g>
               <line x1="0" y1="216" x2="1000" y2="216" stroke="var(--black, #0a0a0a)" stroke-width="3"/>
 
               <!-- Perspective Ground Crosshatch -->
@@ -1804,15 +1918,19 @@
               <line x1="500" y1="220" x2="500" y2="420" stroke="var(--crimson, #DC143C)" stroke-width="3" stroke-dasharray="14 14"/>
 
               <!-- Walking Protagonist Figure -->
+              <g class="print-depth-figure">
               <g transform="translate(468,184)">
                 <ellipse cx="32" cy="148" rx="28" ry="6" fill="var(--black, #0a0a0a)" opacity="0.4"/>
                 <!-- Legs Striding Forward -->
                 <path d="M22 92L12 144L22 146L30 104L40 144L52 142L42 92Z" fill="var(--paper, #f5f0e8)" stroke="var(--black, #0a0a0a)" stroke-width="2"/>
-                <!-- Wind-Blown Jacket -->
+                <!-- The jacket and its ink line turn as one layer. -->
+                <g class="print-depth-coat">
                 <path d="M16 32L48 32L60 72L92 98L52 104L24 98L8 74Z" fill="var(--paper, #f5f0e8)" stroke="var(--black, #0a0a0a)" stroke-width="2.5" stroke-linejoin="round"/>
                 <path d="M48 32L60 72L92 98" fill="none" stroke="var(--crimson, #DC143C)" stroke-width="2.5"/>
+                </g>
                 <!-- Head -->
                 <circle cx="32" cy="18" r="12" fill="var(--black, #0a0a0a)"/>
+              </g>
               </g>
             </svg>
           </article>
